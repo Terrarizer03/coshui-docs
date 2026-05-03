@@ -1,26 +1,32 @@
-# CoshUI
+# Welcome to CoshUI 
 
-### A Declarative UI Library for Python 
+Welcome to the documentation site of CoshUI — a **declarative** UI library built in Python **for** Python.
 
-## Commands
+---
 
-# HELLO WORLD
+## Why CoshUI?
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Before that question is answered — if you're a Python developer — I'm sure you know. Most Python UI Libraries are either old and outdated, overly complex, or both. Now before the pitchforks fly, I have to clarify that CoshUI *isn't* meant to be a replacement.  
 
-## Project layout
+CoshUI was made with the vision of writing small boilerplate but having the tools to customize it however you like. It's meant to be something you install and plug into existing projects.  
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+CoshUI is backend-agnostic — the same UI code works with Pygame, OpenGL, or any backend you build yourself. With its declarative API, writing UI code feels familiar if you've ever written HTML or Flutter, but in pure Python.
 
-```py title="Node" linenums="1"
-@abstractmethod
-def get_render_data():
-    pass
+---
 
-```
+## Introduction
+
+[Install CoshUI Now](introduction/installation.md)  
+[Learn How To Make Your First UI](introduction/your-first-ui.md)
+
+---
+
+## API Questions?
+
+[Learn The API](learn-the-api/getting-started.md)
+
+---
+
+## Interested in Recent Updates?
+
+[Keep Up With The Changelog](changelog.md)

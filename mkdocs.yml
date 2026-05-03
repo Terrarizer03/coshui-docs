@@ -4,6 +4,9 @@ theme:
   name: material
   features:
     - content.code.copy
+    - search.highlight
+    - search.suggest
+    - search.share
   font: 
     text: Comfortaa
     code: JetBrains Mono
@@ -34,24 +37,104 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Home: index.md
   - Introduction:
-    - introduction/index.md
     - Installation: introduction/installation.md
     - Your First UI: introduction/your-first-ui.md
   - Learn the API:
     - Getting Started: learn-the-api/getting-started.md
     - Layout:
+      - Overview: learn-the-api/layout/index.md
+      - Basics: learn-the-api/layout/basics.md
       - Containers: learn-the-api/layout/containers.md
       - Grid: learn-the-api/layout/grid.md
     - Styling:
+      - Overview: learn-the-api/styling/index.md
       - Colors and Alpha: learn-the-api/styling/colors-and-alpha.md
       - Borders: learn-the-api/styling/borders.md
       - Border Radius: learn-the-api/styling/border-radius.md
+      - Transforms: learn-the-api/styling/transforms.md
+    - Widgets:
+      - Overview: learn-the-api/widgets/index.md
+      - Button: learn-the-api/widgets/button.md
+      - Label: learn-the-api/widgets/label.md
+      - Input Field: learn-the-api/widgets/input-field.md
+      - Checkbox: learn-the-api/widgets/checkbox.md
+      - Dropdown: learn-the-api/widgets/dropdown.md
+      - Images: learn-the-api/widgets/images.md
+    - Animations:
+      - Overview: learn-the-api/animations/index.md
+      - Animate Function: learn-the-api/animations/animate-function.md
+      - Properties: learn-the-api/animations/properties.md
+      - Easing: learn-the-api/animations/easing.md
+    - Interactions:
+      - Overview: learn-the-api/interactions/index.md
+      - Hover and Unhover: learn-the-api/interactions/hover-and-unhover.md
+      - Click and Release: learn-the-api/interactions/click-and-release.md
+      - Mouse Filter: learn-the-api/interactions/mouse-filter.md
+    - Properties:
+      - Overview: learn-the-api/properties/index.md
+      - width: learn-the-api/properties/width.md
+      - height: learn-the-api/properties/height.md
+      - gap: learn-the-api/properties/gap.md
+      - padding: learn-the-api/properties/padding.md
+      - margin: learn-the-api/properties/margin.md
+      - sizing: learn-the-api/properties/sizing.md
+      - direction: learn-the-api/properties/direction.md
+      - justify: learn-the-api/properties/justify.md
+      - align: learn-the-api/properties/align.md
+      - z_index: learn-the-api/properties/z-index.md
+      - id: learn-the-api/properties/id.md
+      - classes: learn-the-api/properties/classes.md
+      - on_hover: learn-the-api/properties/on-hover.md
+      - on_unhover: learn-the-api/properties/on-unhover.md
+      - on_click: learn-the-api/properties/on-click.md
+      - on_release: learn-the-api/properties/on-release.md
+      - mouse_filter: learn-the-api/properties/mouse-filter.md
+      - background_color: learn-the-api/properties/background-color.md
+      - alpha: learn-the-api/properties/alpha.md
+      - border: learn-the-api/properties/border.md
+      - border_radius: learn-the-api/properties/border-radius.md
+      - transform_position: learn-the-api/properties/transform-position.md
+      - transform_scale: learn-the-api/properties/transform-scale.md
+      - transform_rotation: learn-the-api/properties/transform-rotation.md
+      - text: learn-the-api/properties/text.md
+      - font: learn-the-api/properties/font.md
+      - font_size: learn-the-api/properties/font-size.md
+      - text_color: learn-the-api/properties/text-color.md
+      - text_align: learn-the-api/properties/text-align.md
+      - text_justify: learn-the-api/properties/text-justify.md
+    - Fonts:
+      - Overview: learn-the-api/fonts/index.md
+      - add_font: learn-the-api/fonts/add-font.md
+      - set_default_font: learn-the-api/fonts/set-default-font.md
+    - Utility:
+      - Overview: learn-the-api/utility/index.md
+      - get_node: learn-the-api/utility/get-node.md
+      - add_class: learn-the-api/utility/add-class.md
+      - animate: learn-the-api/utility/animate.md
+    - Backends:
+      - Overview: learn-the-api/backends/index.md
+      - Pygame: learn-the-api/backends/pygame.md
+      - OpenGL: learn-the-api/backends/opengl.md
   - Examples:
-    - Inventory Grid: examples/inventory-grid.md
     - Pause Menu: examples/pause-menu.md
     - Settings Screen: examples/settings-screen.md
+    - Inventory Grid: examples/inventory-grid.md
   - Changelog: changelog.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Terrarizer03/CoshUI
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/yourcoshuidiscord
+
+copyright: Copyright &copy; 2026 Terrarizer03
