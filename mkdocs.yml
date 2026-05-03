@@ -1,0 +1,57 @@
+site_name: CoshUI
+site_description: A Declarative UI Library for Python
+theme:
+  name: material
+  features:
+    - content.code.copy
+  font: 
+    text: Comfortaa
+    code: JetBrains Mono
+  logo: assets/coshui_logo.png
+  favicon: assets/coshui.ico
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark Mode
+      primary: black
+      accent: deep purple
+    
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light Mode
+      primary: black
+      accent: deep purple
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Introduction:
+    - introduction/index.md
+    - Installation: introduction/installation.md
+    - Your First UI: introduction/your-first-ui.md
+  - Learn the API:
+    - Getting Started: learn-the-api/getting-started.md
+    - Layout:
+      - Containers: learn-the-api/layout/containers.md
+      - Grid: learn-the-api/layout/grid.md
+    - Styling:
+      - Colors and Alpha: learn-the-api/styling/colors-and-alpha.md
+      - Borders: learn-the-api/styling/borders.md
+      - Border Radius: learn-the-api/styling/border-radius.md
+  - Examples:
+    - Inventory Grid: examples/inventory-grid.md
+    - Pause Menu: examples/pause-menu.md
+    - Settings Screen: examples/settings-screen.md
+  - Changelog: changelog.md
