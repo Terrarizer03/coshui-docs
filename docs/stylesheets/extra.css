@@ -6,3 +6,7 @@
     height: 60px;  /* adjust logo size */
     width: auto;
 }
+
+.md-typeset img {
+    border-radius: 15px;
+}

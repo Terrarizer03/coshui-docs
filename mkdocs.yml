@@ -7,11 +7,12 @@ theme:
     - search.highlight
     - search.suggest
     - search.share
+    - navigation.sections
   font: 
     text: Comfortaa
     code: JetBrains Mono
-  logo: assets/coshui_logo.png
-  favicon: assets/coshui.ico
+  logo: assets/images/coshui_logo.png
+  favicon: assets/images/coshui.ico
   palette:
     # Dark Mode
     - scheme: slate
@@ -39,6 +40,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
 
 extra_css:
   - stylesheets/extra.css
@@ -79,7 +83,20 @@ nav:
       - Hover and Unhover: learn-the-api/interactions/hover-and-unhover.md
       - Click and Release: learn-the-api/interactions/click-and-release.md
       - Mouse Filter: learn-the-api/interactions/mouse-filter.md
-    - Properties:
+    - Themes:
+      - Overview: learn-the-api/themes/index.md
+      - Default Themes: learn-the-api/themes/defaults.md
+      - Theme Creation: learn-the-api/themes/create-theme.md
+      - Set Theme: learn-the-api/themes/set-theme.md
+    - Fonts:
+      - Overview: learn-the-api/fonts/index.md
+      - add_font: learn-the-api/fonts/add-font.md
+      - set_default_font: learn-the-api/fonts/set-default-font.md
+    - Backends:
+      - Overview: learn-the-api/backends/index.md
+      - Pygame: learn-the-api/backends/pygame.md
+      - OpenGL: learn-the-api/backends/opengl.md
+    - All Node Properties:
       - Overview: learn-the-api/properties/index.md
       - width: learn-the-api/properties/width.md
       - height: learn-the-api/properties/height.md
@@ -111,19 +128,18 @@ nav:
       - text_color: learn-the-api/properties/text-color.md
       - text_align: learn-the-api/properties/text-align.md
       - text_justify: learn-the-api/properties/text-justify.md
-    - Fonts:
-      - Overview: learn-the-api/fonts/index.md
-      - add_font: learn-the-api/fonts/add-font.md
-      - set_default_font: learn-the-api/fonts/set-default-font.md
-    - Utility:
+      - image_src: learn-the-api/properties/image-src.md
+      - checked: learn-the-api/properties/checked.md
+      - checked_color: learn-the-api/properties/checked-color.md
+      - unchecked_color: learn-the-api/properties/unchecked-color.md
+    - All Public Functions:
       - Overview: learn-the-api/utility/index.md
-      - get_node: learn-the-api/utility/get-node.md
       - add_class: learn-the-api/utility/add-class.md
       - animate: learn-the-api/utility/animate.md
-    - Backends:
-      - Overview: learn-the-api/backends/index.md
-      - Pygame: learn-the-api/backends/pygame.md
-      - OpenGL: learn-the-api/backends/opengl.md
+      - add_font: learn-the-api/utility/add-font.md
+      - set_default_font: learn-the-api/utility/set-default-font.md
+      - create_theme: learn-the-api/utility/create-theme.md
+      - set_default_theme: learn-the-api/utility/set-default-theme.md
   - Examples:
     - Pause Menu: examples/pause-menu.md
     - Settings Screen: examples/settings-screen.md

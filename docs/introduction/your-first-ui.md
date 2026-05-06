@@ -91,7 +91,28 @@ Choose the Backend you want to follow.
         pygame.quit()
     ```
 
-    **`CoshUIRenderer` is where your entire UI structure will live. You can have multiple CoshUIRenderer's, just be sure not to nest them.**
+    **The `CoshUIRenderer` context is where your entire UI structure will live.**
+    
+    !!! warning "Multiple CoshUIRenderers"
+        You can have multiple CoshUIRenderers, but it's best to keep it to only 1. If you have multiple CoshUIRenderers running at once in the same loop, their layouts **WILL** overlap.
+
+    ### Step 4:
+    **With CoshUIRenderer down, we can finally create our UI structure. We'll start by creating a `Container` context and create a `Button` node within it.**
+
+    ```python title="main.py" linenums="24"
+        with CoshUIRenderer(PygameBackend(screen)):
+            with Container(id="container_1", layout=CoshLayout(padding=20), style=CoshStyling(background_color=(80, 75, 255))):
+                Button(id="btn", text="Click Me")
+    ```
+
+    **If you run this code, you should have a light-blue colored container that has 20 padding with a button that says "Click Me" on the top left.**
+    
+    <figure markdown="span">
+        ![Gif of cursor hovering and clicking the button node](../assets/introduction/step-4.gif)
+    </figure>
+    
+    !!! note "ID Requirement"
+        It is best practice to give every Node you create an `id`. Though it's not fully required, if a Node has no id, it is not **persistent** (we will get into this later).
 
 === "PyOpenGL"
 
