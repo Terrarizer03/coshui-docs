@@ -1,6 +1,6 @@
 # alpha
 
-The alpha value controls the transparency of the Node and is a universal property (meaning every Node has this property). This node lives within the `CoshStyling` object. It can be set with both the alpha field (e.g. `alpha=100`) and the background_color field (e.g. `background_color=(255, 0, 0, 100)`) as the 4th value. 
+The alpha value controls the transparency of the Node and is a universal property (meaning every Node has this property). This property lives within the `CoshStyling` object. It can be set with both the alpha field (e.g. `alpha=100`) and the background_color field (e.g. `background_color=(255, 0, 0, 100)`) as the 4th value. 
 
 ??? info "Important Info"
     !!! note "Property Precedence"

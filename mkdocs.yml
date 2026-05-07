@@ -56,16 +56,26 @@ nav:
     - Getting Started: learn-the-api/getting-started.md
     - Layout:
       - Overview: learn-the-api/layout/index.md
-      - Basics: learn-the-api/layout/basics.md
-      - Containers: learn-the-api/layout/containers.md
-      - Grid: learn-the-api/layout/grid.md
+      - Width and Height: learn-the-api/layout/width-and-height.md
+      - Padding and Margin: learn-the-api/layout/padding-and-margin.md
+      - Position: learn-the-api/layout/position.md
     - Styling:
       - Overview: learn-the-api/styling/index.md
       - Colors and Alpha: learn-the-api/styling/colors-and-alpha.md
       - Borders: learn-the-api/styling/borders.md
       - Border Radius: learn-the-api/styling/border-radius.md
       - Transforms: learn-the-api/styling/transforms.md
-    - Widgets:
+    - Themes:
+      - Overview: learn-the-api/themes/index.md
+      - Default Themes: learn-the-api/themes/defaults.md
+      - Theme Creation: learn-the-api/themes/create-theme.md
+      - Set Theme: learn-the-api/themes/set-theme.md
+    - Parent Nodes:
+      - Overview: learn-the-api/parent-nodes/index.md
+      - Containers: learn-the-api/parent-nodes/containers.md
+      - Grid: learn-the-api/parent-nodes/grid.md
+      - Modal: learn-the-api/parent-nodes/modal.md
+    - Widget Nodes:
       - Overview: learn-the-api/widgets/index.md
       - Button: learn-the-api/widgets/button.md
       - Label: learn-the-api/widgets/label.md
@@ -83,11 +93,6 @@ nav:
       - Hover and Unhover: learn-the-api/interactions/hover-and-unhover.md
       - Click and Release: learn-the-api/interactions/click-and-release.md
       - Mouse Filter: learn-the-api/interactions/mouse-filter.md
-    - Themes:
-      - Overview: learn-the-api/themes/index.md
-      - Default Themes: learn-the-api/themes/defaults.md
-      - Theme Creation: learn-the-api/themes/create-theme.md
-      - Set Theme: learn-the-api/themes/set-theme.md
     - Fonts:
       - Overview: learn-the-api/fonts/index.md
       - add_font: learn-the-api/fonts/add-font.md
@@ -98,6 +103,8 @@ nav:
       - OpenGL: learn-the-api/backends/opengl.md
     - All Node Properties:
       - Overview: learn-the-api/properties/index.md
+      - x: learn-the-api/properties/x.md
+      - y: learn-the-api/properties/y.md
       - width: learn-the-api/properties/width.md
       - height: learn-the-api/properties/height.md
       - gap: learn-the-api/properties/gap.md
@@ -107,6 +114,8 @@ nav:
       - direction: learn-the-api/properties/direction.md
       - justify: learn-the-api/properties/justify.md
       - align: learn-the-api/properties/align.md
+      - oveflow: learn-the-api/properties/overflow.md
+      - positioning: learn-the-api/properties/positioning.md
       - z_index: learn-the-api/properties/z-index.md
       - id: learn-the-api/properties/id.md
       - classes: learn-the-api/properties/classes.md
@@ -128,7 +137,8 @@ nav:
       - text_color: learn-the-api/properties/text-color.md
       - text_align: learn-the-api/properties/text-align.md
       - text_justify: learn-the-api/properties/text-justify.md
-      - image_src: learn-the-api/properties/image-src.md
+      - text_oveflow: learn-the-api/properties/text-overflow.md
+      - src: learn-the-api/properties/image-src.md
       - checked: learn-the-api/properties/checked.md
       - checked_color: learn-the-api/properties/checked-color.md
       - unchecked_color: learn-the-api/properties/unchecked-color.md

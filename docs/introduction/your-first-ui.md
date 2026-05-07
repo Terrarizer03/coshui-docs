@@ -94,7 +94,9 @@ Choose the Backend you want to follow.
     **The `CoshUIRenderer` context is where your entire UI structure will live.**
     
     !!! warning "Multiple CoshUIRenderers"
-        You can have multiple CoshUIRenderers, but it's best to keep it to only 1. If you have multiple CoshUIRenderers running at once in the same loop, their layouts **WILL** overlap.
+        You **cannot** have multiple CoshUIRenderers. If you have multiple CoshUIRenderers running at once in the same loop, their layouts **WILL** overlap and UI interactions **WILL** break.
+
+    **Now you may notice the `PygameBackend` takes in the `screen` variable, well as pygame draws everything on a `Surface` object, we pass on that surface to the backend for use.**
 
     ### Step 4:
     **With CoshUIRenderer down, we can finally create our UI structure. We'll start by creating a `Container` context and create a `Button` node within it.**
@@ -116,16 +118,6 @@ Choose the Backend you want to follow.
 
 === "PyOpenGL"
 
-    ## Prerequisites
-
-    - `Python v3.10+`
-    - `coshui` package
-    - `PyOpenGL` dependency
-
-    If you haven't met these requirements, please go [here](installation.md)
-
-    ## Step By Step
-
-    I'm guessing you've now just installed CoshUI and want to learn how to create your first UI. Well you're in luck, in CoshUI, getting started is not hard. I'll lead you through quickly implementing your first ever UI using CoshUI.
-
-    ### **Start with creating your python file and importing `coshui` and `OpenGL`.** 
+    <figure markdown="span">
+        **Coming Soon...**
+    </figure>
