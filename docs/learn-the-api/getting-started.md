@@ -8,7 +8,7 @@ If you haven't already done the first tutorial for CoshUI, it is advisable to ch
 
 ## Layout
 
-This section will teach you all about how different properties within the `CoshLayout` object that are passed to Node objects affect CoshUI's layout system. 
+The Layout section will teach you all about the `CoshLayout` object, its attributes, and how it affects CoshUI's layout system.
 
 [Start Here](layout/index.md)
 
@@ -16,7 +16,7 @@ This section will teach you all about how different properties within the `CoshL
 
 ## Styling
 
-This section talks about the differnt properties within the `CoshStyling` object that get passed to Nodes and how they affect the appearance of them.
+This section teaches you about the `CoshStyling` object, its attributes, and how each affects the appearance of Nodes.
 
 [Start Here](styling/index.md)
 
@@ -30,26 +30,25 @@ Themes are the base appearance of the UI. This section will talk about the diffe
 
 ---
 
-## Parent Nodes and Widgets
+## Nodes
 
-Nodes are the heart of the UI system. Parent Nodes are where "Widgets" live whereas widgets are `Nodes` that have different default behavior. These section(s) will outline the different Parent Nodes and Widgets, and how to use them properly and effectively.
+Nodes are the heart of the UI system. This section will talk about the different kinds of nodes, their default behaviours, how the engine views them, and how to set them up properly and effectively. 
 
-[Start Here For Parent Nodes](parent-nodes/index.md)  
-[Start Here For Widgets](widgets/index.md)
+[Start Here](nodes/index.md)
 
 ---
 
 ## Animation System
 
-This section will explain CoshUI's built in animation system and how to utilize the system properly.
+CoshUI comes with it's own built-in and simple animation system. This section will teach you how to set animations and use it properly within your project.
 
 [Start Here](animations/index.md)
 
 ---
 
-## Interaction and Data Binding
+## Signals and Data Binding
 
-This section explains the different callbacks/callables and how to get/bind data from nodes to outside variables.
+This section explains the different signals a `Node` object can emit, how to capture those signals, and how to get/bind data from specific widgets to outside variables.
 
 [Start Here](interactions/index.md)
 
@@ -57,15 +56,43 @@ This section explains the different callbacks/callables and how to get/bind data
 
 ## Text System
 
-I'll finish this at a later time
+CoshUI uses the utilized backend's built-in text system to display text. This section will teach you all about how text can be used and manipulated.
 
-[Start Here](fonts/index.md)
+[Start Here](text/index.md)
 
 ---
 
-# Specific Properties & Functions
+## Specific Properties & Functions
 
 If you've gone through it all or are just trying to find something specific about the API, then it's best to check these sections:
 
 [All Node Properties](properties/index.md)  
 [All Public Functions](utility/index.md)
+
+---
+
+## Definition of Terms
+
+**1. Universal Attribute/Property**  
+
+- An attribute that every Node possesses.
+
+**2. Local Attribute/Property**  
+
+- An attribute only certain Nodes poessesses.
+
+**3. Recursive Values**  
+
+- Attributes that are inherited by the Node's children (e.g., `z_index`).
+
+**4. Local Values**  
+
+- Attributes that only affects the specified Node (e.g., `alpha`).
+
+**5. Atomic Nodes**
+
+- Nodes that are only made up of a single Node (e.g., `Button`).
+
+**6. Composite Nodes**  
+
+- Nodes that are made up of multiple Nodes (e.g., `Slider`, `Modal`, `Dropdown`)

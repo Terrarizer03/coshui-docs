@@ -8,7 +8,7 @@ Welcome to the documentation site of CoshUI — a **declarative** UI library bui
 
 Before that question is answered — if you're a Python developer — I'm sure you know. Most Python UI Libraries are either old and outdated, overly complex, or both. Now before the pitchforks fly, I have to clarify that CoshUI *isn't* meant to be a replacement.  
 
-CoshUI was made with the vision of writing small boilerplate but having the tools to customize it however you like. It's meant to be something you install and plug into existing projects.  
+CoshUI was made with the vision of writing minimal boilerplate but having the tools to customize it however you like. It's meant to be something you install and plug into existing projects.  
 
 CoshUI is backend-agnostic — the same UI code works with Pygame, OpenGL, or any backend you build yourself. With its declarative API — where indentation defines hierarchy — writing UI code feels familiar if you've ever written HTML or Flutter, but in pure Python.
 
@@ -29,7 +29,7 @@ with CoshUIRenderer(PygameBackend(screen)):
             Button(id="quit_btn", text="Quit")
 ```
 
-The above image — and following code — is an example of what CoshUI can do in just a few lines. The UI in the image uses only the default themes with absolutely no styling other than `container_1`'s background color. So although by no means is it pretty, it's 100% functional.  
+The above image — and following code — is an example of what CoshUI can do in just a few lines. The UI in the image uses only the default themes with absolutely no styling other than `container_1`'s background color. 
 
 ---
 
@@ -40,9 +40,9 @@ The above image — and following code — is an example of what CoshUI can do i
 
 ---
 
-## API Questions?
+## Learn the API
 
-[Learn The API](learn-the-api/getting-started.md)
+[Getting Started](learn-the-api/getting-started.md)
 
 ---
 

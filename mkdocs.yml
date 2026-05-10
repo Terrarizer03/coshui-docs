@@ -70,19 +70,22 @@ nav:
       - Default Themes: learn-the-api/themes/defaults.md
       - Theme Creation: learn-the-api/themes/create-theme.md
       - Set Theme: learn-the-api/themes/set-theme.md
-    - Parent Nodes:
-      - Overview: learn-the-api/parent-nodes/index.md
-      - Containers: learn-the-api/parent-nodes/containers.md
-      - Grid: learn-the-api/parent-nodes/grid.md
-      - Modal: learn-the-api/parent-nodes/modal.md
-    - Widget Nodes:
-      - Overview: learn-the-api/widgets/index.md
-      - Button: learn-the-api/widgets/button.md
-      - Label: learn-the-api/widgets/label.md
-      - Input Field: learn-the-api/widgets/input-field.md
-      - Checkbox: learn-the-api/widgets/checkbox.md
-      - Dropdown: learn-the-api/widgets/dropdown.md
-      - Images: learn-the-api/widgets/images.md
+    - Nodes:
+      - Overview: learn-the-api/nodes/index.md
+      - Parent Nodes:
+        - Overview: learn-the-api/nodes/parent-nodes/index.md
+        - Containers: learn-the-api/nodes/parent-nodes/containers.md
+        - Grid: learn-the-api/nodes/parent-nodes/grid.md
+        - Modal: learn-the-api/nodes/parent-nodes/modal.md
+      - Widget Nodes:
+        - Overview: learn-the-api/nodes/widgets/index.md
+        - Button: learn-the-api/nodes/widgets/button.md
+        - Label: learn-the-api/nodes/widgets/label.md
+        - Input Field: learn-the-api/nodes/widgets/input-field.md
+        - Checkbox: learn-the-api/nodes/widgets/checkbox.md
+        - Dropdown: learn-the-api/nodes/widgets/dropdown.md
+        - Images: learn-the-api/nodes/widgets/images.md
+        - Slider: learn-the-api/nodes/widgets/slider.md
     - Animations:
       - Overview: learn-the-api/animations/index.md
       - Animate Function: learn-the-api/animations/animate-function.md
@@ -90,13 +93,13 @@ nav:
       - Easing: learn-the-api/animations/easing.md
     - Interactions:
       - Overview: learn-the-api/interactions/index.md
-      - Hover and Unhover: learn-the-api/interactions/hover-and-unhover.md
-      - Click and Release: learn-the-api/interactions/click-and-release.md
+      - Signals: learn-the-api/interactions/signals.md
+      - Data Binding: learn-the-api/interactions/data-binding.md
       - Mouse Filter: learn-the-api/interactions/mouse-filter.md
-    - Fonts:
-      - Overview: learn-the-api/fonts/index.md
-      - add_font: learn-the-api/fonts/add-font.md
-      - set_default_font: learn-the-api/fonts/set-default-font.md
+    - Text System:
+      - Overview: learn-the-api/text/index.md
+      - Text Properties: learn-the-api/text/text-properties.md
+      - Set Default Font: learn-the-api/text/set-default.md
     - Backends:
       - Overview: learn-the-api/backends/index.md
       - Pygame: learn-the-api/backends/pygame.md
