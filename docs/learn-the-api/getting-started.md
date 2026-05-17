@@ -87,11 +87,11 @@ If you've gone through it all or are just trying to find something specific abou
 
 **4. Local Values**  
 
-- Attributes that only affects the specified Node (e.g., `alpha`).
+- Attributes that only affects the specified Node (e.g., `width`, `height`).
 
 **5. Atomic Nodes**
 
-- Nodes that are only made up of a single Node (e.g., `Button`).
+- Nodes that are only made up of a single Node (e.g., `Button`, `Checkbox`).
 
 **6. Composite Nodes**  
 

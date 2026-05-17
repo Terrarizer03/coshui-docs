@@ -103,17 +103,18 @@ nav:
     - Backends:
       - Overview: learn-the-api/backends/index.md
       - Pygame: learn-the-api/backends/pygame.md
+      - Raylib: learn-the-api/backends/raylib.md
       - OpenGL: learn-the-api/backends/opengl.md
     - All Node Properties:
       - Overview: learn-the-api/properties/index.md
       - x: learn-the-api/properties/x.md
       - y: learn-the-api/properties/y.md
+      - style: learn-the-api/properties/style.md
       - width: learn-the-api/properties/width.md
       - height: learn-the-api/properties/height.md
       - gap: learn-the-api/properties/gap.md
       - padding: learn-the-api/properties/padding.md
       - margin: learn-the-api/properties/margin.md
-      - sizing: learn-the-api/properties/sizing.md
       - direction: learn-the-api/properties/direction.md
       - justify: learn-the-api/properties/justify.md
       - align: learn-the-api/properties/align.md
@@ -122,10 +123,6 @@ nav:
       - z_index: learn-the-api/properties/z-index.md
       - id: learn-the-api/properties/id.md
       - classes: learn-the-api/properties/classes.md
-      - on_hover: learn-the-api/properties/on-hover.md
-      - on_unhover: learn-the-api/properties/on-unhover.md
-      - on_click: learn-the-api/properties/on-click.md
-      - on_release: learn-the-api/properties/on-release.md
       - mouse_filter: learn-the-api/properties/mouse-filter.md
       - background_color: learn-the-api/properties/background-color.md
       - alpha: learn-the-api/properties/alpha.md

@@ -1,0 +1,3 @@
+# Interactions
+
+`CLICKED` will fire for a single frame, the frame that the element was clicked. `RELEASED` will also fire for a single frame, the frame where the element was released. `PRESSED` will fire for as long as that element is being hovered over and held down with the mouse button, `HOVERED` will also fire every frame while the element is beng hovered over. `HOVER_ENTER` and `HOVER_EXIT` fire once, when you first hover over the element and hover out of the element respectively.
