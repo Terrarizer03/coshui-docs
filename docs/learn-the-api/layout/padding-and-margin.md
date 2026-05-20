@@ -16,7 +16,7 @@ with CoshUIRenderer(...):
 The code-block above will show the inner container being 10 pixels offset from the top-left of the outer container. At the same time, the outer container should be 10 pixels offset from the top-left of the screen.
 
 <figure>
-    <img src="/assets/learn-the-api/padding-and-margin-1.jpg" alt="image of an outer and inner container, demonstrating padding=10 and margin=10">
+    <img src="../../../assets/learn-the-api/padding-and-margin-1.jpg" alt="image of an outer and inner container, demonstrating padding=10 and margin=10">
 </figure>
 
 !!! info "Unlike CSS"

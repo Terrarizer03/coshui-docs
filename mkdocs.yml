@@ -1,4 +1,5 @@
 site_name: CoshUI
+site_url: https://terrarizer03.github.io/coshui-docs
 site_description: A Declarative UI Library for Python
 theme:
   name: material
@@ -104,6 +105,11 @@ nav:
       - Overview: learn-the-api/text/index.md
       - Text Properties: learn-the-api/text/text-properties.md
       - Set Default Font: learn-the-api/text/set-default.md
+    - Types and Enums:
+      - Overview: learn-the-api/types/index.md
+      - Layout Enums: learn-the-api/types/layout-enums.md
+      - Interaction Enums: learn-the-api/types/interaction-enums.md
+      - Text Enums: learn-the-api/types/text-enums.md
     - Backends:
       - Overview: learn-the-api/backends/index.md
       - Pygame: learn-the-api/backends/pygame.md

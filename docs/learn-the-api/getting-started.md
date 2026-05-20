@@ -62,6 +62,14 @@ CoshUI uses the utilized backend's built-in text system to display text. This se
 
 ---
 
+## Types and Enums
+
+CoshUI has multiple Enums to be passed as values for attributes. This section will teach you all about them, where to use them, and how to use them.
+
+[Start Here](types/index.md)
+
+---
+
 ## Specific Properties & Functions
 
 If you've gone through it all or are just trying to find something specific about the API, then it's best to check these sections:
