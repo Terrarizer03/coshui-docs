@@ -149,6 +149,7 @@ nav:
     - All Public Functions:
       - Overview: learn-the-api/utility/index.md
       - add_class: learn-the-api/utility/add-class.md
+      - get_signal: learn-the-api/utility/get-signal.md
       - animate: learn-the-api/utility/animate.md
       - add_font: learn-the-api/utility/add-font.md
       - set_default_font: learn-the-api/utility/set-default-font.md

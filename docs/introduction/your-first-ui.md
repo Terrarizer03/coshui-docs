@@ -28,7 +28,7 @@ Choose the Backend you want to follow.
     ### Step 1:
     **Start with creating your python file and importing `coshui` and `pygame`.**  
 
-    ```python title="main.py" linenums="1"
+    ```python title="main.py"
     # For the sake of this tutorial, we'll be importing everything from coshui.
     from coshui import * 
     import pygame
@@ -37,7 +37,7 @@ Choose the Backend you want to follow.
     ### Step 2:
     **Create your constants, your main() function, initialize `pygame`, and start your main loop.**
 
-    ```python title="main.py" linenums="5"
+    ```python title="main.py"
     WIDTH, HEIGHT = 800, 800
     FPS = 60
     BLACK = (0, 0, 0)
@@ -68,7 +68,7 @@ Choose the Backend you want to follow.
     ### Step 3:
     **Once you have the boilerplate down, it's time to create your first UI. Between `screen.fill(BLACK)` and `pygame.display.flip()`, write `with CoshUIRenderer(PygameBackend(screen))`.**
 
-    ```python title="main.py" linenums="9" hl_lines="15-16"
+    ```python title="main.py" hl_lines="15-16"
     def main():
         pygame.init()
         screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -102,7 +102,7 @@ Choose the Backend you want to follow.
     ### Step 4:
     **With CoshUIRenderer down, we can finally create our UI structure. We'll start by creating a `Container` context and create a `Button` node within it.**
 
-    ```python title="main.py" linenums="23"
+    ```python title="main.py"
         with CoshUIRenderer(PygameBackend(screen)):
             with Container(id="container_1", padding=20, style=CoshStyling(background_color=(80, 75, 255))):
                 Button(id="btn", text="Click Me")
@@ -120,7 +120,7 @@ Choose the Backend you want to follow.
     ### Step 5:   
     **Hopefully you've understood how CoshUI's context manager API works. With that, let's create a Start Menu with a working Quit Button and Settings Button that triggers a modal.**
 
-    ```python title="main.py" linenums="23"
+    ```python title="main.py"
         with CoshUIRenderer(PygameBackend(screen)):
             with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
                 with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -138,7 +138,7 @@ Choose the Backend you want to follow.
     ### Step 6:
     **Now it's time to add a little bit of *interaction* to our UI. Using CoshUI's built-in interaction system, we can use the `get_signal()` function to capture events.**
     
-    ```python title="main.py" linenums="23"
+    ```python title="main.py"
         with CoshUIRenderer(PygameBackend(screen)):
             with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
                 with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -156,7 +156,7 @@ Choose the Backend you want to follow.
     ### Step 7:
     **With our Quit Button working, we can move on to making a settings menu.**
 
-    ```python title="main.py" linenums="5" hl_lines="4 7 31-32"
+    ```python title="main.py" hl_lines="4 7 31-32"
     WIDTH, HEIGHT = 800, 800
     FPS = 60
     BLACK = (0, 0, 0)
@@ -204,7 +204,7 @@ Choose the Backend you want to follow.
     ### Step 8:
     **With our new settings_open boolean, we can add a quick if statement that opens up a modal.**
 
-    ```python title="main.py" linenums="23" hl_lines="7-16"
+    ```python title="main.py" hl_lines="7-16"
         with CoshUIRenderer(PygameBackend(screen)):
             with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
                 with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -236,7 +236,7 @@ Choose the Backend you want to follow.
     ### Step 9:
     **Great, we now have a settings menu we can open, but you might notice that our values aren't getting saved, let's use CoshUI's `Ref` object to bind to our values to make our values persistent and useable.**
 
-    ```python title="main.py" linenums="5" hl_lines="5-6 22 25" 
+    ```python title="main.py" hl_lines="5-6 22 25" 
     WIDTH, HEIGHT = 800, 800
     FPS = 60
     BLACK = (0, 0, 0)
@@ -270,7 +270,7 @@ Choose the Backend you want to follow.
     ### Step 10:
     **This tutorial is slowly coming to a close, but before everything ends, let's polish our UI a little bit by adding *animations* using CoshUI's built-in animation system.**
 
-    ```python title="main.py" linenums="23" hl_lines="8 21-29"
+    ```python title="main.py" hl_lines="8 21-29"
     with CoshUIRenderer(PygameBackend(screen)):
         with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
             with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -310,7 +310,7 @@ Choose the Backend you want to follow.
     
     Also, here is the entire code file that we've built up:
 
-    ```python title="main.py" linenums="1"
+    ```python title="main.py"
     from coshui import *
     import pygame as py
 
@@ -392,7 +392,7 @@ Choose the Backend you want to follow.
     ### Step 1:
     **Start with creating your python file and importing `coshui` and `raylibpy`.**
 
-    ```python title="main.py" linenums="1"
+    ```python title="main.py"
     # For the sake of this tutorial, we'll be importing everything from coshui.
     from coshui import *
     import raylibpy as rl
@@ -401,7 +401,7 @@ Choose the Backend you want to follow.
     ### Step 2:
     **Create your constants, your main() function, initialize the Raylib window, and start your main loop.**
 
-    ```python title="main.py" linenums="5"
+    ```python title="main.py"
     WIDTH, HEIGHT = 800, 800
     FPS = 60
 
@@ -412,6 +412,8 @@ Choose the Backend you want to follow.
         while not rl.window_should_close():
             rl.clear_background(rl.BLACK)
             rl.begin_drawing()
+            
+            # Draw Updates Here
 
             rl.end_drawing()
 
@@ -427,7 +429,7 @@ Choose the Backend you want to follow.
     ### Step 3:
     **Once you have the boilerplate down, it's time to create your first UI. Between `rl.begin_drawing()` and `rl.end_drawing()`, write `with CoshUIRenderer(RaylibBackend())`.**
 
-    ```python title="main.py" linenums="7" hl_lines="9-10"
+    ```python title="main.py" hl_lines="9-10"
     def main():
         rl.init_window(WIDTH, HEIGHT, "CoshUI Test")
         rl.set_target_fps(FPS)
@@ -455,7 +457,7 @@ Choose the Backend you want to follow.
     ### Step 4:
     **With CoshUIRenderer down, we can finally create our UI structure. We'll start by creating a `Container` context and create a `Button` node within it.**
 
-    ```python title="main.py" linenums="18"
+    ```python title="main.py"
         with CoshUIRenderer(RaylibBackend()):
             with Container(id="container_1", padding=20, style=CoshStyling(background_color=(80, 75, 255))):
                 Button(id="btn", text="Click Me")
@@ -476,7 +478,7 @@ Choose the Backend you want to follow.
     ### Step 5:
     **Hopefully you've understood how CoshUI's context manager API works. With that, let's create a Start Menu with a working Quit Button and Settings Button that triggers a modal.**
 
-    ```python title="main.py" linenums="18"
+    ```python title="main.py"
         with CoshUIRenderer(RaylibBackend()):
             with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
                 with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -494,7 +496,7 @@ Choose the Backend you want to follow.
     ### Step 6:
     **Now it's time to add a little bit of *interaction* to our UI. Using CoshUI's built-in interaction system, we can use the `get_signal()` function to capture events.**
 
-    ```python title="main.py" linenums="18"
+    ```python title="main.py"
         with CoshUIRenderer(RaylibBackend()):
             with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
                 with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -502,8 +504,10 @@ Choose the Backend you want to follow.
                     Button(id="settings_button", text="Settings")
                     Button(id="quit_button", text="Quit")
 
+        rl.end_drawing()
+
         if get_signal("quit_button", CLICKED):
-            rl.close_window()
+            break;
     ```
 
     !!! tip "Different Interactions"
@@ -512,7 +516,7 @@ Choose the Backend you want to follow.
     ### Step 7:
     **With our Quit Button working, we can move on to making a settings menu.**
 
-    ```python title="main.py" linenums="5" hl_lines="4 7 28-29"
+    ```python title="main.py" hl_lines="3 6 26-27"
     WIDTH, HEIGHT = 800, 800
     FPS = 60
     settings_open = False
@@ -533,13 +537,13 @@ Choose the Backend you want to follow.
                         Button(id="settings_button", text="Settings")
                         Button(id="quit_button", text="Quit")
 
+            rl.end_drawing()
+
             if get_signal("quit_button", CLICKED):
-                rl.close_window()
+                break;
 
             if get_signal("settings_button", CLICKED):
                 settings_open = not settings_open
-
-            rl.end_drawing()
 
         rl.close_window()
 
@@ -552,7 +556,7 @@ Choose the Backend you want to follow.
     ### Step 8:
     **With our new settings_open boolean, we can add a quick if statement that opens up a modal.**
 
-    ```python title="main.py" linenums="18" hl_lines="7-16"
+    ```python title="main.py" hl_lines="7-16"
         with CoshUIRenderer(RaylibBackend()):
             with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
                 with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -570,8 +574,10 @@ Choose the Backend you want to follow.
                             Slider(id="volume_slider", width=100)
                         Button(id="close_button", text="Close", height=FILL, style=CoshStyling(background_color=(255, 50, 50)))
 
+        rl.end_drawing()
+
         if get_signal("quit_button", CLICKED):
-            rl.close_window()
+            break;
 
         if get_signal("settings_button", CLICKED) or get_signal("close_button", CLICKED):
             settings_open = not settings_open
@@ -584,7 +590,7 @@ Choose the Backend you want to follow.
     ### Step 9:
     **Great, we now have a settings menu we can open, but you might notice that our values aren't getting saved, let's use CoshUI's `Ref` object to bind to our values to make our values persistent and useable.**
 
-    ```python title="main.py" linenums="5" hl_lines="4-5 20 23"
+    ```python title="main.py" hl_lines="4-5 21 24"
     WIDTH, HEIGHT = 800, 800
     FPS = 60
     settings_open = False
@@ -617,7 +623,7 @@ Choose the Backend you want to follow.
     ### Step 10:
     **This tutorial is slowly coming to a close, but before everything ends, let's polish our UI a little bit by adding *animations* using CoshUI's built-in animation system.**
 
-    ```python title="main.py" linenums="18" hl_lines="8 19-27"
+    ```python title="main.py" hl_lines="8 24-31"
     with CoshUIRenderer(RaylibBackend()):
         with Container(id="container_1", width=FILL, height=FILL, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
             with Container(id="main_container", direction=COLUMN, align=ALIGN_CENTER, justify=JUSTIFY_CENTER, gap=15):
@@ -635,8 +641,10 @@ Choose the Backend you want to follow.
                         Slider(id="volume_slider", width=100, bind=volume, value=volume.value)
                     Button(id="close_button", text="Close", height=FILL, style=CoshStyling(background_color=(255, 50, 50)))
 
+    rl.end_drawing()
+
     if get_signal("quit_button", CLICKED):
-        rl.close_window()
+        break;
 
     if get_signal("settings_button", CLICKED) or get_signal("close_button", CLICKED):
         if settings_open:
@@ -657,7 +665,7 @@ Choose the Backend you want to follow.
 
     Also, here is the entire code file that we've built up:
 
-    ```python title="main.py" linenums="1"
+    ```python title="main.py"
     from coshui import *
     import raylibpy as rl
 
@@ -693,8 +701,10 @@ Choose the Backend you want to follow.
                                 Slider(id="volume_slider", width=100, bind=volume, value=volume.value)
                             Button(id="close_button", text="Close", height=FILL, style=CoshStyling(background_color=(255, 50, 50)))
 
+            rl.end_drawing()
+
             if get_signal("quit_button", CLICKED):
-                rl.close_window()
+                break;
 
             if get_signal("settings_button", CLICKED) or get_signal("close_button", CLICKED):
                 if settings_open:
@@ -705,8 +715,6 @@ Choose the Backend you want to follow.
                     settings_open = True
                     animate("alpha", "settings_modal::content", 255, 1.0, "ease_in")
                     animate("alpha", "settings_modal::header", 255, 1.0, "ease_in")
-
-            rl.end_drawing()
 
         rl.close_window()
 

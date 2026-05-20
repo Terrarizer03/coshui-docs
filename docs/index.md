@@ -21,8 +21,8 @@ Now to get onto the real reason why **you** should choose CoshUI:
 
 ```python title="CoshUI Start Screen Code" linenums="1"
 with CoshUIRenderer(PygameBackend(screen)):
-    with Container(id="container_1", sizing=CoshSizing.FILL, layout=CoshLayout(padding=20), style=CoshStyling(background_color=(80, 75, 255)), align=CoshAlign.CENTER, justify=CoshJustify.CENTER):
-        with Container(id="container_2", direction=CoshDirection.COLUMN, gap=10, align=CoshAlign.CENTER):
+    with Container(id="container_1", width=FILL, height=FILL, padding=20, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
+        with Container(id="container_2", direction=COLUMN, gap=10, align=ALIGN_CENTER   ):
             Label(id="label", text="CoshUI", width=100, height=100, font_size=64)
             Button(id="start_btn", text="Start")
             Button(id="settings_btn", text="Settings")
@@ -49,3 +49,9 @@ The above image — and following code — is an example of what CoshUI can do i
 ## Interested in Recent Updates?
 
 [Keep Up With The Changelog](changelog.md)
+
+---
+
+## More Info About The Project
+
+[Check Out The Github Repository](https://github.com/Terrarizer03/CoshUI)
