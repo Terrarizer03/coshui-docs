@@ -30,6 +30,10 @@ theme:
       primary: black
       accent: deep purple
 
+plugins:
+  - search
+  - macros
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -157,6 +161,7 @@ nav:
   - Changelog: changelog.md
 
 extra:
+  version: 0.2.2
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Terrarizer03/CoshUI
