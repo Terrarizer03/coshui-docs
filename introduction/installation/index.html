@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#how-to-install-coshui" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -327,6 +332,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -344,6 +369,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choose-your-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Your Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-first-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your First UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3360,6 +3426,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../learn-the-api/utility/get-signal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    get_signal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../learn-the-api/utility/animate/" class="md-nav__link">
         
   
@@ -3695,6 +3789,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choose-your-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Your Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-first-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your First UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3711,9 +3837,33 @@
 
 
 
-  <h1>Installation</h1>
-
-
+<h1 id="how-to-install-coshui">How to Install CoshUI</h1>
+<p>Thanks for wanting to try out CoshUI! Let's make this installation quick, shall we?</p>
+<p>To install CoshUI's core, do:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui
+</span></code></pre></div></p>
+<h3 id="choose-your-backend">Choose Your Backend</h3>
+<p>CoshUI is <em>backend-agnostic</em>, meaning it uses different frameworks to render its UI structure. To use those backends, you need to download their dependencies, those include:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pygame</label><label for="__tabbed_1_2">Raylib</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>pygame<span class="o">]</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>raylib<span class="o">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Upgrade</p>
+<p>It's good practice to add <code>-U</code> when installing just so you update to the absolute latest. Especially in <strong>version 0.2.2</strong> where updates are frequent.</p>
+</div>
+<p>For more info about backends, check out the <a href="../../learn-the-api/backends/">backend section.</a></p>
+<hr />
+<h3 id="your-first-ui">Your First UI</h3>
+<p>Once you're done installing CoshUI and your required dependency, proceed to this <a href="../your-first-ui/">section.</a></p>
 
 
 
