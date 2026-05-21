@@ -22,6 +22,8 @@ The code-block above will show the inner container being 10 pixels offset from t
 !!! info "Unlike CSS"
     CoshUI's `padding` and `margin` is a little primitive compared to CSS. With the current version (v{{ version }}) targeting specific sides is not supported as of yet. The attributes only take in integers/floats.
 
+---
+
 ### Default Behavior
 
 The default behavior of `padding` and `margin` is 0.0 if they aren't set and they're not set in the *Current Theme*.

@@ -56,7 +56,7 @@ with CoshUIRenderer(...):
 ```
 
 !!! failure "AUTO vs FILL"
-    If you put an inner `ParentNode` that has children and width and/or height that's set to `FILL` inside an outer `ParentNode` with a width and/or height that's set to `AUTO`. The inner `ParentNode` will collapse to 0.0.
+    If you put an inner `ParentNode` with a width and/or height that's set to `FILL` inside an outer `ParentNode` with a width and/or height that's set to `AUTO`. The axis that has the `FILL` value for the inner `ParentNode` will collapse to 0.0.
 
     ```python title="Failure Example"
     with Container(id="main_container", direction=COLUMN, gap=15, width=AUTO, height=AUTO):

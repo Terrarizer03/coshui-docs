@@ -63,7 +63,9 @@ nav:
       - Overview: learn-the-api/layout/index.md
       - Width and Height: learn-the-api/layout/width-and-height.md
       - Padding and Margin: learn-the-api/layout/padding-and-margin.md
-      - Position: learn-the-api/layout/position.md
+      - Position (x and y): learn-the-api/layout/position.md
+      - Positioning: learn-the-api/layout/absolute-vs-relative.md
+      - Align and Justify: learn-the-api/layout/align-and-justify.md
     - Styling:
       - Overview: learn-the-api/styling/index.md
       - Colors and Alpha: learn-the-api/styling/colors-and-alpha.md
@@ -171,8 +173,8 @@ extra:
   version: 0.2.2
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Terrarizer03/CoshUI
+      link: https://github.com/JyleFV/CoshUI
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/yourcoshuidiscord
+      link: https://discord.gg/wYTc27Nga2
 
-copyright: Copyright &copy; 2026 Terrarizer03
+copyright: Copyright &copy; 2026 JyleFV
