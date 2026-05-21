@@ -111,7 +111,7 @@ Choose the Backend you want to follow.
     **If you run this code, you should have a blue-ish colored container that has 20 padding with a button that says "Click Me" on the top left.**
     
     <figure markdown="span">
-        ![Gif of cursor hovering and clicking the button node](../assets/introduction/step-4.gif)
+        ![Gif of cursor hovering and clicking the button node](../assets/introduction/step-4-pygame.gif)
     </figure>
     
     !!! note "ID Requirement"
@@ -466,7 +466,7 @@ Choose the Backend you want to follow.
     **If you run this code, you should have a blue-ish colored container that has 20 padding with a button that says "Click Me" on the top left.**
 
     <figure markdown="span">
-        ![Gif of cursor hovering and clicking the button node](../assets/introduction/step-4-raylib.gif)
+        ![Gif of cursor hovering and clicking the button node](../assets/introduction/step-4-raylib.gif){ width=1000 }
     </figure>
 
     !!! note "ID Requirement"
@@ -586,6 +586,9 @@ Choose the Backend you want to follow.
     <figure markdown="span">
         ![Gif of clicking settings button and opening settings modal](../assets/introduction/settings_open_gif_raylib.gif)
     </figure>
+
+    !!! note "Weird Artifacts"
+        In the current version of {{ version }}, the Raylib backend has a small issue when it comes to rounding borders with decimal values. It is open as the first issue for contributors!
 
     ### Step 9:
     **Great, we now have a settings menu we can open, but you might notice that our values aren't getting saved, let's use CoshUI's `Ref` object to bind to our values to make our values persistent and useable.**
