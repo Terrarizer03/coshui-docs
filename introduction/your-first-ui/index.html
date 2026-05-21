@@ -4691,7 +4691,7 @@
 </span></code></pre></div>
 <p><strong>If you run this code, you should have a blue-ish colored container that has 20 padding with a button that says "Click Me" on the top left.</strong></p>
 <p><figure markdown="span">
-    <img alt="Gif of cursor hovering and clicking the button node" src="../../assets/introduction/step-4.gif" />
+    <img alt="Gif of cursor hovering and clicking the button node" src="../../assets/introduction/step-4-pygame.gif" />
 </figure></p>
 <div class="admonition note">
 <p class="admonition-title">ID Requirement</p>
@@ -5004,7 +5004,7 @@
 </span></code></pre></div>
 <p><strong>If you run this code, you should have a blue-ish colored container that has 20 padding with a button that says "Click Me" on the top left.</strong></p>
 <p><figure markdown="span">
-    <img alt="Gif of cursor hovering and clicking the button node" src="../assets/introduction/step-4-raylib.gif" />
+    <img alt="Gif of cursor hovering and clicking the button node" src="../../assets/introduction/step-4-raylib.gif" width="1000" />
 </figure></p>
 <div class="admonition note">
 <p class="admonition-title">ID Requirement</p>
@@ -5025,7 +5025,7 @@
 </span></code></pre></div>
 <p><strong>With that, we should have a decent looking Menu.</strong></p>
 <p><figure markdown="span">
-    <img alt="image of the menu screen" src="../assets/introduction/tutorial-menu-raylib.png" width="1000" />
+    <img alt="image of the menu screen" src="../../assets/introduction/tutorial-menu-raylib.png" width="1000" />
 </figure></p>
 <h3 id="step-6_1">Step 6:</h3>
 <p><strong>Now it's time to add a little bit of <em>interaction</em> to our UI. Using CoshUI's built-in interaction system, we can use the <code>get_signal()</code> function to capture events.</strong></p>
@@ -5109,8 +5109,12 @@
 </span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>        <span class="n">settings_open</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">settings_open</span>
 </span></code></pre></div>
 <p><figure markdown="span">
-    <img alt="Gif of clicking settings button and opening settings modal" src="../assets/introduction/settings_open_gif_raylib.gif" />
+    <img alt="Gif of clicking settings button and opening settings modal" src="../../assets/introduction/settings_open_gif_raylib.gif" />
 </figure></p>
+<div class="admonition note">
+<p class="admonition-title">Weird Artifacts</p>
+<p>In the current version of 0.2.2, the Raylib backend has a small issue when it comes to rounding borders with decimal values. It is open as the first issue for contributors!</p>
+</div>
 <h3 id="step-9_1">Step 9:</h3>
 <p><strong>Great, we now have a settings menu we can open, but you might notice that our values aren't getting saved, let's use CoshUI's <code>Ref</code> object to bind to our values to make our values persistent and useable.</strong></p>
 <div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">800</span>
