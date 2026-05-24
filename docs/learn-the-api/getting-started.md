@@ -1,3 +1,8 @@
+---
+hide:
+ -toc
+---
+
 # Getting Started
 
 Welcome to the **Learn The API** section of CoshUI's documentation. Now it might be a little overwhelming going through the navigation bar and seeing so many pages — but worry not as this page will serve as a guide for your journey.
@@ -6,63 +11,49 @@ If you haven't already done the first tutorial for CoshUI, it is advisable to ch
 
 ---
 
-## Layout
+### Layout
 
 The Layout section will teach you all about the `CoshLayout` object, its attributes, and how it affects CoshUI's layout system.
 
 [Start Here](layout/index.md)
 
----
-
-## Styling
+### Styling
 
 This section teaches you about the `CoshStyling` object, its attributes, and how each affects the appearance of Nodes.
 
 [Start Here](styling/index.md)
 
----
-
-## Themes
+### Themes
 
 Themes are the base appearance of the UI. This section will talk about the different default themes, how to set them, and how to create your own theme using the `create_theme()` public function.
 
 [Start Here](themes/index.md)
 
----
-
-## Nodes
+### Nodes
 
 Nodes are the heart of the UI system. This section will talk about the different kinds of nodes, their default behaviours, how the engine views them, and how to set them up properly and effectively. 
 
 [Start Here](nodes/index.md)
 
----
-
-## Animation System
+### Animation System
 
 CoshUI comes with it's own built-in and simple animation system. This section will teach you how to set animations and use it properly within your project.
 
 [Start Here](animations/index.md)
 
----
-
-## Signals and Data Binding
+### Signals and Data Binding
 
 This section explains the different signals a `Node` object can emit, how to capture those signals, and how to get/bind data from specific widgets to outside variables.
 
 [Start Here](interactions/index.md)
 
----
-
-## Text System
+### Text System
 
 CoshUI uses the utilized backend's built-in text system to display text. This section will teach you all about how text can be used and manipulated.
 
 [Start Here](text/index.md)
 
----
-
-## Types and Enums
+### Types and Enums
 
 CoshUI has multiple Enums to be passed as values for attributes. This section will teach you all about them, where to use them, and how to use them.
 
@@ -70,7 +61,7 @@ CoshUI has multiple Enums to be passed as values for attributes. This section wi
 
 ---
 
-## Specific Properties & Functions
+### Specific Properties & Functions
 
 If you've gone through it all or are just trying to find something specific about the API, then it's best to check these sections:
 
@@ -79,28 +70,15 @@ If you've gone through it all or are just trying to find something specific abou
 
 ---
 
-## Definition of Terms
+### Definition of Terms
 
-**1. Universal Attribute/Property**  
+Terms frequently used in the CoshUI documentation.
 
-- An attribute that every Node possesses.
-
-**2. Local Attribute/Property**  
-
-- An attribute only certain Nodes poessesses.
-
-**3. Recursive Values**  
-
-- Attributes that are inherited by the Node's children (e.g., `z_index`).
-
-**4. Local Values**  
-
-- Attributes that only affects the specified Node (e.g., `width`, `height`).
-
-**5. Atomic Nodes**
-
-- Nodes that are only made up of a single Node (e.g., `Button`, `Checkbox`).
-
-**6. Composite Nodes**  
-
-- Nodes that are made up of multiple Nodes (e.g., `Slider`, `Modal`, `Dropdown`)
+| Term | Definition |
+| :--- | :--- |
+| Local Values | Attributes that only affects the specified Node (e.g., `width`, `height`) |
+| Atomic Nodes | Nodes that are only made up of a single Node (e.g., `Button`, `Checkbox`) |
+| Composite Nodes | Nodes that are made up of multiple Nodes (e.g., `Slider`, `Modal`, `Dropdown`) |
+| Recursive Values | Attributes that are inherited by the Node's children (e.g., `z_index`, `alpha`) |
+| Local Attribute/Property | An attribute only certain Nodes poessesses |
+| Universal Attribute/Property | An attribute that every Node possesses |

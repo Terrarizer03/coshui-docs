@@ -1,57 +1,101 @@
-# Welcome to CoshUI 
+---
+hide:
+ -toc
+ -navigation
+---
 
-Welcome to the documentation site of CoshUI — a **declarative** UI library built in Python **for** Python.
+# CoshUI
+
+The declarative — backend-agnostic UI engine for Python.
 
 ---
 
-## Why CoshUI?
+## What is CoshUI?
 
-Before that question is answered — if you're a Python developer — I'm sure you know. Most Python UI Libraries are either old and outdated, overly complex, or both. Now before the pitchforks fly, I have to clarify that CoshUI *isn't* meant to be a replacement.  
+Before the pitchforks fly, I have one thing to clarify. **CoshUI is not a replacement for massive desktop UI libraries like Tkinter, PyQt, or CustomTkinter.** 
 
-CoshUI was made with the vision of writing minimal boilerplate but having the tools to customize it however you like. It's meant to be something you install and plug into existing projects.  
+If you're building a standard database management app, a spreadsheet tool, or an enterprise form layout, you should probably stick to those. They are great at what they do.
 
-CoshUI is backend-agnostic — the same UI code works with Pygame, OpenGL, or any backend you build yourself. With its declarative API — where indentation defines hierarchy — writing UI code feels familiar if you've ever written HTML or Flutter, but in pure Python.
+CoshUI was built for a completely different purpose. Game Development Loops.
 
-Now to get onto the real reason why **you** should choose CoshUI:
-
-<figure style="text-align: center;">
-    <img src="assets/home/figure_1.png" alt="CoshUI Start Menu" style="display: block; margin: 0 auto;" width=600 height=600>
-    <figcaption>Figure 1. CoshUI Start Screen (Pygame)</figcaption>
-</figure>
-
-```python title="CoshUI Start Screen Code" linenums="1"
-with CoshUIRenderer(PygameBackend(screen)):
-    with Container(id="container_1", width=FILL, height=FILL, padding=20, style=CoshStyling(background_color=(80, 75, 255)), align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
-        with Container(id="container_2", direction=COLUMN, gap=10, align=ALIGN_CENTER   ):
-            Label(id="label", text="CoshUI", width=100, height=100, font_size=64)
-            Button(id="start_btn", text="Start")
-            Button(id="settings_btn", text="Settings")
-            Button(id="quit_btn", text="Quit")
-```
-
-The above image — and following code — is an example of what CoshUI can do in just a few lines. The UI in the image uses only the default themes with absolutely no styling other than `container_1`'s background color. 
+Inside frameworks like **Pygame** or **Raylib**, the Python UI Libraries made for them are either old and outdated, overly complex, or both. CoshUI is a UI library inspired by CSS, Godot, Dear ImGui, and React — taking their architectural ideas for UI and creating somewhat of a mix.
 
 ---
 
-## Introduction
+## CoshUI API & Visual
 
-[Install CoshUI Now](introduction/installation.md)  
-[Learn How To Make Your First UI](introduction/your-first-ui.md)
+Stop hardcoding raw pixel coordinates (`x=150, y=300`) for every single button. CoshUI lets you declare intent using Python's native `with` context managers — creating natural and responsive layouts that can be easy to read but also highly customizable.
+
+=== "How the Code Looks"
+
+    ```python title="pygame_test.py"
+    import coshui as cui
+    import pygame as py
+    
+    ...
+
+    # Within Main Loop
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="container_1", width=cui.FILL, height=cui.FILL, padding=20, align=cui,ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, style=cui.CoshStyling(background_color=(80, 75, 255))):
+            with cui.Container(id="menu_stack", direction=cui.COLUMN, gap=10, align=cui.ALIGN_CENTER):
+                cui.Label(id="title", text="CoshUI", font_size=64) 
+                cui.Button(id="start_btn", text="Start Game")
+                cui.Button(id="settings_btn", text="Settings")
+                cui.Button(id="quit_btn", text="Quit")
+    ```
+
+=== "The "Cool Rectangles" It Renders"
+
+    ![CoshUI Layout Engine Output](assets/home/figure_1.png)
 
 ---
 
-## Learn the API
+## Why Use It?
 
-[Getting Started](learn-the-api/getting-started.md)
+!!! warning "A Fair Warning"
+    CoshUI is built explicitly to be lightweight and modular. It handles the layout math, state synchronization and reconciliation, tween animations, and signal delegation, then hands an instruction manual of how to render each node to your backend wrapper. It does exactly what it needs to do — nothing more, nothing less.
+
+<div class="grid cards" markdown>
+
+-   :material-layers-triple:{ .lg .middle } **Backend Agnostic Architecture**
+    
+    ---
+
+    The core layout engine doesn't care how pixels hit the screen. It compiles boundaries into light instruction tokens, easily swapping between **Pygame**, **Raylib**, or raw **OpenGL**.
+
+-   :material-sync:{ .lg .middle } **State Persistence & Animation Loops**
+
+    ---
+
+    Features a centralized state storage registry that synchronizes and reconciliates with the last frame. Your animations cleanly intercept and modify state values *before* the layout rules execute.
+
+-   :material-gesture-tap:{ .lg .middle } **Additive Signal Register**
+
+    ---
+
+    Say goodbye to messy callback chains. The interaction system reverses the render stack, maps rotated mouse vectors against node matrices, and streams events safely into a queryable signal register.
+
+</div>
 
 ---
 
-## Interested in Recent Updates?
+## Jump In
 
-[Keep Up With The Changelog](changelog.md)
+<div class="grid cards" markdown>
 
----
+-   **Get Started**
 
-## More Info About The Project
+    [:octicons-arrow-right-24: Installation Guide](introduction/installation.md){ data-preview }
 
-[Check Out The Github Repository](https://github.com/Terrarizer03/CoshUI)
+-   **Build Your First UI**
+
+    [:octicons-arrow-right-24: Your First UI Tutorial](introduction/your-first-ui.md){ data-preview }
+
+-   **Read the Architecture**
+
+    [:octicons-arrow-right-24: API Reference Docs](learn-the-api/getting-started.md){ data-preview }
+
+-   **Check What is New**
+
+    [:octicons-arrow-right-24: Chngelog Updates](changelog.md){ data-preview }
+</div>

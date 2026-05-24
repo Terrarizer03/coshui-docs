@@ -1,3 +1,7 @@
+---
+icon: material/download
+---
+
 # How to Install CoshUI
 
 Thanks for wanting to try out CoshUI! Let's make this installation quick, shall we?

@@ -1,12 +1,28 @@
+.md-sidebar--secondary {
+  display: none;
+}
+
 .md-header {
-    height: 80px;  /* default is around 48px */
+    height: 60px;  /* default is around 48px */
+}
+
+.md-content {
+  margin-right: 0;
 }
 
 .md-header__button.md-logo img {
-    height: 60px;  /* adjust logo size */
+    height: 40px;  /* adjust logo size */
     width: auto;
 }
 
 .md-typeset img {
     border-radius: 15px;
+}
+
+[data-md-color-scheme="default"] .md-header__button.md-logo img {
+  content: url('../assets/images/coshui_logo_light.png');
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+  content: url('../assets/images/coshui_logo_dark.png');
 }

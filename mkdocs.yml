@@ -3,14 +3,23 @@ site_url: https://terrarizer03.github.io/coshui-docs
 site_description: A Declarative UI Library for Python
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/gitlab
   features:
+    - content.tooltips
     - content.code.copy
     - search.highlight
     - search.suggest
     - search.share
+    - header.autohide
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
     - navigation.sections
   font: 
-    text: Comfortaa
+    text: Roboto
     code: JetBrains Mono
   logo: assets/images/coshui_logo.png
   favicon: assets/images/coshui.ico
@@ -18,7 +27,7 @@ theme:
     # Dark Mode
     - scheme: slate
       toggle:
-        icon: material/weather-sunny
+        icon: material/toggle-switch-off-outline
         name: Dark Mode
       primary: black
       accent: deep purple
@@ -26,16 +35,21 @@ theme:
     # Light Mode
     - scheme: default
       toggle:
-        icon: material/weather-night
+        icon: material/toggle-switch
         name: Light Mode
-      primary: black
+      primary: blue grey
       accent: deep purple
+
+repo_url: https://gitlab.com/jylefv/CoshUI
+repo_name: jylefv/CoshUI
 
 plugins:
   - search
   - macros
 
 markdown_extensions:
+  - toc:
+      toc_depth: 2
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -47,7 +61,12 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - abbr
   - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
   - stylesheets/extra.css
@@ -130,7 +149,7 @@ nav:
       - direction: learn-the-api/properties/direction.md
       - justify: learn-the-api/properties/justify.md
       - align: learn-the-api/properties/align.md
-      - oveflow: learn-the-api/properties/overflow.md
+      - overflow: learn-the-api/properties/overflow.md
       - positioning: learn-the-api/properties/positioning.md
       - z_index: learn-the-api/properties/z-index.md
       - id: learn-the-api/properties/id.md
@@ -149,7 +168,7 @@ nav:
       - text_color: learn-the-api/properties/text-color.md
       - text_align: learn-the-api/properties/text-align.md
       - text_justify: learn-the-api/properties/text-justify.md
-      - text_oveflow: learn-the-api/properties/text-overflow.md
+      - text_overflow: learn-the-api/properties/text-overflow.md
       - src: learn-the-api/properties/image-src.md
       - checked: learn-the-api/properties/checked.md
       - checked_color: learn-the-api/properties/checked-color.md
@@ -170,11 +189,16 @@ nav:
   - Changelog: changelog.md
 
 extra:
-  version: 0.2.2
+  version: 0.2.4
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/JyleFV/CoshUI
+      name: GitHub Repository (Mirror)
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/jylefv/CoshUI
+      name: GitLab Repository (Primary)
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/wYTc27Nga2
+      link: https://discord.com/invite/wZUqKv9ux
+      name: Join the Discord
 
 copyright: Copyright &copy; 2026 JyleFV
