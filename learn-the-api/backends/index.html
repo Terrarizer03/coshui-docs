@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="CoshUI" class="md-header__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -348,7 +353,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="CoshUI" class="md-nav__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     CoshUI
@@ -2497,6 +2502,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2514,6 +2539,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pygame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pygame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raylib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raylib
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2583,14 +2649,14 @@
   
   
     <li class="md-nav__item">
-      <a href="opengl/" class="md-nav__link">
+      <a href="pyopengl/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenGL
+    PyOpenGL
   
 
     
@@ -4085,34 +4151,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/inventory-grid/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inventory Grid
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4164,6 +4202,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pygame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pygame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raylib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raylib
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4183,9 +4253,21 @@
   
 
 
-  <h1>Overview</h1>
-
-
+<h1 id="overview">Overview</h1>
+<p>Welcome to the backends section, as stated multiple times in this docs page, CoshUI is <em>backend-aagnostic</em> which lets users render the same UI code in different game frameworks. In the current <strong>version 0.2.4</strong>, there are <em>2 backends</em> for us to use. <code>PygameBackend</code> and <code>RaylibBackend</code>.</p>
+<h2 id="pygame">Pygame</h2>
+<p>For the <code>PygameBackend</code>, it takes in a <code>pygame.Surface</code> object as the parameter as pygame draws using surfaces. To invoke a <code>PygameBackend</code>, set this in your <code>CoshUIRenderer</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># screen is the pygame.Surface</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">PygameBackend</span><span class="p">(</span><span class="n">screen</span><span class="p">)):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">pass</span>
+</span></code></pre></div>
+<p>To learn more about how <code>Nodes</code> are rendered in pygame or just want to learn deeply about how CoshUI wraps its draw calls, <a href="pygame/">click here.</a></p>
+<h2 id="raylib">Raylib</h2>
+<p>For the <code>RaylibBackend</code> — unlike pygame — it draws on the active display, thus not needing to input a parameter. Which in more ways than one is much more helpful for migration. To invoke a <code>RaylibBackend</code>, set this in your <code>CoshUIRenderer</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">RaylibBackend</span><span class="p">()):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">pass</span>
+</span></code></pre></div>
+<p>To learn more about how <code>Nodes</code> are rendered in raylibpy or just want to learn deeply about how CoshUI wraps its draw calls, <a href="raylib/">click here.</a></p>
 
 
 

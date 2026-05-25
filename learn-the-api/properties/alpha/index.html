@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="CoshUI" class="md-header__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -353,7 +353,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="CoshUI" class="md-nav__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     CoshUI
@@ -2578,14 +2578,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/opengl/" class="md-nav__link">
+      <a href="../../backends/pyopengl/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenGL
+    PyOpenGL
   
 
     
@@ -4140,34 +4140,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examples/inventory-grid/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inventory Grid
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4269,7 +4241,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Recursive or Local</p>
-<p>The alpha value is local thus it does not affect the alpha values of its children. If a container had <code>alpha=100</code>, its children will not inherit that value.</p>
+<p>The alpha value is <strong>recursive</strong> thus it affects the alpha values of its children. If a container had <code>alpha=100</code>, its children will inherit that value and also have an alpha of 100.</p>
 </div>
 </details>
 <h3 id="type">Type</h3>

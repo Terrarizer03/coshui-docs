@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="CoshUI" class="md-header__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -353,7 +353,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="CoshUI" class="md-nav__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     CoshUI
@@ -2590,14 +2590,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backends/opengl/" class="md-nav__link">
+      <a href="../../backends/pyopengl/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenGL
+    PyOpenGL
   
 
     
@@ -4092,34 +4092,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examples/inventory-grid/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inventory Grid
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4194,7 +4166,88 @@
 
 <h1 id="align-and-justify">Align and Justify</h1>
 <h3 id="introduction">Introduction</h3>
+<p>CoshUI's implementation of <code>align</code> and <code>justify</code> is similar to CSS's implementation of <code>align-items</code> and <code>justify-content</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Important</p>
+<p>The <code>align</code> and <code>justify</code> properties are only accessible through the <code>ParentNode</code> (i.e. <code>Container</code>, <code>Modal</code>, or <code>Grid</code>)</p>
+</div>
+<div class="language-python highlight"><span class="filename">Setting align and justify</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">ALIGN_CENTER</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="n">JUSTIFY_CENTER</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<p>Starting with the <code>align</code> property, there are 3 flags you can pass through that lets you manipulate the position of the <code>Nodes</code> within a <code>ParentNode</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Flag</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>START</code></td>
+<td style="text-align: left;">Pushes children to the start of the cross axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CENTER</code></td>
+<td style="text-align: left;">Pushes children to the center of the cross axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>END</code></td>
+<td style="text-align: left;">Pushes children to the end of the cross axis.</td>
+</tr>
+</tbody>
+</table>
+<p>Although the data table above seems like it's stating the obvious, it's genuinely just that simple. Moving on to <code>justify</code>, this has a few more flags than <code>align</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Flag</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>START</code></td>
+<td style="text-align: left;">Pushes children to the start of the main axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CENTER</code></td>
+<td style="text-align: left;">Pushes children to the center of the main axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>END</code></td>
+<td style="text-align: left;">Pushes children to the end of the main axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPACE_BETWEEN</code></td>
+<td style="text-align: left;">Divides and sets the gap between the children so that the first and last child reaches the very start and end of the main axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPACE_AROUND</code></td>
+<td style="text-align: left;">Divides and sets the gap between the children to have equal gap all around each child.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPACE_EVENLY</code></td>
+<td style="text-align: left;">Sets the gap between children so that they are <em>exactly</em> the same size.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Cross Axis vs Main Axis</p>
+<p>If you haven't heard about those terms before, the cross axis means the perpendicular of the <code>direction</code> (e.g., <code>ROW</code> or <code>COLUMN</code>), the main axis follows along the <code>direction</code>.</p>
+</div>
 <h3 id="default-behavior">Default Behavior</h3>
+<p>The default behavior for <code>align</code> and <code>justify</code> is <code>START</code>.</p>
+<div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># This will be set to align=ALIGN_START and justify=JUSTIFY_START</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">):</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<div class="admonition failure">
+<p class="admonition-title">Grid Testing</p>
+<p><code>align</code> and <code>justify</code> works a bit differently for <code>Grid</code> and may require some changes before it becoems properly documented.</p>
+</div>
 
 
 

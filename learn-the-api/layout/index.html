@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="CoshUI" class="md-header__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -353,7 +353,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="CoshUI" class="md-nav__button md-logo" aria-label="CoshUI" data-md-component="logo">
       
-  <img src="../../assets/images/coshui_logo.png" alt="logo">
+  <img src="../../assets/images/coshui_logo_dark.png" alt="logo">
 
     </a>
     CoshUI
@@ -2590,14 +2590,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backends/opengl/" class="md-nav__link">
+      <a href="../backends/pyopengl/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenGL
+    PyOpenGL
   
 
     
@@ -4092,34 +4092,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/inventory-grid/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inventory Grid
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4195,14 +4167,24 @@
 <h1 id="overview">Overview</h1>
 <p>When making a <code>Node</code>, there are certain properties that affect CoshUI's layout engine. Here are the specific attributes that you need to know.</p>
 <h3 id="width-and-height">Width and Height</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+</span></code></pre></div>
 <p>Width and height are a no-brainer; they're the attributes that set the size of the <code>Node</code>. If you want to learn more about how these attributes work and their default behaviors, <a href="width-and-height/">click here.</a></p>
 <h3 id="padding-and-margin">Padding and Margin</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span></code></pre></div>
 <p>Padding and Margin — a staple in UI systems — are attributes that set the space outside and within a <code>Node</code>. To learn more about how they work and their default behavior, <a href="padding-and-margin/">click here.</a></p>
 <h3 id="position-x-and-y">Position (x and y)</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">ABSOLUTE</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span></code></pre></div>
 <p>Position is a special attribute in CoshUI. This is one of the attributes that can only be set under certain circumstances. To learn more, <a href="position/">click here.</a></p>
 <h3 id="positioning">Positioning</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">ABSOLUTE</span><span class="p">):</span>
+</span></code></pre></div>
 <p>Postioning is the attribute that determines whether a <code>Node</code> is added to the normal layout calculations or taken out out of it. If you want to understand it deeply, it's best to check out the <strong>"Position (x and y)"</strong> section above this section and <a href="absolute-vs-relative/">this page.</a></p>
 <h3 id="align-and-justify">Align and Justify</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">ALIGN_START</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">JUSTIFY_END</span><span class="p">):</span>
+</span></code></pre></div>
 <p>Align and Justify determines the initial position and gap of/between Nodes. It's a very primitive and limited implementation as of version 0.2.4, so to learn the specific implementations, <a href="align-and-justify/">click here.</a></p>
 
 

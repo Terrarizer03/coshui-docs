@@ -2,398 +2,394 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/changelog/</loc>
-         <lastmod>2026-05-24</lastmod>
-    </url>
-    <url>
-         <loc>https://terrarizer03.github.io/coshui-docs/examples/inventory-grid/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/examples/pause-menu/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/examples/settings-screen/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/introduction/installation/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/introduction/your-first-ui/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/getting-started/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/animations/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/animations/animate-function/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/animations/easing/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/animations/properties/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/backends/</loc>
-         <lastmod>2026-05-24</lastmod>
-    </url>
-    <url>
-         <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/backends/opengl/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/backends/pygame/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
+    </url>
+    <url>
+         <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/backends/pyopengl/</loc>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/backends/raylib/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/interactions/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/interactions/data-binding/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/interactions/mouse-filter/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/interactions/signals/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/layout/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/layout/absolute-vs-relative/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/layout/align-and-justify/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/layout/padding-and-margin/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/layout/position/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/layout/width-and-height/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/parent-nodes/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/parent-nodes/containers/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/parent-nodes/grid/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/parent-nodes/modal/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/button/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/checkbox/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/dropdown/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/images/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/input-field/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/label/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/nodes/widgets/slider/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/align/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/alpha/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/background-color/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/border-radius/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/border/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/checked-color/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/checked/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/classes/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/direction/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/font-size/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/font/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/gap/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/height/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/id/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/image-src/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/justify/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/margin/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/mouse-filter/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/overflow/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/padding/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/positioning/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/style/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/text-align/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/text-color/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/text-justify/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/text-overflow/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/text/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/transform-position/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/transform-rotation/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/transform-scale/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/unchecked-color/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/width/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/x/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/y/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/properties/z-index/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/styling/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/styling/border-radius/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/styling/borders/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/styling/colors-and-alpha/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/styling/transforms/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/text/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/text/set-default/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/text/text-properties/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/themes/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/themes/create-theme/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/themes/defaults/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/themes/set-theme/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/types/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/types/interaction-enums/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/types/layout-enums/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/types/text-enums/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/add-class/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/add-font/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/animate/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/create-theme/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/get-signal/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/set-default-font/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
     <url>
          <loc>https://terrarizer03.github.io/coshui-docs/learn-the-api/utility/set-default-theme/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-05-25</lastmod>
     </url>
 </urlset>
