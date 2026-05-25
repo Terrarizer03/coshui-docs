@@ -11,9 +11,34 @@ If you haven't already done the first tutorial for CoshUI, it is advisable to ch
 
 ---
 
+### CoshUIRenderer
+
+Now before we get into anything, let's talk about `CoshUIRenderer`. This is the entry point for everything CoshUI, without it, you cannot render your UI. So what is it and how can we use it? Well it's fairly simple, if you've seen the [tutorial](../introduction/your-first-ui.md){ data-preview }, you pass it at the very start of your UI structure.
+
+```python
+with CoshUIRenderer(...):
+    pass
+```
+
+This will setup CoshUI and will then let you write your UI structure below it. Now `CoshUIRenderer` takes in a parameter, if you've read the tutorial or even the installation page, you will know to pass in the specific backend, whether that be `PygameBackend` or `RaylibBackend` (to learn more check out the [backends section](backends/index.md)). Once this setup has been done, your starting UI should look like this:
+
+```python
+# Pygame
+with CoshUIRenderer(PygameBackend(screen)):
+    pass
+
+# Raylib
+with CoshUIRenderer(RaylibBackend()):
+    pass
+```
+
+And with that, you can now get onto making your UI structure.
+
+---
+
 ### Layout
 
-The Layout section will teach you all about the `CoshLayout` object, its attributes, and how it affects CoshUI's layout system.
+The Layout section will teach you all about the different attributes that affect CoshUI's layout system and how to use them properly.
 
 [Start Here](layout/index.md)
 
@@ -31,7 +56,7 @@ Themes are the base appearance of the UI. This section will talk about the diffe
 
 ### Nodes
 
-Nodes are the heart of the UI system. This section will talk about the different kinds of nodes, their default behaviours, how the engine views them, and how to set them up properly and effectively. 
+Nodes are the heart of the UI system. This section will talk about the different kinds of nodes, their default behaviors, how the engine views them, and how to set them up properly and effectively. 
 
 [Start Here](nodes/index.md)
 

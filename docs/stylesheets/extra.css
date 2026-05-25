@@ -18,11 +18,3 @@
 .md-typeset img {
     border-radius: 15px;
 }
-
-[data-md-color-scheme="default"] .md-header__button.md-logo img {
-  content: url('../assets/images/coshui_logo_light.png');
-}
-
-[data-md-color-scheme="slate"] .md-header__button.md-logo img {
-  content: url('../assets/images/coshui_logo_dark.png');
-}

@@ -28,7 +28,7 @@ The code-block above will show the inner container being 10 pixels offset from t
 
 The default behavior of `padding` and `margin` is 0.0 if they aren't set and they're not set in the *Current Theme*.
 
-```python title="No padding and margin"
+```python title="Default Behavior"
 with CoshUIRenderer(...):
     # The padding and margin properties are set to the default of 0.0
     with Container(id="example_container", width=150, height=150):

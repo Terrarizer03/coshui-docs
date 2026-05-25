@@ -97,5 +97,5 @@ Stop hardcoding raw pixel coordinates (`x=150, y=300`) for every single button. 
 
 -   **Check What is New**
 
-    [:octicons-arrow-right-24: Chngelog Updates](changelog.md){ data-preview }
+    [:octicons-arrow-right-24: Changelog Updates](changelog.md){ data-preview }
 </div>

@@ -7,7 +7,7 @@ The alpha value controls the transparency of the Node and is a universal propert
         If you have alpha set in **both** the `alpha` and `background_color` field, the `alpha` field will be applied as the engine treats it as higher priority.
 
     !!! note "Recursive or Local"
-        The alpha value is local thus it does not affect the alpha values of its children. If a container had `alpha=100`, its children will not inherit that value.
+        The alpha value is **recursive** thus it affects the alpha values of its children. If a container had `alpha=100`, its children will inherit that value and also have an alpha of 100.
     
 
 

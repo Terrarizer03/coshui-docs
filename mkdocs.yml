@@ -21,7 +21,7 @@ theme:
   font: 
     text: Roboto
     code: JetBrains Mono
-  logo: assets/images/coshui_logo.png
+  logo: assets/images/coshui_logo_dark.png
   favicon: assets/images/coshui.ico
   palette:
     # Dark Mode
@@ -135,7 +135,7 @@ nav:
       - Overview: learn-the-api/backends/index.md
       - Pygame: learn-the-api/backends/pygame.md
       - Raylib: learn-the-api/backends/raylib.md
-      - OpenGL: learn-the-api/backends/opengl.md
+      - PyOpenGL: learn-the-api/backends/pyopengl.md
     - All Node Properties:
       - Overview: learn-the-api/properties/index.md
       - x: learn-the-api/properties/x.md
@@ -185,7 +185,6 @@ nav:
   - Examples:
     - Pause Menu: examples/pause-menu.md
     - Settings Screen: examples/settings-screen.md
-    - Inventory Grid: examples/inventory-grid.md
   - Changelog: changelog.md
 
 extra:

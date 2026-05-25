@@ -2,7 +2,7 @@
 
 ### Introduction
 
-When it comes to positioning in CoshUI, there's 2 flags that can be passed through the `positioning` attribute. 
+When it comes to positioning in CoshUI, there are 2 flags that can be passed through the `positioning` attribute. 
 
 The first is the `RELATIVE` flag. This lets the `Node` participate in layout calculations.
 
@@ -12,9 +12,9 @@ with CoshUIRenderer(...):
         pass
 ```
 
-This behaviour sets the `Node` take in space within Containers and let other Nodes respect that space.
+This behavior sets the `Node` take in space within Containers and let other Nodes respect that space.
 
-The second flag is the `ABSOLUTE` flag. This *lifts* the `Node` and decouples it from layout calculations.
+The second flag is the `ABSOLUTE` flag. This *lifts* the `Node` and decouples it from layout calculations aside from the parents initial `x` and `y`.
 
 ```python title="Setting the ABSOLUTE flag"
 with CoshUIRenderer(...):
@@ -27,7 +27,7 @@ with CoshUIRenderer(...):
 
 ### Default Behavior
 
-The default behavior for the `positioning` attribute is `RELATIVE`, so setting the attribute to `RELATIVE` is kind of redundant :/.
+The default behavior for the `positioning` attribute is `RELATIVE`.
 
 ```python title="Default Behavior"
 with CoshUIRenderer(...):

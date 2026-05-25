@@ -48,7 +48,7 @@ with CoshUIRenderer(...):
 
 The default behavior for `width` and `height` is `AUTO`. For ParentNodes, if they have no children, their sizing will change from `AUTO` to `FILL`. For Widgets on the other hand, they will be set to 0 if they have no values in the *Current Theme*.
 
-```python title="No width or height"
+```python title="Default Behavior"
 with CoshUIRenderer(...):
     # The default behavior of this will be AUTO
     with Container(id="example_container"):
