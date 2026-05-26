@@ -26,3 +26,10 @@ with CoshUIRenderer(...):
 ### Default Behavior
 
 The `x` and `y` properties are special properties that rarely get manipulated. Their default values are usually always set to 0.0. The reason for this is that the layout engine determines the position for Nodes for the most part using the hidden `_x` and `_y` attributes that `x` and `y` directly manipulates when `positioning` is set to `ABSOLUTE`.
+
+```python title="Default Behavior"
+with CoshUIRenderer(...):
+    # The default values for x and y are 0.0
+    with Container(id="example_container"):
+        pass
+```

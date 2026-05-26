@@ -8,8 +8,6 @@ The alpha value controls the transparency of the Node and is a universal propert
 
     !!! note "Recursive or Local"
         The alpha value is **recursive** thus it affects the alpha values of its children. If a container had `alpha=100`, its children will inherit that value and also have an alpha of 100.
-    
-
 
 ### Type
 

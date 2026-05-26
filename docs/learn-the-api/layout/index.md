@@ -2,6 +2,8 @@
 
 When making a `Node`, there are certain properties that affect CoshUI's layout engine. Here are the specific attributes that you need to know.
 
+---
+
 ### Width and Height
 
 ```python

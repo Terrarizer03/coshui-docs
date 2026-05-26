@@ -91,6 +91,7 @@ nav:
       - Borders: learn-the-api/styling/borders.md
       - Border Radius: learn-the-api/styling/border-radius.md
       - Transforms: learn-the-api/styling/transforms.md
+      - Classes: learn-the-api/styling/classes.md
     - Themes:
       - Overview: learn-the-api/themes/index.md
       - Default Themes: learn-the-api/themes/defaults.md
