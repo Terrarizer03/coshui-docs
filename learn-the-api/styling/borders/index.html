@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#borders" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -293,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../examples/pause-menu/" class="md-tabs__link">
+        <a href="../../../examples/health-bar/" class="md-tabs__link">
           
   
   
@@ -955,6 +960,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -4064,42 +4071,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/pause-menu/" class="md-nav__link">
+      <a href="../../../examples/health-bar/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Pause Menu
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examples/settings-screen/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Settings Screen
+    Health Bar
   
 
     
@@ -4164,6 +4143,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -4183,9 +4164,25 @@
   
 
 
-  <h1>Borders</h1>
-
-
+<h1 id="borders">Borders</h1>
+<h3 id="introduction">Introduction</h3>
+<p>Borders in CoshUI act as the <em>outline</em> of rectangles. When setting a border, it naturally takes in the <code>color</code> of that border and the <code>weight</code>. You can set it in 2 ways, like this:</p>
+<div class="language-python highlight"><span class="filename">Setting border</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">))):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">pass</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># or</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))):</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<p>The border that's set above will be a <span style="color: #ff0000;">red</span> border with 5 weight.</p>
+<h3 id="default-behavior">Default Behavior</h3>
+<p>The default behavior of <code>border</code> is <code>None</code>.</p>
+<div class="language-python highlight"><span class="filename">Setting border</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># This renders no border</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">()):</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">pass</span>
+</span></code></pre></div>
 
 
 

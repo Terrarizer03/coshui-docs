@@ -296,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="examples/pause-menu/" class="md-tabs__link">
+        <a href="examples/health-bar/" class="md-tabs__link">
           
   
   
@@ -4112,42 +4112,14 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/pause-menu/" class="md-nav__link">
+      <a href="examples/health-bar/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Pause Menu
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/settings-screen/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Settings Screen
+    Health Bar
   
 
     
@@ -4310,7 +4282,7 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Within Main Loop</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">cui</span><span class="o">.</span><span class="n">PygameBackend</span><span class="p">(</span><span class="n">screen</span><span class="p">)):</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;container_1&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">cui</span><span class="p">,</span><span class="n">ALIGN_CENTER</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">JUSTIFY_CENTER</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">255</span><span class="p">))):</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;container_1&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">ALIGN_CENTER</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">JUSTIFY_CENTER</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">255</span><span class="p">))):</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;menu_stack&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">COLUMN</span><span class="p">,</span> <span class="n">gap</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">ALIGN_CENTER</span><span class="p">):</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;CoshUI&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span> 
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;start_btn&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Start Game&quot;</span><span class="p">)</span>

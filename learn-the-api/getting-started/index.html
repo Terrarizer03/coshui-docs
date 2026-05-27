@@ -298,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/pause-menu/" class="md-tabs__link">
+        <a href="../../examples/health-bar/" class="md-tabs__link">
           
   
   
@@ -4071,42 +4071,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/pause-menu/" class="md-nav__link">
+      <a href="../../examples/health-bar/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Pause Menu
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/settings-screen/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Settings Screen
+    Health Bar
   
 
     
@@ -4202,16 +4174,16 @@
 <hr />
 <h3 id="coshuirenderer">CoshUIRenderer</h3>
 <p>Now before we get into anything, let's talk about <code>CoshUIRenderer</code>. This is the entry point for everything CoshUI, without it, you cannot render your UI. So what is it and how can we use it? Well it's fairly simple, if you've seen the <a data-preview="data-preview" href="../../introduction/your-first-ui/">tutorial</a>, you pass it at the very start of your UI structure.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">pass</span>
 </span></code></pre></div>
 <p>This will setup CoshUI and will then let you write your UI structure below it. Now <code>CoshUIRenderer</code> takes in a parameter, if you've read the tutorial or even the installation page, you will know to pass in the specific backend, whether that be <code>PygameBackend</code> or <code>RaylibBackend</code> (to learn more check out the <a href="../backends/">backends section</a>). Once this setup has been done, your starting UI should look like this:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Pygame</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">PygameBackend</span><span class="p">(</span><span class="n">screen</span><span class="p">)):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">cui</span><span class="o">.</span><span class="n">PygameBackend</span><span class="p">(</span><span class="n">screen</span><span class="p">)):</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">pass</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Raylib</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">RaylibBackend</span><span class="p">()):</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="n">cui</span><span class="o">.</span><span class="n">RaylibBackend</span><span class="p">()):</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">pass</span>
 </span></code></pre></div>
 <p>And with that, you can now get onto making your UI structure.</p>

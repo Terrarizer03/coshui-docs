@@ -298,7 +298,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../examples/pause-menu/" class="md-tabs__link">
+        <a href="../../../examples/health-bar/" class="md-tabs__link">
           
   
   
@@ -4071,42 +4071,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/pause-menu/" class="md-nav__link">
+      <a href="../../../examples/health-bar/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Pause Menu
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examples/settings-screen/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Settings Screen
+    Health Bar
   
 
     
@@ -4195,14 +4167,14 @@
 <h1 id="width-and-height">Width and Height</h1>
 <h3 id="introduction">Introduction</h3>
 <p>The <code>width</code> and <code>height</code> properties can be considered some of the most important properties within CoshUI without exaggeration. They determine the space a <code>Node</code> occupies in the layout engine. Setting them is very easy:</p>
-<div class="language-python highlight"><span class="filename">Setting width and height</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<div class="language-python highlight"><span class="filename">Setting width and height</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">pass</span>
 </span></code></pre></div>
 <p>The code-block above shows us how to set a <em>fixed</em> width and height. But there are different behaviors you can set width and height to. Like in CSS, you can set these properties to <code>AUTO</code> and <code>FILL</code>. </p>
 <p>The behavior for <code>AUTO</code> means it will adapt to the size of its children, mimicking CSS's <code>auto</code> behavior.</p>
-<div class="language-python highlight"><span class="filename">Setting width and height as AUTO</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">AUTO</span><span class="p">):</span>
+<div class="language-python highlight"><span class="filename">Setting width and height as AUTO</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">AUTO</span><span class="p">):</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">pass</span>
 </span></code></pre></div>
 <div class="admonition question">
@@ -4210,13 +4182,13 @@
 <p>If you've set the width and/or height of your Container — a <code>ParentNode</code> — as <code>AUTO</code> without it having any children, the engine will fallback to <code>FILL</code>.</p>
 </div>
 <p><code>FILL</code>'s behavior on the other hand is the opposite, it will expand its width and/or height to the size of the parent, mimicking CSS's <code>100%</code> behavior.</p>
-<div class="language-python highlight"><span class="filename">Setting width and height as FILL</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">FILL</span><span class="p">):</span>
+<div class="language-python highlight"><span class="filename">Setting width and height as FILL</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">):</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="k">pass</span>
 </span></code></pre></div>
 <p>Of course you can also mix behavior.</p>
-<div class="language-python highlight"><span class="filename">Setting width and height as AUTO and FILL</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">FILL</span><span class="p">):</span> <span class="c1"># And vice-versa</span>
+<div class="language-python highlight"><span class="filename">Setting width and height as AUTO and FILL</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">):</span> <span class="c1"># And vice-versa</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="k">pass</span>
 </span></code></pre></div>
 <div class="admonition info">
@@ -4226,19 +4198,19 @@
 <hr />
 <h3 id="default-behavior">Default Behavior</h3>
 <p>The default behavior for <code>width</code> and <code>height</code> is <code>AUTO</code>. For ParentNodes, if they have no children, their sizing will change from <code>AUTO</code> to <code>FILL</code>. For Widgets on the other hand, they will be set to 0 if they have no values in the <em>Current Theme</em>.</p>
-<div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">with</span> <span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># The default behavior of this will be AUTO</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">):</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">):</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">pass</span>
 </span></code></pre></div>
 <div class="admonition failure">
 <p class="admonition-title">AUTO vs FILL</p>
 <p>If you put an inner <code>ParentNode</code> with a width and/or height that's set to <code>FILL</code> inside an outer <code>ParentNode</code> with a width and/or height that's set to <code>AUTO</code>. The axis that has the <code>FILL</code> value for the inner <code>ParentNode</code> will collapse to 0.0.</p>
-<div class="language-python highlight"><span class="filename">Failure Example</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;main_container&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">COLUMN</span><span class="p">,</span> <span class="n">gap</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">AUTO</span><span class="p">):</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">with</span> <span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;sub_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">FILL</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))):</span> <span class="c1"># Background color to see it&#39;s sizes.</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;sub_button&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;settings_button&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Settings&quot;</span><span class="p">)</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;quit_button&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Quit&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Failure Example</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;main_container&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">COLUMN</span><span class="p">,</span> <span class="n">gap</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">AUTO</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">AUTO</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;sub_container&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))):</span> <span class="c1"># Background color to see it&#39;s sizes.</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;sub_button&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;settings_button&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Settings&quot;</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;quit_button&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Quit&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 
