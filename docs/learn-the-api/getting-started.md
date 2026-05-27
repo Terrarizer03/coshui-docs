@@ -16,7 +16,7 @@ If you haven't already done the first tutorial for CoshUI, it is advisable to ch
 Now before we get into anything, let's talk about `CoshUIRenderer`. This is the entry point for everything CoshUI, without it, you cannot render your UI. So what is it and how can we use it? Well it's fairly simple, if you've seen the [tutorial](../introduction/your-first-ui.md){ data-preview }, you pass it at the very start of your UI structure.
 
 ```python
-with CoshUIRenderer(...):
+with cui.CoshUIRenderer(...):
     pass
 ```
 
@@ -24,11 +24,11 @@ This will setup CoshUI and will then let you write your UI structure below it. N
 
 ```python
 # Pygame
-with CoshUIRenderer(PygameBackend(screen)):
+with cui.CoshUIRenderer(cui.PygameBackend(screen)):
     pass
 
 # Raylib
-with CoshUIRenderer(RaylibBackend()):
+with cui.CoshUIRenderer(cui.RaylibBackend()):
     pass
 ```
 

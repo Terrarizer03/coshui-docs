@@ -36,7 +36,7 @@ Stop hardcoding raw pixel coordinates (`x=150, y=300`) for every single button. 
 
     # Within Main Loop
     with cui.CoshUIRenderer(cui.PygameBackend(screen)):
-        with cui.Container(id="container_1", width=cui.FILL, height=cui.FILL, padding=20, align=cui,ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, style=cui.CoshStyling(background_color=(80, 75, 255))):
+        with cui.Container(id="container_1", width=cui.FILL, height=cui.FILL, padding=20, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, style=cui.CoshStyling(background_color=(80, 75, 255))):
             with cui.Container(id="menu_stack", direction=cui.COLUMN, gap=10, align=cui.ALIGN_CENTER):
                 cui.Label(id="title", text="CoshUI", font_size=64) 
                 cui.Button(id="start_btn", text="Start Game")

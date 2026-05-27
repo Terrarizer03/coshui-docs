@@ -7,8 +7,8 @@ When it comes to positioning in CoshUI, there are 2 flags that can be passed thr
 The first is the `RELATIVE` flag. This lets the `Node` participate in layout calculations.
 
 ```python title="Setting the RELATIVE flag"
-with CoshUIRenderer(...):
-    with Container(id="example_container", positioning=RELATIVE):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", positioning=cui.RELATIVE):
         pass
 ```
 
@@ -17,8 +17,8 @@ This behavior sets the `Node` take in space within Containers and let other Node
 The second flag is the `ABSOLUTE` flag. This *lifts* the `Node` and decouples it from layout calculations aside from the parents initial `x` and `y`.
 
 ```python title="Setting the ABSOLUTE flag"
-with CoshUIRenderer(...):
-    with Container(id="example_container", positioning=ABSOLUTE):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", positioning=cui.ABSOLUTE):
         pass
 ```
 
@@ -30,8 +30,8 @@ with CoshUIRenderer(...):
 The default behavior for the `positioning` attribute is `RELATIVE`.
 
 ```python title="Default Behavior"
-with CoshUIRenderer(...):
+with cui.CoshUIRenderer(...):
     # This will be set to RELATIVE
-    with Container(id="example_container"):
+    with cui.Container(id="example_container"):
         pass
 ```

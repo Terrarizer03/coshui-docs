@@ -16,8 +16,8 @@ with CoshUIRenderer(...):
 The main case is if your `Node` is set to `ABSOLUTE` positioning, CoshUI treats `ABSOLUTE` positioning as something *above* the `RELATIVE` Nodes. They're mostly taken out of the layout calculations aside from the initial x and y values which are inherited from the `ParentNode`.
 
 ```python title="Setting Position with ABSOLUTE"
-with CoshUIRenderer(...):
-    with Container(id="example_container", positioning=ABSOLUTE, x=10, y=10):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", positioning=cui.ABSOLUTE, x=10, y=10):
         pass
 ```
 
@@ -28,8 +28,8 @@ with CoshUIRenderer(...):
 The `x` and `y` properties are special properties that rarely get manipulated. Their default values are usually always set to 0.0. The reason for this is that the layout engine determines the position for Nodes for the most part using the hidden `_x` and `_y` attributes that `x` and `y` directly manipulates when `positioning` is set to `ABSOLUTE`.
 
 ```python title="Default Behavior"
-with CoshUIRenderer(...):
+with cui.CoshUIRenderer(...):
     # The default values for x and y are 0.0
-    with Container(id="example_container"):
+    with cui.Container(id="example_container"):
         pass
 ```

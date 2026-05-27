@@ -11,9 +11,9 @@ CoshUI's main philosophy is the idea that *everything* should have a certain lev
 
 ```python
 # Background Color AND Alpha
-with cui.Container(id="example", style=CoshStyling(background_color=(255, 255, 100), alpha=100)):
+with cui.Container(id="example_container", style=cui.CoshStyling(background_color=(255, 255, 100), alpha=100)):
 # Background Color WITH Alpha
-with cui.Container(id="example", style=CoshStyling(background_color=(255, 255, 100, 100))):
+with cui.Container(id="example_container", style=cui.CoshStyling(background_color=(255, 255, 100, 100))):
 ```
 
 The first style we'll discuss is the `background_color` and the `alpha` property. Although they seem like they have little to no correlation, they are actually quite coupled in the CoshUI engine along with the fact that they have slightly similar behavior. To learn more, [click here.](colors-and-alpha.md)
@@ -21,9 +21,9 @@ The first style we'll discuss is the `background_color` and the `alpha` property
 ### Borders
 
 ```python
-with cui.Container(id="example", style=CoshStyling(border=((255, 255, 100), 5))):
+with cui.Container(id="example_container", style=cui.CoshStyling(border=((255, 255, 100), 5))):
 # or
-with cui.Container(id="example", style=CoshStyling(border=(255, 255, 100, 5))):
+with cui.Container(id="example_container", style=cui.CoshStyling(border=(255, 255, 100, 5))):
 ```
 
 The `border` property in CoshUI acts as the *outline* for the `Node`. It requires 2 values, a **color** for the border and its **weight**. To learn more [click here.](borders.md)
@@ -31,9 +31,9 @@ The `border` property in CoshUI acts as the *outline* for the `Node`. It require
 ### Border Radius
 
 ```python
-with cui.Container(id="example", style=CoshStyling(border_radius=20)):
+with cui.Container(id="example_container", style=cui.CoshStyling(border_radius=20)):
 # or
-with cui.Container(id="example", style=CoshStyling(border_radius=(10, 20, 10, 20))):
+with cui.Container(id="example_container", style=cui.CoshStyling(border_radius=(10, 20, 10, 20))):
 ```
 
 The `border_radius` property lets you change the *roundness* of the corners of a `Node`. To learn more [click here.](border-radius.md)
@@ -41,7 +41,7 @@ The `border_radius` property lets you change the *roundness* of the corners of a
 ### Transforms
 
 ```python
-with cui.Container(id="example", style=CoshStyling(transform_position=(50, 50), transform_rotation=45.0, transform_scale=2.0)):
+with cui.Container(id="example_container", style=cui.CoshStyling(transform_position=(50, 50), transform_rotation=45.0, transform_scale=2.0)):
 ```
 
 This page will teach you about the different transforms you can do to a `Node` object, mainly `transform_position`, `transform_rotation`, and `transform_scale`. To learn more [click here.](transforms.md)
@@ -50,10 +50,10 @@ This page will teach you about the different transforms you can do to a `Node` o
 
 ```python
 # Outside the loop
-add_class("example_class", CoshStyling(background_color=(255, 100, 100)))
+add_class("example_class", cui.CoshStyling(background_color=(255, 100, 100)))
 
 # In CoshUIRenderer
-with cui.Container(id="example", classes="example_class"):
+with cui.Container(id="example_container", classes="example_class"):
 ```
 
-The `classes` property in CoshUI is a way to reuse CoshStyling objects without needing to do `style=CoshStyling()` throughout every `Node` object, it also lets you combine different `CoshStyling` objects in case you have multiple classes you want to reuse for a `Node`. To learn more, [click here.](classes.md)
+The `classes` property in CoshUI is a way to reuse CoshStyling objects without needing to do `style=cui.CoshStyling()` throughout every `Node` object, it also lets you combine different `CoshStyling` objects in case you have multiple classes you want to reuse for a `Node`. To learn more, [click here.](classes.md)

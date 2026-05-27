@@ -5,8 +5,8 @@
 The `width` and `height` properties can be considered some of the most important properties within CoshUI without exaggeration. They determine the space a `Node` occupies in the layout engine. Setting them is very easy:
 
 ```python title="Setting width and height"
-with CoshUIRenderer(...):
-    with Container(id="example_container", width=100, height=100):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", width=100, height=100):
         pass
 ```
 
@@ -15,8 +15,8 @@ The code-block above shows us how to set a *fixed* width and height. But there a
 The behavior for `AUTO` means it will adapt to the size of its children, mimicking CSS's `auto` behavior.
 
 ```python title="Setting width and height as AUTO"
-with CoshUIRenderer(...):
-    with Container(id="example_container", width=AUTO, height=AUTO):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", width=cui.AUTO, height=cui.AUTO):
         pass
 ```
 
@@ -26,16 +26,16 @@ with CoshUIRenderer(...):
 `FILL`'s behavior on the other hand is the opposite, it will expand its width and/or height to the size of the parent, mimicking CSS's `100%` behavior.
 
 ```python title="Setting width and height as FILL"
-with CoshUIRenderer(...):
-    with Container(id="example_container", width=FILL, height=FILL):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", width=cui.FILL, height=cui.FILL):
         pass
 ```
 
 Of course you can also mix behavior.
 
 ```python title="Setting width and height as AUTO and FILL"
-with CoshUIRenderer(...):
-    with Container(id="example_container", width=AUTO, height=FILL): # And vice-versa
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", width=cui.AUTO, height=cui.FILL): # And vice-versa
         pass
 ```
 
@@ -49,9 +49,9 @@ with CoshUIRenderer(...):
 The default behavior for `width` and `height` is `AUTO`. For ParentNodes, if they have no children, their sizing will change from `AUTO` to `FILL`. For Widgets on the other hand, they will be set to 0 if they have no values in the *Current Theme*.
 
 ```python title="Default Behavior"
-with CoshUIRenderer(...):
+with cui.CoshUIRenderer(...):
     # The default behavior of this will be AUTO
-    with Container(id="example_container"):
+    with cui.Container(id="example_container"):
         pass
 ```
 
@@ -59,9 +59,9 @@ with CoshUIRenderer(...):
     If you put an inner `ParentNode` with a width and/or height that's set to `FILL` inside an outer `ParentNode` with a width and/or height that's set to `AUTO`. The axis that has the `FILL` value for the inner `ParentNode` will collapse to 0.0.
 
     ```python title="Failure Example"
-    with Container(id="main_container", direction=COLUMN, gap=15, width=AUTO, height=AUTO):
-        with Container(id="sub_container", width=FILL, height=FILL, style=CoshStyling(background_color=(255, 100, 100))): # Background color to see it's sizes.
-            Button(id="sub_button", text="Example", width=100, height=100)
-        Button(id="settings_button", text="Settings")
-        Button(id="quit_button", text="Quit")
+    with cui.Container(id="main_container", direction=cui.COLUMN, gap=15, width=cui.AUTO, height=cui.AUTO):
+        with cui.Container(id="sub_container", width=cui.FILL, height=cui.FILL, style=cui.CoshStyling(background_color=(255, 100, 100))): # Background color to see it's sizes.
+            cui.Button(id="sub_button", text="Example", width=100, height=100)
+        cui.Button(id="settings_button", text="Settings")
+        cui.Button(id="quit_button", text="Quit")
     ```

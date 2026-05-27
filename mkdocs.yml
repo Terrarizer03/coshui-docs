@@ -184,8 +184,7 @@ nav:
       - create_theme: learn-the-api/utility/create-theme.md
       - set_default_theme: learn-the-api/utility/set-default-theme.md
   - Examples:
-    - Pause Menu: examples/pause-menu.md
-    - Settings Screen: examples/settings-screen.md
+    - Health Bar: examples/health-bar.md
   - Changelog: changelog.md
 
 extra:

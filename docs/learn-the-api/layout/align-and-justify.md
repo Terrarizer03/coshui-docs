@@ -8,8 +8,8 @@ CoshUI's implementation of `align` and `justify` is similar to CSS's implementat
     The `align` and `justify` properties are only accessible through the `ParentNode` (i.e. `Container`, `Modal`, or `Grid`)
 
 ```python title="Setting align and justify"
-with CoshUIRenderer(...):
-    with Container(id="example_container", align=ALIGN_CENTER, justify=JUSTIFY_CENTER):
+with cui.CoshUIRenderer(...):
+    with cui.Container(id="example_container", align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
         pass
 ```
 
@@ -42,7 +42,7 @@ The default behavior for `align` and `justify` is `START`.
 ```python title="Default Behavior"
 with CoshUIRenderer(...):
     # This will be set to align=ALIGN_START and justify=JUSTIFY_START
-    with Container(id="example_container"):
+    with cui.Container(id="example_container"):
         pass
 ```
 

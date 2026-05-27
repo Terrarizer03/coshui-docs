@@ -27,16 +27,16 @@ The minimum value of this property is `0` with the maximum being `255`.
 ## Examples
 
 ```python linenums="1"
-with CoshUIRenderer(...):
-    with Container(...):
-        Button(text="Hello", style=CoshStyling(alpha=100))
+with cui.CoshUIRenderer(...):
+    with cui.Container(...):
+        cui.Button(text="Hello", style=cui.CoshStyling(alpha=100))
 ```
 
 or
 
 ```python linenums="1"
-with CoshUIRenderer(...):
-    with Container(...):
-        Button(text="Hello", style=CoshStyling(background_color=(255, 0, 0, 100)))
+with cui.CoshUIRenderer(...):
+    with cui.Container(...):
+        cui.Button(text="Hello", style=cui.CoshStyling(background_color=(255, 0, 0, 100)))
 ```
 
