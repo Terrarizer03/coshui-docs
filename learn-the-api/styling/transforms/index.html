@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#transforms" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1011,6 +1016,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -4136,6 +4143,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -4155,9 +4164,83 @@
   
 
 
-  <h1>Transforms</h1>
-
-
+<h1 id="transforms">Transforms</h1>
+<h3 id="quick-guide">Quick Guide</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Recursive or Local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>transform_position</code></td>
+<td style="text-align: left;">tuple(x, y)</td>
+<td style="text-align: left;">(0, 0)</td>
+<td style="text-align: left;">Recursive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>transform_scale</code></td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Local</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>transform_rotation</code></td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">Local</td>
+</tr>
+</tbody>
+</table>
+<h3 id="introduction">Introduction</h3>
+<p>In CoshUI, there are styling properties that are considered "transform" properties. These are attributes that only alter the <strong>rendering</strong> side of the UI Engine without touching the layout pipeline. </p>
+<p>In version 0.2.4, there are 3 "transform" properties:  </p>
+<ul>
+<li><code>transform_position</code> </li>
+<li><code>transform_scale</code></li>
+<li><code>transform_rotation</code></li>
+</ul>
+<hr />
+<h3 id="transform_position"><code>transform_position</code></h3>
+<p>Let's start with <code>transform_position</code>, this property is a property that lets you <em>move</em> <code>Nodes</code> without needing to sacrifice its <code>RELATIVE</code> positioning. It takes in a 2-value <code>tuple</code> that describes the <strong>x</strong> and <strong>y</strong> offset.  </p>
+<div class="language-python highlight"><span class="filename">Setting transform_position</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">transform_position</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<p>The code-block above offsets the current <em>rendered</em> position of the <code>Node</code> by 50 pixels in the x direction and 50 pixels in the y direction. The layout calculations are unaffected, the true <code>x</code> and <code>y</code> values of a <code>Node</code> don't change, but the rendering is just <em>offset</em> by those transform values. </p>
+<hr />
+<h3 id="transform_scale"><code>transform_scale</code></h3>
+<p>Moving on, <code>transform_scale</code> is the property that changes the scale of the <code>Node</code>. The parameter takes in a float or integer that multiplies the current <code>width</code> and <code>height</code> values when <strong>rendering</strong>.</p>
+<div class="language-python highlight"><span class="filename">Setting transform_scale</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">transform_scale</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<p>This code-block makes the Container <strong>2.5 times</strong> bigger in scale with — again — the layout pipeline's calculations being unaffected.</p>
+<hr />
+<h3 id="transform_rotation"><code>transform_rotation</code></h3>
+<p>Finally, we get to <code>transform_rotation</code>, a property that changes the nodes <em>rotation</em>. It takes in a degree in float-form.</p>
+<div class="language-python highlight"><span class="filename">Setting transform_rotation</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">transform_rotation</span><span class="o">=</span><span class="mf">45.0</span><span class="p">)):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<p>The code block sets the <code>transform_rotation</code> property on the <code>Node</code> object with a 45.0 degree tilt.</p>
+<hr />
+<h3 id="default-behavior">Default Behavior</h3>
+<p>For <code>transform_position</code>, the default behavior for the engine is to set it to (0, 0) offset if unset by the user. For <code>transform_scale</code>, the default behavior is for the engine to set it to 1.0 if user doesn't explicitly set. And for <code>transform_rotation</code>, it is set to 0.0 by the engine if not explicitly set by the user.</p>
+<div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="c1"># transform_position = (0, 0)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="c1"># transform_scale = 1.0</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="c1"># transform_rotation = 0.0</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">()):</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Recursive or Local</p>
+<p>These values are <strong>local values</strong>, they live only on the <code>Node</code> they are set on and do not propagate to their children <strong>EXCEPT</strong> for <code>transform_position</code>. In the current version of 0.2.4, there are active discussions to turn all "transform" properties to <strong>recursive values</strong>.</p>
+</div>
 
 
 

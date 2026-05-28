@@ -4165,23 +4165,39 @@
 
 
 <h1 id="border-radius">Border Radius</h1>
+<h3 id="quick-guide">Quick Guide</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Recursive or Local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>border_radius</code></td>
+<td style="text-align: left;">int <strong>or</strong> tuple(x, y, z, w)</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Local</td>
+</tr>
+</tbody>
+</table>
 <h3 id="introduction">Introduction</h3>
 <p>CoshUI can let you set a <code>border_radius</code> for your <code>Nodes</code>. <code>border_radius</code> acts as the <em>roundness</em> of the corners of your <code>Nodes</code>. There are 2 ways to set <code>border_radius</code>:</p>
 <div class="language-python highlight"><span class="filename">Setting border_radius</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">border_radius</span><span class="o">=</span><span class="mi">20</span><span class="p">)):</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">pass</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># or</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">border_radius</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))):</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">pass</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">border_radius</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># or</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">border_radius</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
 </span></code></pre></div>
 <p>When <code>border_radius</code> is given a single integer, the behavior is to apply that value to all 4 corners. When given a tuple of 4 values, it'll apply it in this order (top-left, top-right, bottom-right, and bottom-left).</p>
 <h3 id="default-value">Default Value</h3>
 <p>The default value for <code>border_radius</code> is 0.</p>
 <div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># This sets border_radius to 0</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">()):</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">pass</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
 </span></code></pre></div>
 
 

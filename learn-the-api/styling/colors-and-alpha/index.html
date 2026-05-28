@@ -4165,31 +4165,56 @@
 
 
 <h1 id="colors-and-alpha">Colors and Alpha</h1>
+<h3 id="quick-guide">Quick Guide</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Recursive or Local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>alpha</code></td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">255</td>
+<td style="text-align: left;">Recursive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>background_color</code></td>
+<td style="text-align: left;">tuple(r, g, b) <strong>or</strong> tuple(r, g, b, a)</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Local</td>
+</tr>
+</tbody>
+</table>
 <h3 id="introduction">Introduction</h3>
 <p>In UI libraries, one of the most common things people automatically reach for is <em>color</em>. Being able to change the color is normal and expected. In CoshUI, changing color requires passing in a <code>CoshStyling</code> object to a universal <code>style</code> field and adding an <code>RGB</code> or <code>RGBA</code> tuple to the <code>background_color</code> field.</p>
 <div class="language-python highlight"><span class="filename">Setting color</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">))):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>
 </span></code></pre></div>
 <p>Now we get onto why <strong>Color</strong> and <strong>Alpha</strong> was added to the same page. As I discussed, you can pass in an <code>RGB</code> <em>or</em> an <code>RGBA</code> value to <code>background_color</code>.</p>
 <div class="language-python highlight"><span class="filename">Setting color WITH alpha</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># The 4th value in the background_color tuple is Alpha</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">))):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">255</span><span class="p">)))</span>
 </span></code></pre></div>
-<p>In the code block above, we set a 4th value in the tuple that acts as the <code>alpha</code> field. But that isn't the only way to set <code>alpha</code>.</p>
+<p>In the code-block above, we set a 4th value in the tuple that acts as the <code>alpha</code> field. But that isn't the only way to set <code>alpha</code>.</p>
 <div class="language-python highlight"><span class="filename">Setting alpha</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">255</span><span class="p">)):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">255</span><span class="p">))</span>
 </span></code></pre></div>
 <p>There is also a dedicated <code>alpha</code> field that you can pass in a value between 0-255 to.</p>
 <div class="admonition info">
 <p class="admonition-title">Precedence</p>
-<p>If you add set the alpha value in <code>background_color</code> (background_color=(255, 255, 100, 100)) <strong>AND</strong> in <code>alpha</code> (alpha=255), the value within the <code>alpha</code> field takes precedence.</p>
+<p>If you set the alpha value in <code>background_color</code> (background_color=(255, 255, 100, 100)) <strong>AND</strong> in <code>alpha</code> (alpha=255), the value within the <code>alpha</code> field takes precedence.</p>
 <div class="language-python highlight"><span class="filename">Setting both RGBA and alpha</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="c1"># The alpha field takes higher priority in the engine, so in this case, </span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="c1"># the alpha value of the node is 255.</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">(</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">background_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> 
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">alpha</span><span class="o">=</span><span class="mi">255</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">)):</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">))</span>
 </span></code></pre></div>
 </div>
 <hr />
@@ -4197,12 +4222,12 @@
 <p>When <code>background_color</code> is not set, the default value the engine takes is <code>None</code>, if the <code>background_color</code> is not set, the rectangle of the <code>Node</code> just doesn't get rendered at all.</p>
 <div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># Since no explicit value is passed, background_color is set to None</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">()):</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
 </span></code></pre></div>
 <p>For <code>alpha</code>, the default value is 255 — the max value — when no explicit value is passed. </p>
 <div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="c1"># Since no explicit value is passed, alpha is set to 255</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">()):</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
 </span></code></pre></div>
 <details class="note">
 <summary>Fun Fact</summary>

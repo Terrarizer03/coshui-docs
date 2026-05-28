@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#classes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1039,6 +1044,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -4136,6 +4143,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -4155,9 +4164,62 @@
   
 
 
-  <h1>Classes</h1>
-
-
+<h1 id="classes">Classes</h1>
+<h3 id="quick-guide">Quick Guide</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Recursive or Local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>classes</code></td>
+<td style="text-align: left;">str or list[str]</td>
+<td style="text-align: left;">"" (empty string)</td>
+<td style="text-align: left;">Local</td>
+</tr>
+</tbody>
+</table>
+<h3 id="introduction">Introduction</h3>
+<p>CoshUI features a <strong>class system</strong> that lets you <em>reuse</em> <code>CoshStyling</code> objects over many <code>Nodes</code>. Basically, make a Style for specific <code>Nodes</code>, and reuse that style without needing to copy and paste the <code>style</code> field over and over again.</p>
+<p>Now, the <code>classes</code> property is not a parameter of the <code>style</code> attribute, and it also requires a few steps first before you can start adding classes to <code>Nodes</code>. To start, you need to <strong>create</strong> the class by calling the <code>add_class</code> function <strong>before</strong> your loop, giving your class a name, and passing in the <code>CoshStyling</code> object for that class with its preferred styles. </p>
+<div class="language-python highlight"><span class="filename">Creating a class</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># MAKE SURE THIS IS *BEFORE* YOUR MAIN LOOP</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;example_class&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
+</span></code></pre></div>
+<p>In the code-block above, we create the class with the name "example_class", you can now pass on the styling values that you want in the <code>CoshStyling</code> object.</p>
+<p>Once your class is ready and the <code>CoshStyling</code> has values, you can then pass on that class to your <code>Node</code> by doing this:</p>
+<div class="language-python highlight"><span class="filename">Passing a class</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;example_class&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This <code>Container</code> node will now use the styling set in classes, a cool thing about this is you can pass in <strong>multiple</strong> classes. You can use a <em>spaced-string</em> approach or a list of class names.</p>
+<div class="language-python highlight"><span class="filename">Passing multiple classes</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># BEFORE Loop</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;example_class&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;example_class_2&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;example_class_3&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># INSIDE loop</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;example_class example_class_2 example_class_3&quot;</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># OR</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;example_class&quot;</span><span class="p">,</span> <span class="s2">&quot;example_class_2&quot;</span><span class="p">,</span> <span class="s2">&quot;example_class_3&quot;</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Multiple Class Priority</p>
+<p>When given multiple classes like this with some classes overriding style values, the class that gets added the latest (in this case "example_class_3") will win. </p>
+<p>If "example_class" has a <code>background_color</code> set to (255, 255, 255) and "example_class_3" has its <code>background_color</code> set to (100, 100, 255), "example_class_3" will win.</p>
+</div>
+<p>Now question, if the <code>style</code> field <strong>and</strong> the <code>classes</code> field were filled out, what gets applied? Well, the CoshUI engine will prioritize user explicit styles, so even if this were the case:</p>
+<div class="language-python highlight"><span class="filename">Class vs Style</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;example_class&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">CoshStyling</span><span class="p">())</span>
+</span></code></pre></div>
+<p>Styles set values will take precedence over any values set by classes.</p>
+<h3 id="default-behavior">Default Behavior</h3>
+<p>The default behavior of the <code>classes</code> property is an empty string ("").</p>
+<div class="language-python highlight"><span class="filename">Default Behavior</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># The classes property is set to &quot;&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_container&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 
