@@ -4,7 +4,7 @@ hide:
 icon: octicons/terminal-16
 ---
 
-# Your First UI
+# Your First UI — Rewrite Soon
 
 Choose the Backend you want to follow.
 

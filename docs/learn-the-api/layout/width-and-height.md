@@ -1,13 +1,19 @@
 # Width and Height
 
+### Quick Guide
+
+| Property | Type | Default | Recursive or Local |
+| :--- | :--- | :--- | :--- |
+| `width` | CoshSizing **or** int | CoshSizing.AUTO | Local | 
+| `height` | CoshSizing **or** int | CoshSizing.AUTO | Local | 
+
 ### Introduction
 
 The `width` and `height` properties can be considered some of the most important properties within CoshUI without exaggeration. They determine the space a `Node` occupies in the layout engine. Setting them is very easy:
 
 ```python title="Setting width and height"
 with cui.CoshUIRenderer(...):
-    with cui.Container(id="example_container", width=100, height=100):
-        pass
+    cui.Container(id="example_container", width=100, height=100)
 ```
 
 The code-block above shows us how to set a *fixed* width and height. But there are different behaviors you can set width and height to. Like in CSS, you can set these properties to `AUTO` and `FILL`. 
@@ -16,8 +22,7 @@ The behavior for `AUTO` means it will adapt to the size of its children, mimicki
 
 ```python title="Setting width and height as AUTO"
 with cui.CoshUIRenderer(...):
-    with cui.Container(id="example_container", width=cui.AUTO, height=cui.AUTO):
-        pass
+    cui.Container(id="example_container", width=cui.AUTO, height=cui.AUTO)
 ```
 
 !!! question "No children AUTO?"
@@ -27,19 +32,17 @@ with cui.CoshUIRenderer(...):
 
 ```python title="Setting width and height as FILL"
 with cui.CoshUIRenderer(...):
-    with cui.Container(id="example_container", width=cui.FILL, height=cui.FILL):
-        pass
+    cui.Container(id="example_container", width=cui.FILL, height=cui.FILL)
 ```
 
 Of course you can also mix behavior.
 
 ```python title="Setting width and height as AUTO and FILL"
 with cui.CoshUIRenderer(...):
-    with cui.Container(id="example_container", width=cui.AUTO, height=cui.FILL): # And vice-versa
-        pass
+    cui.Container(id="example_container", width=cui.AUTO, height=cui.FILL) # And vice-versa
 ```
 
-!!! info "CoshSizing"
+??? info "CoshSizing"
     `CoshSizing` is the Enum that houses AUTO and FILL (e.g., `CoshSizing.AUTO` and `CoshSizing.FILL`). Though CoshUI has the `AUTO` and `FILL` constants that you can pass without needing to call the Enum, it's good to understand where these constants come from.
 
 --- 
@@ -51,8 +54,7 @@ The default behavior for `width` and `height` is `AUTO`. For ParentNodes, if the
 ```python title="Default Behavior"
 with cui.CoshUIRenderer(...):
     # The default behavior of this will be AUTO
-    with cui.Container(id="example_container"):
-        pass
+    cui.Container(id="example_container")
 ```
 
 !!! failure "AUTO vs FILL"
