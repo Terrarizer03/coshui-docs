@@ -3,6 +3,7 @@ site_url: https://terrarizer03.github.io/coshui-docs
 site_description: A Declarative UI Library for Python
 theme:
   name: material
+  custom_dir: docs/overrides
   icon:
     repo: fontawesome/brands/gitlab
   features:
@@ -70,6 +71,7 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/main.css
 
 nav:
   - Home: index.md

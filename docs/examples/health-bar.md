@@ -3,7 +3,7 @@
 This example showcases a simple game loop with a health-bar that goes down and a working death menu that appears when health reaches 0.
 
 !!! info "Highlighted Lines"
-    The highlighted lines in the code is all the UI code that makes everything possible.
+    The highlighted lines are all the code that makes the UI possible.
 
 ### Choose your Backend
 
@@ -11,7 +11,7 @@ This example showcases a simple game loop with a health-bar that goes down and a
 
     <img src="../../assets/examples/health-bar-pygame.gif">
 
-    ```python title="game_pygame.py" linenums="1" hl_lines="74-93"
+    ```python title="game_pygame.py" linenums="1" hl_lines="75-92"
     from abc import ABC, abstractmethod
 
     import pygame as py
@@ -39,7 +39,8 @@ This example showcases a simple game loop with a health-bar that goes down and a
         def __init__(self, x, y, w, h, color):
             super().__init__(x, y, w, h, color)
             self.speed = 5
-            self.health = 100
+            self.MAX_HEALTH = 100
+            self.health = self.MAX_HEALTH
 
         def draw(self, screen):
             py.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
@@ -89,8 +90,7 @@ This example showcases a simple game loop with a health-bar that goes down and a
                 with cui.CoshUIRenderer(cui.PygameBackend(self.screen)):
                     with cui.Container(id="root", padding=10):
                         with cui.Container(id="health_container", width=400, height=25, padding=10, style=cui.CoshStyling(background_color=(50, 50, 50), border_radius=20)):
-                            # It's self.player.health * 3.8 because to get the right width it's: player.health * ((parent_width - (parent_padding * 2)) / 100) / 100
-                            cui.Container(id="health_bar", width=max(0, self.player.health * 3.8), height=cui.FILL, style=cui.CoshStyling(background_color=(100, 255, 100), border_radius=20)):
+                            cui.Container(id="health_bar", width=cui.PERCENTAGE((self.player.health / self.player.MAX_HEALTH) * 100), height=cui.FILL, style=cui.CoshStyling(background_color=(100, 255, 100), border_radius=20))
                     if self.player.health <= 0:
                         with cui.Container(id="second_root", width=WIDTH, height=HEIGHT, positioning=cui.ABSOLUTE, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                             with cui.Container(id="dead_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=20):
@@ -131,7 +131,7 @@ This example showcases a simple game loop with a health-bar that goes down and a
 
     <img src="../../assets/examples/health-bar-raylib.gif">
 
-    ```python title="game_raylib.py" linenums="1" hl_lines="69-81 85-90"
+    ```python title="game_raylib.py" linenums="1" hl_lines="70-80 84-89"
     from abc import ABC, abstractmethod
 
     import raylibpy as rl
@@ -159,7 +159,8 @@ This example showcases a simple game loop with a health-bar that goes down and a
         def __init__(self, x, y, w, h, color):
             super().__init__(x, y, w, h, color)
             self.speed = 5
-            self.health = 100
+            self.MAX_HEALTH = 100
+            self.health = self.MAX_HEALTH
 
         def draw(self):
             rl.draw_rectangle(int(self.x), int(self.y), int(self.width), int(self.height), self.color)
@@ -204,8 +205,7 @@ This example showcases a simple game loop with a health-bar that goes down and a
                 with cui.CoshUIRenderer(cui.RaylibBackend()):
                     with cui.Container(id="root", padding=10):
                         with cui.Container(id="health_container", width=400, height=25, padding=10, style=cui.CoshStyling(background_color=(50, 50, 50), border_radius=20)):
-                            # It's self.player.health * 3.8 because to get the right width it's: player.health * ((parent_width - (parent_padding * 2)) / 100) / 100
-                            cui.Container(id="health_bar", width=max(0, self.player.health * 3.8), height=cui.FILL, style=cui.CoshStyling(background_color=(100, 255, 100), border_radius=20)):
+                            cui.Container(id="health_bar", width=cui.PERCENTAGE((self.player.health / self.player.MAX_HEALTH) * 100), height=cui.FILL, style=cui.CoshStyling(background_color=(100, 255, 100), border_radius=20)):
                     if self.player.health <= 0:
                         with cui.Container(id="second_root", width=WIDTH, height=HEIGHT, positioning=cui.ABSOLUTE, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                             with cui.Container(id="dead_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=20):
