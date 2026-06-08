@@ -1,3 +1,3 @@
-# PyOpenGL
+# ModernGL
 
 **Work in Progress**

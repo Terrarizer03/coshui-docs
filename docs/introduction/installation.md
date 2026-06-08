@@ -25,6 +25,21 @@ CoshUI is *backend-agnostic*, meaning it uses different frameworks to render its
     pip install -U coshui[raylib]
     ```
 
+=== "PyOpenGL | GLFW"
+    ```bash
+    pip install -U coshui[pyopengl]
+    ```
+
+=== "ModernGL | GLFW"
+    ```bash
+    pip install -U coshui[moderngl]
+    ```
+
+=== "ModernGL | MGLW"
+    ```bash
+    pip install -U coshui[moderngl-mglw]
+    ```
+
 !!! note "Upgrade"
     It's good practice to add `-U` when installing just so you update to the absolute latest. Especially in **version {{ version }}** where updates are frequent.
 

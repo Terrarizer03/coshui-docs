@@ -138,6 +138,7 @@ nav:
       - Overview: learn-the-api/backends/index.md
       - Pygame: learn-the-api/backends/pygame.md
       - Raylib: learn-the-api/backends/raylib.md
+      - ModernGL: learn-the-api/backends/moderngl.md
       - PyOpenGL: learn-the-api/backends/pyopengl.md
     - All Node Properties:
       - Overview: learn-the-api/properties/index.md
@@ -190,7 +191,7 @@ nav:
   - Changelog: changelog.md
 
 extra:
-  version: 0.2.4
+  version: 0.3.0
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/JyleFV/CoshUI
