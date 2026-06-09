@@ -58,7 +58,7 @@ with cui.CoshUIRenderer(...):
         pass
 ```
 
-The code block sets the `transform_rotation` property on the `Node` object with a 45.0 degree tilt.
+The code-block sets the `transform_rotation` property on the `Node` object with a 45.0 degree tilt.
 
 ---
 

@@ -205,7 +205,7 @@ This example showcases a simple game loop with a health-bar that goes down and a
                 with cui.CoshUIRenderer(cui.RaylibBackend()):
                     with cui.Container(id="root", padding=10):
                         with cui.Container(id="health_container", width=400, height=25, padding=10, style=cui.CoshStyling(background_color=(50, 50, 50), border_radius=20)):
-                            cui.Container(id="health_bar", width=cui.PERCENTAGE((self.player.health / self.player.MAX_HEALTH) * 100), height=cui.FILL, style=cui.CoshStyling(background_color=(100, 255, 100), border_radius=20)):
+                            cui.Container(id="health_bar", width=cui.PERCENTAGE((self.player.health / self.player.MAX_HEALTH) * 100), height=cui.FILL, style=cui.CoshStyling(background_color=(100, 255, 100), border_radius=20))
                     if self.player.health <= 0:
                         with cui.Container(id="second_root", width=WIDTH, height=HEIGHT, positioning=cui.ABSOLUTE, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                             with cui.Container(id="dead_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=20):
