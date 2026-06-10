@@ -19,7 +19,7 @@ CoshUI is different, it's something you add into your game loop — completely s
 ## An Example with Pygame
 CoshUI lets you build UIs that slot into any game loop easily. The highlighted code in the left-side code-block outlines all the code needed to produce the image on the right.
 
-<div class="grid" markdown="1">
+<div class="grid" markdown="1" style="margin-bottom: 3rem; gap: 20px;">
 
 ```python title="pygame_main.py" hl_lines="22-31"
 import coshui as cui
@@ -101,7 +101,7 @@ CoshUI can do quite a lot of things, from flexbox-like capabilities to animation
 
 </div>
 
-To learn more, I encourage you to start with the [tutorial](introduction/your-first-ui.md) or to read the [API.](learn-the-api/getting-started.md)
+To learn more, it is encouraged to start with the [tutorial](introduction/your-first-ui.md) or to read the [API.](learn-the-api/getting-started.md)
 
 ---
 

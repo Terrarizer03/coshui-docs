@@ -18,7 +18,6 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.footer
-    - navigation.sections
   font: 
     text: Roboto
     code: JetBrains Mono

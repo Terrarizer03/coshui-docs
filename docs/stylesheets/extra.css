@@ -3,7 +3,7 @@
 }
 
 .md-header {
-    height: 60px;  /* default is around 48px */
+  height: 60px;  /* default is around 48px */
 }
 
 .md-content {
@@ -11,10 +11,54 @@
 }
 
 .md-header__button.md-logo img {
-    height: 40px;  /* adjust logo size */
-    width: auto;
+  height: 40px;  /* adjust logo size */
+  width: auto;
 }
 
 .md-typeset img {
-    border-radius: 15px;
+  border-radius: 15px;
+}
+
+.grid > * {
+  margin-bottom: 1.5rem; 
+}
+
+.grid img {
+  width: 100%;       /* Let the image scale down nicely on small screens */
+  height: auto;      /* Maintain aspect ratio naturally on mobile */
+  display: block;
+}
+
+
+/* --- Desktop Styles (Only applies when side-by-side) --- */
+/* Adjust the min-width (e.g., 60em / 960px) to match your theme's breakpoint */
+@media screen and (min-width: 60em) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 0.5rem), 1fr)) !important;
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* Clear the mobile margin when they are side-by-side */
+  .grid > * {
+    margin-bottom: 0;
+  }
+
+  /* Enforce equal matching heights only on desktop */
+  .grid .highlight, 
+  .grid img {
+    height: 27rem;
+    max-height: 27rem;
+    box-sizing: border-box;
+  }
+
+  .grid .highlight pre {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .grid img {
+    width: auto;
+    object-fit: contain;
+  }
 }
