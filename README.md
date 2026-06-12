@@ -1,6 +1,6 @@
 # CoshUI Docs
 
-This is the official documentation for [CoshUI](https://github.com/Terrarizer03/CoshUI).
+This is the official documentation for [CoshUI](https://github.com/JyleFV/CoshUI).
 
 ## View Docs
 

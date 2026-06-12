@@ -22,18 +22,19 @@ Choose the Backend you want to follow.
 
     If you haven't met these requirements, please go [here.](installation.md)
 
+    ---
+
     ## Basic Boilerplate
-    To start us off, lets make the `Pygame` boilerplate that we'll use for this tutorial. 
+    To start us off, let's make the `Pygame` boilerplate that we'll use for this tutorial. If you're following along, make sure to copy this boilerplate into your file.
     
     **Do note that all UI related code that we will be working on will be within the highlighted line.**
 
-    ```python title="pygame_test.py" hl_lines="22"
+    ```python title="pygame_test.py" hl_lines="21"
     import pygame as py
     import coshui as cui
 
     WIDTH, HEIGHT = 800, 800
     FPS = 60
-    BLACK = (0, 0, 0)
 
     def main():
         py.init()
@@ -47,7 +48,7 @@ Choose the Backend you want to follow.
                 if event.type == py.QUIT:
                     running = False
 
-            screen.fill(BLACK)
+            screen.fill((0, 0, 0))
 
             # CoshUI Code Here
 
@@ -60,6 +61,98 @@ Choose the Backend you want to follow.
         main()
     ```
 
+    ---
+
+    ## Setting Up CoshUIRenderer
+    Let us move on to the *"body"* of CoshUI. `CoshUIRenderer()` is the "entry point" of the CoshUI engine, UI syntax will not work properly without it. To set it up, you must do this:
+    !!! info "Highlight in Boilerplate"
+        Remember to put this code within the highlighted part of the boilerplate.
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        pass
+    ```
+
+    All UI code runs within this context manager (`with` block). It registers all CoshUI nodes, determines their order of rendering, and gives you the ability to animate and interact with them for free.
+
+    !!! note "Immediate and Retained Hybrid"
+        A note to keep in mind is that CoshUI is inherently an "immediate mode" UI library, meaning it rebuilds every Node per frame. It gets away with signals and animations because it has an internal reconciliation layer that saves and sets state per frame.
+    
+    ### CoshUIRenderer Parameters
+
+    Before we move on, I'd like to discuss the *parameters* `CoshUIRenderer()` takes. It takes a `CoshBackend` instance for its first parameter and a `CoshMode` instance for its second. `CoshBackend` is easy to deduce, it's the backend that we pass based on what rendering pipeline we're using, but `CoshMode` might be a little confusing.
+
+    `CoshMode` is defaulted to `NORMAL`, which makes it run normally. But one thing you can do is set it to `DEBUG`:
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen), cui.DEBUG):
+        pass
+    ```
+
+    If set to `DEBUG`, it will open up a tkinter window that lets you see the entire UI structure and click individual Nodes to see their properties for that frame (similar to DevTools on a browser). This is helpful for whenever need to check values for each Node. 
+
+    ![image of CoshUI debugger](../assets/introduction/debugger.gif)
+
+    ---
+
+    ## Declaring Your First Element
+    Learning new UI libraries can be scary because of the new API you have to learn, but CoshUI is built to be easy to pick up without much resistance when building or migrating the UI. If you have experience with HTML then this might seem very familiar, if you don't then that's completely okay. Let's create our first `Container` as a Node instead of a Parent. Here's how that works:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        cui.Container(id="root_container", width=100, height=100)
+    ```
+    
+    If you've added that to your code and ran it, you might be confused as to why nothing is showing, well no need to worry about that for now, your `Container` is currently invisible because it has no color. We'll get into styling in the next section. 
+    
+    Back to our example above, that `Container` instance creates a box that is 100x100 in size on the top-left of the screen. An interesting part about `Containers` is that they can actually act as context managers that take in children like this:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=100, height=100):
+            cui.Container(id="child_container", width=50, height=50)
+    ```
+    This arrangement creates a `Container` ***within*** the `root_container` that is 50x50 in size.
+
+    ---
+
+    ## Styling Your First Element
+    In other UI libraries, styling is mostly an afterthought. In CoshUI, styling is a primary part of the experience. To style a Node, you need to utilize CoshUI's `CoshStyling` object. It holds the properties that each Node needs to be visually distinct. To set it, you can do this:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        cui.Container(
+            id="root_container", 
+            width=100, height=100, 
+            style=cui.CoshStyling(background_color=(100, 100, 255))
+        )
+    ```
+    When run, this should show your 100x100 ***light blue-ish*** `Container` at the top-left of your window. 
+
+    ![image of blue-ish container](../assets/introduction/blue-container-pygame.gif)
+    
+    ### CoshStyling Parameters
+
+    ### Reusable Styling Through *Classes*
+
+    ---
+    
+    ## Layout Fundamentals
+    Before moving on, let's learn a little bit about the layout properties you can set which gives you maximum control over your UI.
+    
+    #### Width and Height
+    As shown in earlier sections, you can set width and height. These two properties are [Universal Properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }, meaning they exist and can be set in every Node within CoshUI. They determine the size of your Node based on pixels.
+
+    To learn more, check out the [Width and Height](../learn-the-api/layout/width-and-height.md#introduction){ data-preview } section in the API.
+
+    #### Padding and Margin
+    Margin is a [Universal Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } whilst padding is a [Local Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } and can only be set within `ParentNodes` (Nodes that can take in children). An example of a `ParentNode` would be `Container`. Margin is the property that dictates the space other nodes need to give around that specific Node, while padding dictates the distance the children should be from the edges of that `ParentNode`.
+
+    To learn more, check out the [Padding and Margin](../learn-the-api/layout/padding-and-margin.md#introduction){ data-preview } section in the API.
+
+    #### Position
+
+    ---
+
 === "Raylib"
 
     ## Prerequisites
@@ -70,8 +163,10 @@ Choose the Backend you want to follow.
 
     If you haven't met these requirements, please go [here.](installation.md)
 
+    ---
+
     ## Basic Boilerplate
-    To start us off, lets make the `Raylib` boilerplate that we'll use for this tutorial. 
+    To start us off, let's make the `Raylib` boilerplate that we'll use for this tutorial. If you're following along, make sure to copy this boilerplate into your file.
     
     **Do note that all UI related code that we will be working on will be within the highlighted line.**
 
@@ -111,8 +206,10 @@ Choose the Backend you want to follow.
 
     If you haven't met these requirements, please go [here.](installation.md)
 
+    ---
+
     ## Basic Boilerplate
-    To start us off, lets make the `PyOpenGL` with `GLFW` boilerplate that we'll use for this tutorial. 
+    To start us off, let's make the `PyOpenGL` with `GLFW` boilerplate that we'll use for this tutorial. If you're following along, make sure to copy this boilerplate into your file.
     
     **Do note that all UI related code that we will be working on will be within the highlighted line.**
 
@@ -157,8 +254,10 @@ Choose the Backend you want to follow.
 
     If you haven't met these requirements, please go [here.](installation.md)
 
+    ---
+
     ## Basic Boilerplate
-    To start us off, lets make the `ModernGL` with `GLFW` boilerplate that we'll use for this tutorial. 
+    To start us off, let's make the `ModernGL` with `GLFW` boilerplate that we'll use for this tutorial. If you're following along, make sure to copy this boilerplate into your file.
     
     **Do note that all UI related code that we will be working on will be within the highlighted line.**
 
@@ -204,8 +303,10 @@ Choose the Backend you want to follow.
 
     If you haven't met these requirements, please go [here.](installation.md)
 
+    ---
+
     ## Basic Boilerplate
-    To start us off, lets make the `ModernGL` with `MGLW` boilerplate that we'll use for this tutorial. 
+    To start us off, let's make the `ModernGL` with `MGLW` boilerplate that we'll use for this tutorial. If you're following along, make sure to copy this boilerplate into your file.
     
     **Do note that all UI related code that we will be working on will be within the highlighted line.**
 
