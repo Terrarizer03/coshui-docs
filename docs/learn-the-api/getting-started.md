@@ -102,8 +102,9 @@ Terms frequently used in the CoshUI documentation.
 | Term | Definition |
 | :--- | :--- |
 | Local Values | Attributes that only affects the specified Node (e.g., `width`, `height`) |
+| Recursive Values | Attributes that are inherited by the Node's children (e.g., `z_index`) |
 | Atomic Nodes | Nodes that are only made up of a single Node (e.g., `Button`, `Checkbox`) |
 | Composite Nodes | Nodes that are made up of multiple Nodes (e.g., `Slider`, `Modal`, `Dropdown`) |
-| Recursive Values | Attributes that are inherited by the Node's children (e.g., `z_index`) |
 | Local Attribute/Property | An attribute only certain Nodes poessesses |
 | Universal Attribute/Property | An attribute that every Node possesses |
+| Transform Properties | Properties that only affect the Node's rendering |

@@ -185,6 +185,7 @@ nav:
       - set_default_font: learn-the-api/utility/set-default-font.md
       - create_theme: learn-the-api/utility/create-theme.md
       - set_default_theme: learn-the-api/utility/set-default-theme.md
+    - Debugger: learn-the-api/debugger.md
   - Examples:
     - Health Bar: examples/health-bar.md
   - Changelog: changelog.md

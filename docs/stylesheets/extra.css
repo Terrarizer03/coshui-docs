@@ -19,46 +19,54 @@
   border-radius: 15px;
 }
 
-.grid > * {
-  margin-bottom: 1.5rem; 
+.md-typeset .cui-collapse {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.grid img {
-  width: 100%;       /* Let the image scale down nicely on small screens */
-  height: auto;      /* Maintain aspect ratio naturally on mobile */
-  display: block;
-}
-
-
-/* --- Desktop Styles (Only applies when side-by-side) --- */
-/* Adjust the min-width (e.g., 60em / 960px) to match your theme's breakpoint */
-@media screen and (min-width: 60em) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 0.5rem), 1fr)) !important;
+.md-typeset .cui-collapse > summary {
+    background: transparent !important;
+    border: none !important;
+    margin: 0.6em 0 0.6em !important; /* matches normal heading spacing */
+    padding: 0 !important;
+    min-height: auto !important;
+    list-style: none;
+    cursor: pointer;
     display: flex;
-    align-items: stretch;
-  }
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 700;
+    font-size: 1.75em; /* tune to match your ### / #### size */
+    color: var(--md-default-fg-color);
+}
 
-  /* Clear the mobile margin when they are side-by-side */
-  .grid > * {
-    margin-bottom: 0;
-  }
+/* Remove Material's icon + chevron */
+.md-typeset .cui-collapse > summary::before,
+.md-typeset .cui-collapse > summary::after {
+    display: none !important;
+}
+.md-typeset .cui-collapse > summary::-webkit-details-marker {
+    display: none;
+}
 
-  /* Enforce equal matching heights only on desktop */
-  .grid .highlight, 
-  .grid img {
-    height: 27rem;
-    max-height: 27rem;
-    box-sizing: border-box;
-  }
+/* Small, subtle chevron */
+.cui-collapse-chevron {
+    display: inline-flex;
+    font-size: 0.65em;
+    color: var(--md-default-fg-color--light);
+    transition: transform 0.2s ease;
+}
+.cui-collapse[open] .cui-collapse-chevron {
+    transform: rotate(90deg);
+}
 
-  .grid .highlight pre {
-    height: 100%;
-    overflow-y: auto;
-  }
-
-  .grid img {
-    width: auto;
-    object-fit: contain;
-  }
+/* Content flows like normal paragraphs, no indent/box */
+.md-typeset .cui-collapse-content {
+    margin: 0;
+    padding: 0;
+    font-size: medium;
 }

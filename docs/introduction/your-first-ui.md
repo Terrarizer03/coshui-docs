@@ -77,8 +77,10 @@ Choose the Backend you want to follow.
 
     !!! note "Immediate and Retained Hybrid"
         A note to keep in mind is that CoshUI is inherently an "immediate mode" UI library, meaning it rebuilds every Node per frame. It gets away with signals and animations because it has an internal reconciliation layer that saves and sets state per frame.
-    
-    ### CoshUIRenderer Parameters
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>CoshUIRenderer Parameters</summary>
+    <div class="cui-collapse-content" markdown="1">
 
     Before we move on, I'd like to discuss the *parameters* `CoshUIRenderer()` takes. It takes a `CoshBackend` instance for its first parameter and a `CoshMode` instance for its second. `CoshBackend` is easy to deduce, it's the backend that we pass based on what rendering pipeline we're using, but `CoshMode` might be a little confusing.
 
@@ -90,7 +92,13 @@ Choose the Backend you want to follow.
 
     If set to `DEBUG`, it will open up a tkinter window that lets you see the entire UI structure and click individual Nodes to see their properties for that frame (similar to DevTools on a browser). This is helpful for whenever need to check values for each Node. 
 
-    ![image of CoshUI debugger](../assets/introduction/debugger.gif)
+    <figure align="center" markdown="span">
+        ![image of CoshUI debugger](../assets/introduction/debugger.gif){ width="500" }
+        <figcaption>Gif of CoshUI's debugger.</figcaption>
+    </figure>
+
+    </div>
+    </details>
 
     ---
 
@@ -113,10 +121,15 @@ Choose the Backend you want to follow.
     ```
     This arrangement creates a `Container` ***within*** the `root_container` that is 50x50 in size.
 
+    !!! note "Node Types"
+        From this, there might be some people thinking CoshUI is all about `Containers`, but the `Container` is one of many Nodes/Widgets in CoshUI. We'll get to the others soon.
+
     ---
 
     ## Styling Your First Element
-    In other UI libraries, styling is mostly an afterthought. In CoshUI, styling is a primary part of the experience. To style a Node, you need to utilize CoshUI's `CoshStyling` object. It holds the properties that each Node needs to be visually distinct. To set it, you can do this:
+    In other UI libraries, styling is mostly an afterthought. In CoshUI, styling is a primary part of the experience. To style a Node, you need to utilize CoshUI's `CoshStyling` object. It holds the properties that each Node needs to be visually distinct. 
+    
+    So let's first add a color to our `Container`. To set it, you can do this:
 
     ```python title="pygame_test.py"
     with cui.CoshUIRenderer(cui.PygameBackend(screen)):
@@ -128,11 +141,122 @@ Choose the Backend you want to follow.
     ```
     When run, this should show your 100x100 ***light blue-ish*** `Container` at the top-left of your window. 
 
-    ![image of blue-ish container](../assets/introduction/blue-container-pygame.gif)
-    
-    ### CoshStyling Parameters
+    <figure markdown>
+        ![image of blue-ish container](../assets/introduction/blue-container-pygame.png)
+        <figcaption>Image of Blue 100x100 Container.</figcaption>
+    </figure>
 
-    ### Reusable Styling Through *Classes*
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>CoshStyling Parameters</summary>
+    <div class="cui-collapse-content" markdown="1">
+
+    The `CoshStyling` object is what determines the visual identity of a Node. It offers a few parameters that let you change the entire look of a Node.
+
+    #### Background Color and Alpha
+    Background Color is almost a no-brainer. Its main purpose is to declare the color of the Node. It can be set like this: `background_color=(R, G, B)` or `background_color=(R, G, B, A)`.
+
+    Alpha is also — again — a no-brainer. It determines the *transparency* of a Node. It can be set like this: `alpha=0-255`.
+
+    You may notice, background color lets you set the alpha within it. Not to worry though, if the `alpha` field is set when the alpha value is set in `background_color`, the `alpha` field takes priority.
+
+    #### Border
+    Border sets an outline around a Node. It can be set like this: `border=((R, G, B), weight)` or `border=(R, G, B, weight)`
+
+    #### Border Radius
+    Border radius determines the *roundness* of a Node's corner. You can either set all corners or each individual corner like this: `border_radius=20` or `border_radius=(top-left, top-right, bottom-right, bottom-left)`
+
+    #### Transforms
+    CoshUI has ["transform" properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }. Basically properties that only affect rendering, not layout.
+
+    The first is `transform_position`, which lets you offset the node relative to its position. Basically (0, 50) means it moves 50 pixels downward from its current position. It can be set like this: `transform_position=(x, y)`
+
+    The next one is `transform_scale`, which changes the **scale** of a Node with the default being 1.0. It can be set like this: `transform_scale=2.0` which makes the Node 2x bigger relative to its center.
+
+    The last one is `transform_rotation`, which rotates the Node based counter-clockwise on the passed degree. It can be set like this: `transform_rotation=45.0` which tilts the node 45 degrees counter-clockwise.
+
+    To learn more about styling, check the [Styling](../learn-the-api/styling/index.md){ data-preview } section in the API.  
+
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Reusable Styling Through Classes</summary>
+    <div class="cui-collapse-content" markdown="1">
+    
+    If you've noticed, styling can be somewhat tedious, especially if it's the same styles applied to multiple Nodes. To make it easier, CoshUI has a *class* system that you can utilize to apply the same styles to many Nodes without re-declaring the same `CoshStyling` object. To use it you have to declare the class and the `CoshStyling` object **before** the main while loop like this:
+
+    ```python
+    # This is called BEFORE the while loop.
+    cui.add_class(
+        "example_class", 
+        cui.CoshStyling(background_color=(255, 100, 100), border_radius=10, border=((255, 255, 255), 5))
+    )
+    ```
+
+    with that, you can now pass in that style to a Node by passing it through the `classes` field with the string itself (`classes="example_class"`) or a list (`classes=["example_class"]`). Here's an example:
+
+    ```python
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        cui.Container(
+            id="root_container", 
+            width=100, height=100, 
+            classes="example_class"
+        )
+    ```
+
+    The cool thing about classes is that you can pass in ***multiple*** classes at the same time, so if you declare multiple classes with different styling for each, the Node will take in all of it like this: 
+
+    ```python
+    # Outside the while loop
+    cui.add_class(
+        "example_class", 
+        cui.CoshStyling(background_color=(255, 100, 100), border_radius=10, border=((255, 255, 255), 5))
+    )
+    cui.add_class(
+        "example_class2", 
+        cui.CoshStyling(alpha=150)
+    )
+
+    # in CoshUIRenderer
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        cui.Container(
+            id="root_container", 
+            width=100, height=100, 
+            classes="example_class example_class2"
+        )
+    ```
+
+    You can pass multiple classes like this where you just add in a space to the string, but if your class name itself has a space (for some reason), it's better to pass it through a list like this:
+
+    ```python
+    classes=["example_class", "example_class2"]
+    ```
+
+    !!! question "Class Ordering"
+        A question appears with multiple classes, what styles get added if there are conflicting styles? In CoshUI, the classes that are added ***later*** in the `classes` field will override the ones added before. In the example above, if the two classes had conflicting properties, the one added latest will override the ones before. And of course, explicit styling (styles directly added  through the `style` field) takes highest priority.
+
+        **Example:**
+        ```python
+        cui.add_class(
+            "red",
+            cui.CoshStyling(background_color=(255, 0, 0))
+        )
+
+        cui.add_class(
+            "blue",
+            cui.CoshStyling(background_color=(0, 0, 255))
+        )
+
+        cui.Container(
+            classes="red blue"
+        )
+        ```
+        In this example, the color of the Container will be blue.
+
+    If you want to learn more about reusable styling, check out the [Classes](../learn-the-api/styling/classes.md) section in the API.
+
+    </div>
+    </details>
 
     ---
     
@@ -140,18 +264,80 @@ Choose the Backend you want to follow.
     Before moving on, let's learn a little bit about the layout properties you can set which gives you maximum control over your UI.
     
     #### Width and Height
-    As shown in earlier sections, you can set width and height. These two properties are [Universal Properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }, meaning they exist and can be set in every Node within CoshUI. They determine the size of your Node based on pixels.
+    As shown in earlier sections, you can set width and height. These two properties are [Universal Properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }, meaning they exist and can be set in every Node within CoshUI. They determine the size of your Node based on pixels. Here are the 4 ways to set width and height:
 
+    ```python title="pygame_test.py"
+    # Fixed
+    cui.Container(
+        width=100
+    )
+    # Fill
+    cui.Container(
+        width=cui.FILL
+    )
+    # AUTO
+    cui.Container(
+        width=cui.AUTO
+    )
+    # Percentage
+    cui.Container(
+        width=cui.PERCENTAGE(75)
+    )
+    ```
     To learn more, check out the [Width and Height](../learn-the-api/layout/width-and-height.md#introduction){ data-preview } section in the API.
 
     #### Padding and Margin
-    Margin is a [Universal Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } whilst padding is a [Local Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } and can only be set within `ParentNodes` (Nodes that can take in children). An example of a `ParentNode` would be `Container`. Margin is the property that dictates the space other nodes need to give around that specific Node, while padding dictates the distance the children should be from the edges of that `ParentNode`.
+    Margin is a [Universal Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } whilst padding is a [Local Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } and can only be set within `ParentNodes` (Nodes that can take in children). An example of a `ParentNode` would be `Container`. Margin is the property that dictates the space other nodes need to give around that specific Node, while padding dictates the distance the children should be from the edges of that `ParentNode`. You can set padding and margin like this:
+
+    ```python title="pygame_test.py"
+    cui.Container(padding=10,  margin=10)
+    ```
 
     To learn more, check out the [Padding and Margin](../learn-the-api/layout/padding-and-margin.md#introduction){ data-preview } section in the API.
 
+    #### Positioning
+    Positioning is a simple toggle in CoshUI. It determines whether a Node will be added to the layout calculations or not. The default is `RELATIVE`, meaning it will take up space and other Nodes will respect that space, setting it to `ABSOLUTE` makes it so Nodes no longer get added to layout calculations. Other Nodes will take that Node's space, kind of like it doesn't exist anymore to them. This also opens up the `x` and `y` parameters discussed next. Setting `positioning` is like this:
+
+    ```python title="pygame_test.py"
+    cui.Container(positioning=cui.ABSOLUTE)
+    ```
+    To learn more, check out the [Positioning](../learn-the-api/layout/absolute-vs-relative.md#introduction){ data-preview } section in the API.
+
     #### Position
+    Position in CoshUI refers to the `x` and `y` properties, and these are a bit *special*. It can only be mutated when the `positioning` parameter is set to `ABSOLUTE`, if not then adding values to `x` and `y` does nothing. What `x` and `y` do is directly offsets the position (relative to the parent) of the node *layout-wise*. To set `x` and `y`, you need to first set `positioning` to `ABSOLUTE` first, like this:
+
+    ```python title="pygame_test.py"
+    cui.Container(positioning=cui.ABSOLUTE, x=50, y=100)
+    ```
+    To learn more, check out the [Position](../learn-the-api/layout/position.md#introduction){ data-preview } section in the API.
+
+    #### Align and Justify
 
     ---
+
+    ## Introducing Signals
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Different Interactions</summary>
+    <div class="cui-collapse-content" markdown="1">
+
+    </div>
+    </details>
+
+    ---
+
+    ## Introducing Animations
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Properties and Easing Curves</summary>
+    <div class="cui-collapse-content" markdown="1">
+
+    </div>
+    </details>
+
+    ---
+
+    ## Creating A Menu Screen
 
 === "Raylib"
 
