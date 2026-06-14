@@ -185,7 +185,7 @@ Choose the Backend you want to follow.
     
     If you've noticed, styling can be somewhat tedious, especially if it's the same styles applied to multiple Nodes. To make it easier, CoshUI has a *class* system that you can utilize to apply the same styles to many Nodes without re-declaring the same `CoshStyling` object. To use it you have to declare the class and the `CoshStyling` object **before** the main while loop like this:
 
-    ```python
+    ```python title="pygame_test.py"
     # This is called BEFORE the while loop.
     cui.add_class(
         "example_class", 
@@ -195,7 +195,7 @@ Choose the Backend you want to follow.
 
     with that, you can now pass in that style to a Node by passing it through the `classes` field with the string itself (`classes="example_class"`) or a list (`classes=["example_class"]`). Here's an example:
 
-    ```python
+    ```python title="pygame_test.py"
     with cui.CoshUIRenderer(cui.PygameBackend(screen)):
         cui.Container(
             id="root_container", 
@@ -206,7 +206,7 @@ Choose the Backend you want to follow.
 
     The cool thing about classes is that you can pass in ***multiple*** classes at the same time, so if you declare multiple classes with different styling for each, the Node will take in all of it like this: 
 
-    ```python
+    ```python title="pygame_test.py"
     # Outside the while loop
     cui.add_class(
         "example_class", 
@@ -228,7 +228,7 @@ Choose the Backend you want to follow.
 
     You can pass multiple classes like this where you just add in a space to the string, but if your class name itself has a space (for some reason), it's better to pass it through a list like this:
 
-    ```python
+    ```python title="pygame_test.py"
     classes=["example_class", "example_class2"]
     ```
 
@@ -236,15 +236,15 @@ Choose the Backend you want to follow.
         A question appears with multiple classes, what styles get added if there are conflicting styles? In CoshUI, the classes that are added ***later*** in the `classes` field will override the ones added before. In the example above, if the two classes had conflicting properties, the one added latest will override the ones before. And of course, explicit styling (styles directly added  through the `style` field) takes highest priority.
 
         **Example:**
-        ```python
-        cui.add_class(
-            "red",
-            cui.CoshStyling(background_color=(255, 0, 0))
-        )
-
+        ```python title="pygame_test.py"
         cui.add_class(
             "blue",
             cui.CoshStyling(background_color=(0, 0, 255))
+        )
+
+        cui.add_class(
+            "red",
+            cui.CoshStyling(background_color=(255, 0, 0))
         )
 
         cui.Container(
@@ -253,7 +253,7 @@ Choose the Backend you want to follow.
         ```
         In this example, the color of the Container will be blue.
 
-    If you want to learn more about reusable styling, check out the [Classes](../learn-the-api/styling/classes.md) section in the API.
+    If you want to learn more about reusable styling, check out the [Classes](../learn-the-api/styling/classes.md){ data-preview } section in the API.
 
     </div>
     </details>
@@ -296,10 +296,13 @@ Choose the Backend you want to follow.
     To learn more, check out the [Padding and Margin](../learn-the-api/layout/padding-and-margin.md#introduction){ data-preview } section in the API.
 
     #### Positioning
-    Positioning is a simple toggle in CoshUI. It determines whether a Node will be added to the layout calculations or not. The default is `RELATIVE`, meaning it will take up space and other Nodes will respect that space, setting it to `ABSOLUTE` makes it so Nodes no longer get added to layout calculations. Other Nodes will take that Node's space, kind of like it doesn't exist anymore to them. This also opens up the `x` and `y` parameters discussed next. Setting `positioning` is like this:
+    Positioning is a simple toggle in CoshUI. It determines whether a Node will be added to the layout calculations or not. The default is `RELATIVE`, meaning it will take up space and other Nodes will respect that space, setting it to `ABSOLUTE` makes it so that Node no longer gets added to layout calculations. Other Nodes will take that Node's space, kind of like it doesn't exist anymore to them. This also opens up the `x` and `y` parameters discussed next. Setting `positioning` is like this:
 
     ```python title="pygame_test.py"
+    # ABSOLUTE
     cui.Container(positioning=cui.ABSOLUTE)
+    # RELATIVE (This is default so there's no point in setting this)
+    cui.Container(positioning=cui.RELATIVE)
     ```
     To learn more, check out the [Positioning](../learn-the-api/layout/absolute-vs-relative.md#introduction){ data-preview } section in the API.
 
@@ -312,14 +315,129 @@ Choose the Backend you want to follow.
     To learn more, check out the [Position](../learn-the-api/layout/position.md#introduction){ data-preview } section in the API.
 
     #### Align and Justify
+    The `align` and `justify` properties for CoshUI are [Local Properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }, they are accessible only through `ParentNodes` like `Container` or `Grid`. They determine the position of that Nodes children within itself. They can be set like this:
+
+    ```python title="pygame_test.py"
+    # Note that these are only accessible through ParentNodes.
+    cui.Container(align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER)
+
+    # These are the values you can set align and justify to.
+    align=cui.ALIGN_START
+    align=cui.ALIGN_CENTER
+    align=cui.ALIGN_END
+    justify=cui.JUSTIFY_START
+    justify=cui.JUSTIFY_CENTER
+    justify=cui.JUSTIFY_END
+    justify=cui.JUSTIFY_SPACE_AROUND
+    justify=cui.JUSTIFY_SPACE_BETWEEN
+    justify=cui.JUSTIFY_SPACE_EVENLY
+    ```
+    As this is a complex topic, it is encouraged to check the [Align and Justify](../learn-the-api/layout/align-and-justify.md#introduction){ data-preview } section in the API.
 
     ---
 
     ## Introducing Signals
+    If you've used other UI frameworks, interaction systems usually use callback systems, which can be rather complex and a bit of a mess to set up. In CoshUI however, you can use what's called a "signal". Every Node will emit one, so if a Node is hovered over it will emit a `HOVERED` signal, if it is clicked it will emit a `CLICKED` signal. This comes automatically so users only need to poll those signals to check whether an event has happened to a Node or not, which lets you run your code if it has. 
+    
+    Let's declare a `Button()` — one of CoshUI's many widgets — and see how it works. Let's also make it so the Container's width and height fill the entire screen, here's how that will work:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(
+            id="root_container", 
+            width=cui.FILL, height=cui.FILL, 
+            style=cui.CoshStyling(background_color=(100, 100, 255))
+        ):
+            cui.Button(id="example_button", text="Click to Print")
+    ```
+    If you run it, you might be able to notice the button having its own hover and click animations. That's an example of the signal system in action. Now to make it yourself, you need to make an `if` statement with the `get_signal()` function that CoshUI provides:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(
+            id="root_container", 
+            width=cui.FILL, height=cui.FILL, 
+            style=cui.CoshStyling(background_color=(100, 100, 255))
+        ):
+            cui.Button(id="example_button", text="Click to Print")
+    
+    if cui.get_signal("example_button", cui.CLICKED):
+        print("Hello World!")
+    ```
+    From the example, you can see that `get_signal()` takes in 2 parameters, the id of the Node you want to capture signals from and the event you want to poll. Once you click the button, it will now print `Hello World!` in the terminal.
+
+    A nice thing about the signal system is that it works for every Node, not just buttons. If you want to see if a `Container` was clicked, you can poll it as long as it has an id. It's also additive, meaning if you make a signal on the same Node, it doesn't override others. 
+
+    **Example:**
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        cui.Container(
+            id="root_container", 
+            width=cui.FILL, height=cui.FILL, 
+            style=cui.CoshStyling(background_color=(100, 100, 255))
+        )
+    
+    if cui.get_signal("root_container", cui.CLICKED):
+        print("Hello World!")
+    ```
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Mouse Filters</summary>
+    <div class="cui-collapse-content" markdown="1">
+    
+    In CoshUI, there are ways to customize *how* a Node receives and consumes interaction events. We can achieve that with the `mouse_filter` field which is a [Universal Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }. 
+
+    The first value you can set `mouse_filter` to is `IGNORE`:
+
+    ```python title="pygame_test.py"
+    cui.Container(mouse_filter=cui.IGNORE)
+    ```
+    This makes it so the Node doesn't emit any signals while also letting Nodes below it receive the event.
+
+    Next value is `PASS`:
+
+    ```python title="pygame_test.py"
+    cui.Container(mouse_filter=cui.PASS)
+    ```
+    This lets the interaction event *pass through* the Node whilst also emitting the signal.
+
+    Last value is `STOP`:
+
+    ```python title="pygame_test.py"
+    cui.Container(mouse_filter=cui.STOP)
+    ```
+    This is the default value and makes it so it receives the event and consumes it, stopping the event from propagating to Nodes below.
+
+    </div>
+    </details>
 
     <details class="cui-collapse">
     <summary><span class="cui-collapse-chevron">▸</span>Different Interactions</summary>
     <div class="cui-collapse-content" markdown="1">
+
+    As you may have already guessed, but there are quite a few interactions that can be passed in to the signal system. Here's what they are:
+
+    ```python title="pygame_test.py"
+    # Checks if the node was just clicked.
+    cui.CLICKED
+    
+    # Checks if the node was just released from a click event.
+    cui.RELEASED
+
+    # Checks if the node is being clicked that frame.
+    cui.PRESSED
+
+    # Checks if the cursor entered the Node's boundaries.
+    cui.HOVER_ENTER 
+
+    # Checks if the cursor exited the Node's boundaries.
+    cui.HOVER_EXIT 
+
+    # Checks if the cursor is within the Node's boundaries. 
+    cui.HOVERED 
+    ```
+
+    These can be passed to the second parameter of the `get_signal()` function. To learn more, check the [Signals](../learn-the-api/interactions/signals.md) section in the API.
 
     </div>
     </details>
