@@ -334,6 +334,15 @@ Choose the Backend you want to follow.
     ```
     As this is a complex topic, it is encouraged to check the [Align and Justify](../learn-the-api/layout/align-and-justify.md#introduction){ data-preview } section in the API.
 
+    #### Gap
+    The `gap` property only exists in `ParentNodes`. It's a simple property, it all it does is determine the gap children will have between each other. Here's how to set it:
+
+    ```python title="pygame_test.py"
+    with cui.Container(gap=10):
+        ...
+    ```
+    The example above makes it so the children of the `Container` will have a gap of 10 pixels between each other.
+
     ---
 
     ## Introducing Signals
@@ -445,10 +454,49 @@ Choose the Backend you want to follow.
     ---
 
     ## Introducing Animations
+    When using other UI libraries, I'm willing to bet most of them have little to no built-in animation systems. Some may have external libraries that help with animations but for the most part, animations are either fully missing or not even considered a first-class citizen. 
+    
+    CoshUI is different, it has its own animation system built upon the reconciliation structure. You've most probably seen it work in the previous section as the `Button()` widget has built-in animations. 
+    
+    So let's address how to animate Nodes. CoshUI has an `animate()` function that takes in 5 parameters, `n_property`, `target_id`, `end_value`, `duration`, and finally `easing`. Here's an example of how it works:
+
+    ```python title="pygame_test.py"
+    if cui.get_signal("example_button", cui.CLICKED):
+        cui.animate("transform_position", "example_button", (0, 50), 1.5, "ease_out_bounce")
+    ```
+    The example above shows a use case for animation, it makes it so if the button is clicked, it will animate its rendered position downwards 50 pixels in 1.5 seconds with an easing curve of "ease_out_bounce".
+
+    <figure markdown>
+        ![gif of button being clicked and dropping](../assets/introduction/button-animation-pygame.gif)
+        <figcaption>Gif of button being clicked then falling.</figcaption>
+    </figure>
+
+    To learn more about animations, check out the [Animation](../learn-the-api/animations/index.md) section in the API.
 
     <details class="cui-collapse">
     <summary><span class="cui-collapse-chevron">▸</span>Properties and Easing Curves</summary>
     <div class="cui-collapse-content" markdown="1">
+
+    As explained, CoshUI's animation system has many parameters, and some of them aren't very straightforward, especially the Node properties you can animate and the easing curves. Here's a comprehensive list of properties and easing curves you can pass to CoshUI's `animate()` function.
+
+    | Properties | Description |
+    | :--- | :--- |
+    | `background_color` | Smoothly shifts the Node's background to a new RGB color. |
+    | `alpha` | Fades the Node in or out by easing its transparency toward the target value. |
+    | `transform_position` | Glides the Node to a new offset position, without affecting layout. |
+    | `transform_scale` | Grows or shrinks the Node toward the target scale, relative to its center. |
+    | `transform_rotation` | Spins the Node counter-clockwise toward the target rotation, in degrees. |
+
+    | Easing Curves | Description |
+    | :--- | :--- |
+    | `linear` | Moves at a constant speed from start to finish — no acceleration or deceleration. |
+    | `ease_in` | Starts slow and speeds up toward the end. |
+    | `ease_out` | Starts fast and slows down toward the end. |
+    | `ease_in_out` | Starts slow, speeds up in the middle, then slows down again at the end. |
+    | `ease_in_bounce` | Bounces a few times right at the start before settling into motion. |
+    | `ease_out_bounce` | Settles in with a few bounces at the end, like a ball coming to rest. |
+    | `ease_in_elastic` | Winds up with a springy overshoot before snapping into motion. |
+    | `ease_out_elastic` | Overshoots the target and wobbles back like a spring before settling. |
 
     </div>
     </details>
