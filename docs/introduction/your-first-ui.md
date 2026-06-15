@@ -261,9 +261,14 @@ Choose the Backend you want to follow.
     ---
     
     ## Layout Fundamentals
-    Before moving on, let's learn a little bit about the layout properties you can set which gives you maximum control over your UI.
+    Before moving on, let's learn a little bit about the layout properties you can set which gives you maximum control over your UI. 
     
-    #### Width and Height
+    As this is a little much to take on all at once, I've made every part collapsible so it's easier to digest one at a time.
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Width and Height</summary>
+    <div class="cui-collapse-content" markdown="1">
+
     As shown in earlier sections, you can set width and height. These two properties are [Universal Properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }, meaning they exist and can be set in every Node within CoshUI. They determine the size of your Node based on pixels. Here are the 4 ways to set width and height:
 
     ```python title="pygame_test.py"
@@ -284,9 +289,16 @@ Choose the Backend you want to follow.
         width=cui.PERCENTAGE(75)
     )
     ```
+
     To learn more, check out the [Width and Height](../learn-the-api/layout/width-and-height.md#introduction){ data-preview } section in the API.
 
-    #### Padding and Margin
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Padding and Margin</summary>
+    <div class="cui-collapse-content" markdown="1">
+
     Margin is a [Universal Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } whilst padding is a [Local Property](../learn-the-api/getting-started.md#definition-of-terms){ data-preview } and can only be set within `ParentNodes` (Nodes that can take in children). An example of a `ParentNode` would be `Container`. Margin is the property that dictates the space other nodes need to give around that specific Node, while padding dictates the distance the children should be from the edges of that `ParentNode`. You can set padding and margin like this:
 
     ```python title="pygame_test.py"
@@ -295,7 +307,13 @@ Choose the Backend you want to follow.
 
     To learn more, check out the [Padding and Margin](../learn-the-api/layout/padding-and-margin.md#introduction){ data-preview } section in the API.
 
-    #### Positioning
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Positioning</summary>
+    <div class="cui-collapse-content" markdown="1">
+
     Positioning is a simple toggle in CoshUI. It determines whether a Node will be added to the layout calculations or not. The default is `RELATIVE`, meaning it will take up space and other Nodes will respect that space, setting it to `ABSOLUTE` makes it so that Node no longer gets added to layout calculations. Other Nodes will take that Node's space, kind of like it doesn't exist anymore to them. This also opens up the `x` and `y` parameters discussed next. Setting `positioning` is like this:
 
     ```python title="pygame_test.py"
@@ -304,17 +322,31 @@ Choose the Backend you want to follow.
     # RELATIVE (This is default so there's no point in setting this)
     cui.Container(positioning=cui.RELATIVE)
     ```
+
     To learn more, check out the [Positioning](../learn-the-api/layout/absolute-vs-relative.md#introduction){ data-preview } section in the API.
 
-    #### Position
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Position</summary>
+    <div class="cui-collapse-content" markdown="1">
+
     Position in CoshUI refers to the `x` and `y` properties, and these are a bit *special*. It can only be mutated when the `positioning` parameter is set to `ABSOLUTE`, if not then adding values to `x` and `y` does nothing. What `x` and `y` do is directly offsets the position (relative to the parent) of the node *layout-wise*. To set `x` and `y`, you need to first set `positioning` to `ABSOLUTE` first, like this:
 
     ```python title="pygame_test.py"
     cui.Container(positioning=cui.ABSOLUTE, x=50, y=100)
     ```
+
     To learn more, check out the [Position](../learn-the-api/layout/position.md#introduction){ data-preview } section in the API.
 
-    #### Align and Justify
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Align and Justify</summary>
+    <div class="cui-collapse-content" markdown="1">
+
     The `align` and `justify` properties for CoshUI are [Local Properties](../learn-the-api/getting-started.md#definition-of-terms){ data-preview }, they are accessible only through `ParentNodes` like `Container` or `Grid`. They determine the position of that Nodes children within itself. They can be set like this:
 
     ```python title="pygame_test.py"
@@ -332,16 +364,43 @@ Choose the Backend you want to follow.
     justify=cui.JUSTIFY_SPACE_BETWEEN
     justify=cui.JUSTIFY_SPACE_EVENLY
     ```
+
     As this is a complex topic, it is encouraged to check the [Align and Justify](../learn-the-api/layout/align-and-justify.md#introduction){ data-preview } section in the API.
 
-    #### Gap
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Gap</summary>
+    <div class="cui-collapse-content" markdown="1">
+
     The `gap` property only exists in `ParentNodes`. It's a simple property, it all it does is determine the gap children will have between each other. Here's how to set it:
 
     ```python title="pygame_test.py"
     with cui.Container(gap=10):
         ...
     ```
+
     The example above makes it so the children of the `Container` will have a gap of 10 pixels between each other.
+
+    </div>
+    </details>
+
+    <details class="cui-collapse">
+    <summary><span class="cui-collapse-chevron">▸</span>Direction</summary>
+    <div class="cui-collapse-content" markdown="1">
+
+    The `direction` property is a property that only the `Container` widget possesses, it determines whether children will be placed horizontally or vertically. It's default value is `ROW` and setting it is simple:
+
+    ```python title="pygame_test.py"
+    with cui.Container(direction=cui.COLUMN):
+        ...
+    ```
+
+    You can set it to both `ROW` and `COLUMN`, but `ROW` is default so there's no point in setting it unless you want to be explicit.
+
+    </div>
+    </details>
 
     ---
 
@@ -471,13 +530,11 @@ Choose the Backend you want to follow.
         <figcaption>Gif of button being clicked then falling.</figcaption>
     </figure>
 
-    To learn more about animations, check out the [Animation](../learn-the-api/animations/index.md) section in the API.
-
     <details class="cui-collapse">
     <summary><span class="cui-collapse-chevron">▸</span>Properties and Easing Curves</summary>
     <div class="cui-collapse-content" markdown="1">
 
-    As explained, CoshUI's animation system has many parameters, and some of them aren't very straightforward, especially the Node properties you can animate and the easing curves. Here's a comprehensive list of properties and easing curves you can pass to CoshUI's `animate()` function.
+    As explained, CoshUI's animation system has many parameters, and some of them aren't very straightforward, especially the Node properties you can animate and the easing curves. Here's a comprehensive list of properties you can pass to CoshUI's `animate()` function.
 
     | Properties | Description |
     | :--- | :--- |
@@ -486,6 +543,8 @@ Choose the Backend you want to follow.
     | `transform_position` | Glides the Node to a new offset position, without affecting layout. |
     | `transform_scale` | Grows or shrinks the Node toward the target scale, relative to its center. |
     | `transform_rotation` | Spins the Node counter-clockwise toward the target rotation, in degrees. |
+
+    When it comes to easing curves, CoshUI's list is quite small currently but should be enough for most use cases. A quick note would be the `_in` suffix on the easing means the movement is applied at the beginning and the `_out` suffix means the movement is applied at the end. Here is CoshUI's list:
 
     | Easing Curves | Description |
     | :--- | :--- |
@@ -498,12 +557,175 @@ Choose the Backend you want to follow.
     | `ease_in_elastic` | Winds up with a springy overshoot before snapping into motion. |
     | `ease_out_elastic` | Overshoots the target and wobbles back like a spring before settling. |
 
+    To learn more about animations, check out the [Animation](../learn-the-api/animations/index.md) section in the API.
+
     </div>
     </details>
 
     ---
 
     ## Creating A Menu Screen
+    Now that we've decently discussed CoshUI's capabilities, let's get on to actually creating something. We'll use the same boilerplate with the same `root_container` Container as declared but lets get back on track to actually making a basic version of something that you or someone might try making for a game. 
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL):
+            pass
+    ```
+    With this container that fills the entire screen, we can then add a `Label()` widget acting as our game's title.
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL):
+            cui.Label(id="title", text="CoshUI Test")
+    ```
+    If you run the file, you'll see our "CoshUI Test" label at the top-left. What we want is to put this at the very center, so let's use the `align` and `justify` parameters to put it to the center like this: 
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+            cui.Label(id="title", text="CoshUI Test")
+    ```
+    If you followed everything correctly (or copy pasted the code), it should show "CoshUI Test" being at the middle of the screen. Let's add a couple of buttons to make it *look* like a menu screen shall we? Let's also wrap the `Label()` in a container so we can set the direction to `COLUMN` instead of `ROW`:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+            with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+                cui.Label(id="title", text="CoshUI Test")
+                cui.Button(id="start_btn", text="Start")
+                cui.Button(id="quit_btn", text="Quit")
+    ```
+
+    <figure>
+        ![Image of the menu screen](../assets/introduction/menu-1-pygame.png)
+        <figcaption>Early Menu Screen</figcaption>
+    </figure>
+
+    If the image loaded properly, that's how you menu screen should look like. You might think: "This doesn't really look that good...", but that's okay, these are the default values. CoshUI supports styling overrides for the default styling. So lets start that:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+            with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
+                cui.Label(id="title", text="CoshUI Test", font_size=56)
+                cui.Button(id="start_btn", text="Start")
+                cui.Button(id="quit_btn", text="Quit")
+    ```
+    We've added a small gap between all the children and also made the title bigger which mirrors most basic menu screens. Now let's style our buttons, if you've read the "Reusable Styling Through Classes" in this page's [Styling Your First Element](#styling-your-first-element), you'd know we can create classes to reuse. Let's do just that for buttons:
+
+    ```python title="pygame_test.py"
+    cui.add_class(
+        "menu_buttons", 
+        cui.CoshStyling(background_color=(220, 165, 255), border=None, border_radius=(10, 0, 10, 0))
+    )
+    ```
+    Reminder to place this code ***before*** the while loop. If you've set up the class, then you can do this to add the custom styling to your buttons:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+            with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
+                cui.Label(id="title", text="CoshUI Test", font_size=56)
+                cui.Button(id="start_btn", text="Start", classes="menu_buttons")
+                cui.Button(id="quit_btn", text="Quit", classes="menu_buttons")
+    ```
+
+    <figure>
+        ![Image of the menu screen with custom buttons](../assets/introduction/menu-2-pygame.png)
+        <figcaption>Menu Screen with Custom Buttons</figcaption>
+    </figure>
+
+    Now lets add some interaction such as making it so when you click the "Quit" button it closes the window:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+            with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
+                cui.Label(id="title", text="CoshUI Test", font_size=56)
+                cui.Button(id="start_btn", text="Start", classes="menu_buttons")
+                cui.Button(id="quit_btn", text="Quit", classes="menu_buttons")
+
+    if cui.get_signal("quit_btn", cui.CLICKED):
+        running = False
+    ```
+
+    With that, the quit button should be fully functional. Before this tutorial ends though, let's add some functionality to our "Start" button, something simple like a fade out effect with CoshUI's animation system:
+
+    ```python title="pygame_test.py"
+    with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+        with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+            with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
+                cui.Label(id="title", text="CoshUI Test", font_size=56)
+                cui.Button(id="start_btn", text="Start", classes="menu_buttons")
+                cui.Button(id="quit_btn", text="Quit", classes="menu_buttons")
+
+    if cui.get_signal("start_btn", cui.CLICKED):
+        cui.animate("alpha", "menu_container", 0, 1.5, "linear")
+    if cui.get_signal("quit_btn", cui.CLICKED):
+        running = False
+    ```
+
+    <figure>
+        ![Image of menu screen fading](../assets/introduction/menu-3-pygame.gif)
+        <figcaption>Menu Screen fading when clicking Start</figcaption>
+    </figure>
+
+    Now you might worry about the the UI still being rendered when at 0 alpha but you don't need to as Elements don't render when `alpha` is set to 0 or if `background_color` has no value, so your frame budget is safe for the most part.
+
+    ---
+
+    ## Final Remarks 
+    And with that, that should give you the basic understanding of how to use CoshUI. This tutorial can't cover everything like image rendering or other widgets such as `Grid`, `Modal`, `Slider`, and more. So if you want to dive even deeper and create cooler things with CoshUI, you can head on over to the [Learn The API](../learn-the-api/getting-started.md){ data-preview } section for more.
+
+    As promised, here is the entire code file:
+
+    ```python title="pygame_test.py"
+    import pygame as py
+    import coshui as cui
+
+    WIDTH, HEIGHT = 800, 800
+    FPS = 60
+
+    def main():
+        py.init()
+        screen = py.display.set_mode((WIDTH, HEIGHT))
+        py.display.set_caption("Pygame CoshUI Test")
+        clock = py.time.Clock()
+
+        cui.add_class(
+            "menu_buttons", 
+            cui.CoshStyling(background_color=(220, 165, 255), border=None, border_radius=(10, 0, 10, 0))
+        )
+        
+        running = True
+        while running:
+            for event in py.event.get():
+                if event.type == py.QUIT:
+                    running = False
+
+            screen.fill((0, 0, 0))
+
+            with cui.CoshUIRenderer(cui.PygameBackend(screen)):
+                with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
+                    with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
+                        cui.Label(id="title", text="CoshUI Test", font_size=56)
+                        cui.Button(id="start_btn", text="Start", classes="menu_buttons")
+                        cui.Button(id="quit_btn", text="Quit", classes="menu_buttons")
+
+            if cui.get_signal("start_btn", cui.CLICKED):
+                cui.animate("alpha", "menu_container", 0, 1.5, "linear")
+            if cui.get_signal("quit_btn", cui.CLICKED):
+                running = False
+
+            py.display.flip()
+            clock.tick(FPS)
+
+        py.quit()
+
+    if __name__ == "__main__":
+        main()
+    ```
 
 === "Raylib"
 

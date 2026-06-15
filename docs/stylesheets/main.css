@@ -91,14 +91,11 @@
 }
 
 .grid img {
-  width: 100%;       /* Let the image scale down nicely on small screens */
-  height: auto;      /* Maintain aspect ratio naturally on mobile */
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-
-/* --- Desktop Styles (Only applies when side-by-side) --- */
-/* Adjust the min-width (e.g., 60em / 960px) to match your theme's breakpoint */
 @media screen and (min-width: 60em) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(calc(50% - 0.5rem), 1fr)) !important;
@@ -106,12 +103,10 @@
     align-items: stretch;
   }
 
-  /* Clear the mobile margin when they are side-by-side */
   .grid > * {
     margin-bottom: 0;
   }
 
-  /* Enforce equal matching heights only on desktop */
   .grid .highlight, 
   .grid img {
     height: 27rem;
@@ -128,4 +123,101 @@
     width: auto;
     object-fit: contain;
   }
+}
+
+/* extra */
+
+.md-sidebar--secondary {
+  display: none;
+}
+
+.md-header {
+  height: 60px;
+}
+
+.md-content {
+  margin-right: 0;
+}
+
+.md-header__button.md-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.md-typeset img {
+  border-radius: 15px;
+}
+
+.md-typeset .cui-collapse {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-typeset .cui-collapse > summary {
+  background: transparent !important;
+  border: none !important;
+  margin: 0.6em 0 0.6em !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 700;
+  font-size: 1.75em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .cui-collapse > summary::before,
+.md-typeset .cui-collapse > summary::after {
+  display: none !important;
+}
+.md-typeset .cui-collapse > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cui-collapse-chevron {
+  display: inline-flex;
+  font-size: 1em;
+  color: var(--md-default-fg-color--light);
+  transition: transform 0.2s ease;
+}
+.cui-collapse[open] .cui-collapse-chevron {
+  transform: rotate(90deg);
+}
+
+.md-typeset .cui-collapse-content {
+  margin: 0;
+  padding: 0;
+  font-size: medium;
+}
+
+.sticky-banner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: #ff5252;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+}
+
+.banner-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.md-header {
+  top: 36px !important;
+}
+
+.md-main__inner {
+  margin-top: 36px !important; 
 }
