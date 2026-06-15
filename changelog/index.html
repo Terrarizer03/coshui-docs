@@ -53,6 +53,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../stylesheets/main.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,6 +94,15 @@
       </div>
     
     
+    <div class="sticky-banner">
+        <span class="banner-text">
+            <strong>CoshUI's website is still under construction, meaning some pages may have no content. If you're having trouble and the pages you need are empty, ask in the</strong>
+            <a href="https://discord.com/invite/wZUqKv9ux" target="_blank" style="color: white; text-decoration: underline;">Discord</a>.
+            <strong> Thank you.</strong>
+        </span>
+    </div>
+
+  
       
 
 <header class="md-header" data-md-component="header">
@@ -217,6 +228,7 @@
   
 </header>
     
+
     <div class="md-container" data-md-component="container">
       
       
@@ -412,8 +424,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -531,8 +541,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -610,8 +618,6 @@
     
     
       
-      
-        
       
     
     
@@ -839,8 +845,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1067,8 +1071,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1239,8 +1241,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1318,8 +1318,6 @@
     
     
       
-      
-        
       
     
     
@@ -1490,8 +1488,6 @@
     
     
       
-      
-        
       
     
     
@@ -1783,8 +1779,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1954,8 +1948,6 @@
     
     
       
-      
-        
       
     
     
@@ -2127,8 +2119,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2270,8 +2260,6 @@
     
     
       
-      
-        
       
     
     
@@ -2443,8 +2431,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2574,6 +2560,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../learn-the-api/backends/moderngl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ModernGL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../learn-the-api/backends/pyopengl/" class="md-nav__link">
         
   
@@ -2614,8 +2628,6 @@
     
     
       
-      
-        
       
     
     
@@ -3683,8 +3695,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -3955,6 +3965,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn-the-api/debugger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3973,8 +4011,6 @@
     
     
       
-      
-        
       
     
     
@@ -4116,6 +4152,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v030-graphics-pipeline-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.0] Graphics Pipeline Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v024-initial-release" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4163,6 +4210,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v030-graphics-pipeline-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.0] Graphics Pipeline Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v024-initial-release" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4186,6 +4244,8 @@
               
               <article class="md-content__inner md-typeset">
                 
+    
+    
                   
   
 
@@ -4197,6 +4257,107 @@
 
 <h1 id="changelog">Changelog</h1>
 <p>This section outlines all versions and changes for CoshUI's releases and updates.</p>
+<hr />
+<h2 id="v030-graphics-pipeline-support">[v0.3.0] Graphics Pipeline Support</h2>
+<p><code>June 7, 2026</code></p>
+<h3 id="new-features">New Features:</h3>
+<ul>
+<li><strong>CoshPercentage</strong>: New sizing type that lets users set width/height as a percentage of the parent’s dimensions.</li>
+<li><strong>CoshDebug</strong>: New debugger that opens its own tkinter window and shows a live node inspector showing the full UI tree, computed layout values, style properties, and signals fired each frame.</li>
+<li><strong>More Easing Curves</strong>: Added new easing curves to <code>animate()</code>.  </li>
+</ul>
+<figure align="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">New Curves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>"ease_in_bounce"</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>"ease_out_bounce"</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>"ease_in_elastic"</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>"ease_out_elastic"</code></td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="behavior-changes">Behavior Changes:</h3>
+<ul>
+<li><strong>ABSOLUTE FILL</strong>: Gave the ability for <code>ABSOLUTE</code> positioning Nodes to use cui.FILL for its <code>width</code> and <code>height</code> values.</li>
+</ul>
+<h3 id="breaking-changes">Breaking Changes:</h3>
+<ul>
+<li><strong>On Complete</strong>: <code>animate()</code> function no longer takes in on_complete callback, but returns a Tween that lets you call a <code>.finished()</code> method that accepts the callback. This is partly to make it more pythonic but also to clean up the API and to add new methods in the future like <code>.loop()</code>.<ul>
+<li><strong>Example</strong>: <code>animate(...).finished(callback)</code></li>
+</ul>
+</li>
+<li><strong>Property Name Changes</strong>: <code>animate()</code> function's property names changed. By doing this, it becomes easier to use the animation system by mapping the new names to the actual properties being animated.  </li>
+</ul>
+<figure align="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Old</th>
+<th style="text-align: left;">New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>animate("scale", …)</code></td>
+<td style="text-align: left;"><code>animate("transform_scale", …)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>animate("position", …)</code></td>
+<td style="text-align: left;"><code>animate("transform_position", …)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>animate("rotation", …)</code></td>
+<td style="text-align: left;"><code>animate("transform_rotation", …)</code></td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="bug-fixes">Bug Fixes:</h3>
+<ul>
+<li><strong>Pygame’s Missing Alpha</strong>: Alpha value not being set when rotation was 0.0 for rectangles, this is due to being accidentally forgotten when implementing rotation.</li>
+<li><strong>Raylib Border-radius Rotation</strong>: Raylib losing border radius when rotated is now fixed.</li>
+</ul>
+<h3 id="backends">Backends:</h3>
+<ul>
+<li><strong>PyOpenGLBackend</strong>: New backend for PyOpenGL with GLFW support.</li>
+<li><strong>ModernGLBackend</strong>: New backend for ModernGL with GLFW and MGLW support.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ModernGL-Window's support acts fairly weird with the debugger. My main theory is the debugger consumes a bit too much and hangs some parts of it. If this is true, then this may also be a program complexity problem — which if it is, there might become a need to completely rework the debugger.</p>
+</div>
+<h3 id="new-installs">New Installs:</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># For ModernGL + GLFW</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>moderngl<span class="o">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># For ModernGL + MGLW</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>moderngl-mglw<span class="o">]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># For PyOpenGL + GLFW</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pyopengl<span class="o">]</span>
+</span></code></pre></div>
+<h3 id="planned-for-v031-and-above">Planned for v0.3.1 and above:</h3>
+<ul>
+<li><strong>Gradients</strong>: Gradient support for all backends.</li>
+<li><strong>Drop Shadow</strong>: Drop Shadow support for all backends.</li>
+<li><strong>Glow</strong>: Glow support for all backends.</li>
+<li><strong>Profiler</strong>: "Profile" tab in Debugger that gives context in frame by frame execution times of each engine pass.</li>
+<li><strong>More Alignment Options</strong>: Self alignment in <code>Grid</code> cells. </li>
+<li><strong>And Much More...</strong></li>
+</ul>
 <hr />
 <h2 id="v024-initial-release">[v0.2.4] Initial Release</h2>
 <p><code>May 23, 2026</code><br />
@@ -4213,14 +4374,14 @@ The first public release of CoshUI — a Python-first, declarative, backend-agno
 <li>Text wrapping and transform rotation support</li>
 </ul>
 <h3 id="install">Install</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># For core</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># For Pygame</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pygame<span class="o">]</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># For Raylib</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>raylib<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># For core</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># For Pygame</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pygame<span class="o">]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># For Raylib</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>raylib<span class="o">]</span>
 </span></code></pre></div>
 <h3 id="notes">Notes</h3>
 <p>This is an early release. Grid has not been thoroughly tested and may have edge cases. Issues and contributions welcome on <a href="https://gitlab.com/jylefv/CoshUI">GitLab</a>.</p>
@@ -4242,6 +4403,7 @@ The first public release of CoshUI — a Python-first, declarative, backend-agno
 
 
                 
+
               </article>
             </div>
           
@@ -4345,7 +4507,7 @@ The first public release of CoshUI — a Python-first, declarative, backend-agno
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tooltips", "content.code.copy", "search.highlight", "search.suggest", "search.share", "header.autohide", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer", "navigation.sections"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.2.4"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tooltips", "content.code.copy", "search.highlight", "search.suggest", "search.share", "header.autohide", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.3.0"}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

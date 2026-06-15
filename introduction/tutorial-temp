@@ -1,0 +1,16 @@
+Temporary Tutorial Document File
+
+Tutorial Flow:
+1.  Basic Boilerplate for all backends
+2.  Setting up CoshUIRenderer
+    2.5.    Explaining Parameters
+3.  Declaring your first Element
+4.  Styling your first Element
+    4.5.  CoshStyling Properties
+    4.6.  Reusing Styling with Classes
+5.  Layout Fundamentals
+6.  Introducing Signals
+    6.5.    Different Interactions
+7.  Introducing Animations
+    7.5.    Properties and Easing
+8.  Creating a proper Menu Screen

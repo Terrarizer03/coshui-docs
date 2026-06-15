@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <div class="sticky-banner">
+        <span class="banner-text">
+            <strong>CoshUI's website is still under construction, meaning some pages may have no content. If you're having trouble and the pages you need are empty, ask in the</strong>
+            <a href="https://discord.com/invite/wZUqKv9ux" target="_blank" style="color: white; text-decoration: underline;">Discord</a>.
+            <strong> Thank you.</strong>
+        </span>
+    </div>
+
+  {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+    {% if page.is_homepage %}
+        <style>
+            .md-typeset h1,
+            .md-content__button {
+            display: none;
+            }
+        </style>
+        <div class="homepage">
+            <section class="md-hero">
+                <div class="md-hero__inner md-grid">
+                    <h2>CoshUI</h2>
+                    <p>The declarative — backend-agnostic UI engine for Python.</p>
+                    <a href="introduction/installation/" class="md-button md-button--primary">Installation</a>
+                    <a href="learn-the-api/getting-started/" class="md-button md-button--secondary">Learn The API</a>
+                </div>
+            </section>
+        </div>
+    {% endif %}
+    {{ super() }}
+{% endblock %}

@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/main.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -94,6 +96,15 @@
       </div>
     
     
+    <div class="sticky-banner">
+        <span class="banner-text">
+            <strong>CoshUI's website is still under construction, meaning some pages may have no content. If you're having trouble and the pages you need are empty, ask in the</strong>
+            <a href="https://discord.com/invite/wZUqKv9ux" target="_blank" style="color: white; text-decoration: underline;">Discord</a>.
+            <strong> Thank you.</strong>
+        </span>
+    </div>
+
+  
       
 
 <header class="md-header" data-md-component="header">
@@ -219,6 +230,7 @@
   
 </header>
     
+
     <div class="md-container" data-md-component="container">
       
       
@@ -417,8 +429,6 @@
         
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
@@ -546,8 +556,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -625,8 +633,6 @@
     
     
       
-      
-        
       
     
     
@@ -854,8 +860,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1082,8 +1086,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1254,8 +1256,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1333,8 +1333,6 @@
     
     
       
-      
-        
       
     
     
@@ -1505,8 +1503,6 @@
     
     
       
-      
-        
       
     
     
@@ -1798,8 +1794,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1969,8 +1963,6 @@
     
     
       
-      
-        
       
     
     
@@ -2142,8 +2134,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2285,8 +2275,6 @@
     
     
       
-      
-        
       
     
     
@@ -2458,8 +2446,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2589,6 +2575,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../learn-the-api/backends/moderngl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ModernGL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../learn-the-api/backends/pyopengl/" class="md-nav__link">
         
   
@@ -2629,8 +2643,6 @@
     
     
       
-      
-        
       
     
     
@@ -3698,8 +3710,6 @@
     
       
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -3970,6 +3980,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn-the-api/debugger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3988,8 +4026,6 @@
     
     
       
-      
-        
       
     
     
@@ -4122,6 +4158,8 @@
               
               <article class="md-content__inner md-typeset">
                 
+    
+    
                   
 
 
@@ -4136,7 +4174,7 @@
 </span></code></pre></div></p>
 <h3 id="choose-your-backend">Choose Your Backend</h3>
 <p>CoshUI is <em>backend-agnostic</em>, meaning it uses different frameworks to render its UI structure. To use those backends, you need to download their dependencies, those include:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pygame</label><label for="__tabbed_1_2">Raylib</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pygame</label><label for="__tabbed_1_2">Raylib</label><label for="__tabbed_1_3">PyOpenGL | GLFW</label><label for="__tabbed_1_4">ModernGL | GLFW</label><label for="__tabbed_1_5">ModernGL | MGLW</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>pygame<span class="o">]</span>
@@ -4146,11 +4184,23 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>raylib<span class="o">]</span>
 </span></code></pre></div>
 </div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>pyopengl<span class="o">]</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>moderngl<span class="o">]</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>coshui<span class="o">[</span>moderngl-mglw<span class="o">]</span>
+</span></code></pre></div>
+</div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Upgrade</p>
-<p>It's good practice to add <code>-U</code> when installing just so you update to the absolute latest. Especially in <strong>version 0.2.4</strong> where updates are frequent.</p>
+<p>It's good practice to add <code>-U</code> when installing just so you update to the absolute latest. Especially in <strong>version 0.3.0</strong> where updates are frequent.</p>
 </div>
 <p>For more info about backends, check out the <a href="../../learn-the-api/backends/">backend section.</a></p>
 <hr />
@@ -4172,6 +4222,7 @@
 
 
                 
+
               </article>
             </div>
           
@@ -4289,7 +4340,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.tooltips", "content.code.copy", "search.highlight", "search.suggest", "search.share", "header.autohide", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer", "navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.2.4"}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.tooltips", "content.code.copy", "search.highlight", "search.suggest", "search.share", "header.autohide", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.3.0"}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
