@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 
-{% block header %}
-    <div class="sticky-banner">
-        <span class="banner-text">
-            <strong>CoshUI's website is still under construction, meaning some pages may have no content. If you're having trouble and the pages you need are empty, ask in the</strong>
-            <a href="https://discord.com/invite/wZUqKv9ux" target="_blank" style="color: white; text-decoration: underline;">Discord</a>.
-            <strong> Thank you.</strong>
-        </span>
-    </div>
-
-  {{ super() }}
+{% block announce %}
+    <strong>CoshUI's website is still under construction, meaning some pages may have no content. If you're having trouble and the pages you need are empty, ask in the</strong>
+    <a href="https://discord.com/invite/wZUqKv9ux" target="_blank" class="discord-banner-link">Discord</a>.
+    <strong> Thank you.</strong>
 {% endblock %}
 
 
