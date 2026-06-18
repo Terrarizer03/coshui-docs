@@ -1496,7 +1496,7 @@ Choose the Backend you want to follow.
         Remember to put this code within the highlighted part of the boilerplate.
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         pass
     ```
 
@@ -1533,7 +1533,7 @@ Choose the Backend you want to follow.
     Learning new UI libraries can be scary because of the new API you have to learn, but CoshUI is built to be easy to pick up without much resistance when building or migrating the UI. If you have experience with HTML then this might seem very familiar, if you don't then that's completely okay. Let's create our first `Container` as a Node instead of a Parent. Here's how that works:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(id="root_container", width=100, height=100)
     ```
     
@@ -1542,7 +1542,7 @@ Choose the Backend you want to follow.
     Back to our example above, that `Container` instance creates a box that is 100x100 in size on the top-left of the screen. An interesting part about `Containers` is that they can actually act as context managers that take in children like this:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=100, height=100):
             cui.Container(id="child_container", width=50, height=50)
     ```
@@ -1559,7 +1559,7 @@ Choose the Backend you want to follow.
     So let's first add a color to our `Container`. To set it, you can do this:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=100, height=100, 
@@ -1623,7 +1623,7 @@ Choose the Backend you want to follow.
     with that, you can now pass in that style to a Node by passing it through the `classes` field with the string itself (`classes="example_class"`) or a list (`classes=["example_class"]`). Here's an example:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=100, height=100, 
@@ -1645,7 +1645,7 @@ Choose the Backend you want to follow.
     )
 
     # in CoshUIRenderer
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=100, height=100, 
@@ -1837,7 +1837,7 @@ Choose the Backend you want to follow.
     Let's declare a `Button()` — one of CoshUI's many widgets — and see how it works. Let's also make it so the Container's width and height fill the entire screen, here's how that will work:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(
             id="root_container", 
             width=cui.FILL, height=cui.FILL, 
@@ -1848,7 +1848,7 @@ Choose the Backend you want to follow.
     If you run it, you might be able to notice the button having its own hover and click animations. That's an example of the signal system in action. Now to make it yourself, you need to make an `if` statement with the `get_signal()` function that CoshUI provides:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(
             id="root_container", 
             width=cui.FILL, height=cui.FILL, 
@@ -1865,7 +1865,7 @@ Choose the Backend you want to follow.
 
     **Example:**
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=cui.FILL, height=cui.FILL, 
@@ -1995,28 +1995,28 @@ Choose the Backend you want to follow.
     Now that we've decently discussed CoshUI's capabilities, let's get on to actually creating something. We'll use the same boilerplate with the same `root_container` Container as declared but lets get back on track to actually making a basic version of something that you or someone might try making for a game. 
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL):
             pass
     ```
     With this container that fills the entire screen, we can then add a `Label()` widget acting as our game's title.
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL):
             cui.Label(id="title", text="CoshUI Test")
     ```
     If you run the file, you'll see our "CoshUI Test" label at the top-left. What we want is to put this at the very center, so let's use the `align` and `justify` parameters to put it to the center like this: 
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             cui.Label(id="title", text="CoshUI Test")
     ```
     If you followed everything correctly (or copy pasted the code), it should show "CoshUI Test" being at the middle of the screen. Let's add a couple of buttons to make it *look* like a menu screen shall we? Let's also wrap the `Label()` in a container so we can set the direction to `COLUMN` instead of `ROW`:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                 cui.Label(id="title", text="CoshUI Test")
@@ -2032,7 +2032,7 @@ Choose the Backend you want to follow.
     If the image loaded properly, that's how your menu screen should look like. You might think: "This doesn't really look that good...", but that's okay, these are the default values. CoshUI supports styling overrides for the default styling. So lets start that:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2050,7 +2050,7 @@ Choose the Backend you want to follow.
     Reminder to place this code ***before*** the while loop. If you've set up the class, then you can do this to add the custom styling to your buttons:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2066,7 +2066,7 @@ Choose the Backend you want to follow.
     Now lets add some interaction such as making it so when you click the "Quit" button it closes the window:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2080,7 +2080,7 @@ Choose the Backend you want to follow.
     With that, the quit button should be fully functional. Before this tutorial ends though, let's add some functionality to our "Start" button, something simple like a fade out effect with CoshUI's animation system:
 
     ```python title="pyopengl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2134,7 +2134,7 @@ Choose the Backend you want to follow.
         while not glfw.window_should_close(window):
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-            with cui.CoshUIRenderer(self.coshui_backend):
+            with cui.CoshUIRenderer(backend):
                 with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                     with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                         cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2221,7 +2221,7 @@ Choose the Backend you want to follow.
         Remember to put this code within the highlighted part of the boilerplate.
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         pass
     ```
 
@@ -2258,7 +2258,7 @@ Choose the Backend you want to follow.
     Learning new UI libraries can be scared because of the new API you have to learn, but CoshUI is built to be easy to pick up without much resistance when building or migrating the UI. If you have experience with HTML then this might seem very familiar, if you don't then that's completely okay. Let's create our first `Container` as a Node instead of a Parent. Here's how that works:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(id="root_container", width=100, height=100)
     ```
     
@@ -2267,7 +2267,7 @@ Choose the Backend you want to follow.
     Back to our example above, that `Container` instance creates a box that is 100x100 in size on the top-left of the screen. An interesting part about `Containers` is that they can actually act as context managers that take in children like this:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=100, height=100):
             cui.Container(id="child_container", width=50, height=50)
     ```
@@ -2284,7 +2284,7 @@ Choose the Backend you want to follow.
     So let's first add a color to our `Container`. To set it, you can do this:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=100, height=100, 
@@ -2348,7 +2348,7 @@ Choose the Backend you want to follow.
     with that, you can now pass in that style to a Node by passing it through the `classes` field with the string itself (`classes="example_class"`) or a list (`classes=["example_class"]`). Here's an example:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=100, height=100, 
@@ -2370,7 +2370,7 @@ Choose the Backend you want to follow.
     )
 
     # in CoshUIRenderer
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=100, height=100, 
@@ -2562,7 +2562,7 @@ Choose the Backend you want to follow.
     Let's declare a `Button()` — one of CoshUI's many widgets — and see how it works. Let's also make it so the Container's width and height fill the entire screen, here's how that will work:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(
             id="root_container", 
             width=cui.FILL, height=cui.FILL, 
@@ -2573,7 +2573,7 @@ Choose the Backend you want to follow.
     If you run it, you might be able to notice the button having its own hover and click animations. That's an example of the signal system in action. Now to make it yourself, you need to make an `if` statement with the `get_signal()` function that CoshUI provides:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(
             id="root_container", 
             width=cui.FILL, height=cui.FILL, 
@@ -2590,7 +2590,7 @@ Choose the Backend you want to follow.
 
     **Example:**
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         cui.Container(
             id="root_container", 
             width=cui.FILL, height=cui.FILL, 
@@ -2720,28 +2720,28 @@ Choose the Backend you want to follow.
     Now that we've decently discussed CoshUI's capabilities, let's get on to actually creating something. We'll use the same boilerplate with the same `root_container` Container as declared but lets get back on track to actually making a basic version of something that you or someone might try making for a game. 
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL):
             pass
     ```
     With this container that fills the entire screen, we can then add a `Label()` widget acting as our game's title.
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL):
             cui.Label(id="title", text="CoshUI Test")
     ```
     If you run the file, you'll see our "CoshUI Test" label at the top-left. What we want is to put this at the very center, so let's use the `align` and `justify` parameters to put it to the center like this: 
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             cui.Label(id="title", text="CoshUI Test")
     ```
     If you followed everything correctly (or copy pasted the code), it should show "CoshUI Test" being at the middle of the screen. Let's add a couple of buttons to make it *look* like a menu screen shall we? Let's also wrap the `Label()` in a container so we can set the direction to `COLUMN` instead of `ROW`:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                 cui.Label(id="title", text="CoshUI Test")
@@ -2757,7 +2757,7 @@ Choose the Backend you want to follow.
     If the image loaded properly, that's how your menu screen should look like. You might think: "This doesn't really look that good...", but that's okay, these are the default values. CoshUI supports styling overrides for the default styling. So lets start that:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2775,7 +2775,7 @@ Choose the Backend you want to follow.
     Reminder to place this code ***before*** the while loop. If you've set up the class, then you can do this to add the custom styling to your buttons:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2791,7 +2791,7 @@ Choose the Backend you want to follow.
     Now lets add some interaction such as making it so when you click the "Quit" button it closes the window:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2805,7 +2805,7 @@ Choose the Backend you want to follow.
     With that, the quit button should be fully functional. Before this tutorial ends though, let's add some functionality to our "Start" button, something simple like a fade out effect with CoshUI's animation system:
 
     ```python title="moderngl_glfw_test.py"
-    with cui.CoshUIRenderer(self.coshui_backend):
+    with cui.CoshUIRenderer(backend):
         with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
             with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                 cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2859,7 +2859,7 @@ Choose the Backend you want to follow.
         while not glfw.window_should_close(window):
             ctx.clear(0.0, 0.0, 0.0, 1.0)
 
-            with cui.CoshUIRenderer(self.coshui_backend):
+            with cui.CoshUIRenderer(backend):
                 with cui.Container(id="root_container", width=cui.FILL, height=cui.FILL, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER):
                     with cui.Container(id="menu_container", direction=cui.COLUMN, align=cui.ALIGN_CENTER, justify=cui.JUSTIFY_CENTER, gap=10):
                         cui.Label(id="title", text="CoshUI Test", font_size=56)
@@ -2973,7 +2973,7 @@ Choose the Backend you want to follow.
 
     `CoshMode` is defaulted to `NORMAL`, which makes it run normally. But one thing you can do is set it to `DEBUG`:
     ```python title="moderngl_mglw_test.py"
-    with cui.CoshUIRenderer(backend, cui.DEBUG):
+    with cui.CoshUIRenderer(self.coshui_backend, cui.DEBUG):
         pass
     ```
 

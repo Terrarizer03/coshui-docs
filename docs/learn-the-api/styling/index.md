@@ -1,5 +1,6 @@
 # Overview
 
+## Introduction
 CoshUI's main philosophy is the idea that *everything* should have a certain level of flexibility and customization. Unlike other Python UI libraries that follow strict themes and let you use only pre-made layouts, CoshUI is fundamentally different. This section will teach you about the different kinds of attributes that you can change in the `CoshStyling` object, how it affects their looks, and how to make `classes` to reuse those styles.
 
 !!! note "v{{ version }}"

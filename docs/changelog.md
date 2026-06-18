@@ -8,6 +8,20 @@ hide:
 This section outlines all versions and changes for CoshUI's releases and updates.
 
 ---
+## [v0.3.1] Graphics Backends Fix | Patch Notes
+
+`June 18, 2026`
+### Patches:
+
+- **Missing Shaders**: PyOpenGL and ModernGL backends not working at all due to shaders not being added to the PyPI package.
+
+### DX Additions:
+
+- **PyOpenGL Windower Warning**: If anything other than `cui.GLFW` is passed into `PyOpenGLBackend`, it gives an error.
+- **Wrong Node ID**: `get_signal` now has a Node ID check, before it did not.
+- **Dropdown Default Theme**: Added a basic default theme for Dropdown to reduce resistance of usage.
+
+---
 ## [v0.3.0] Graphics Pipeline Support
 
 `June 7, 2026`

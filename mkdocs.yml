@@ -104,15 +104,15 @@ nav:
         - Containers: learn-the-api/nodes/parent-nodes/containers.md
         - Grid: learn-the-api/nodes/parent-nodes/grid.md
         - Modal: learn-the-api/nodes/parent-nodes/modal.md
-      - Widget Nodes:
-        - Overview: learn-the-api/nodes/widgets/index.md
-        - Button: learn-the-api/nodes/widgets/button.md
-        - Label: learn-the-api/nodes/widgets/label.md
-        - Input Field: learn-the-api/nodes/widgets/input-field.md
-        - Checkbox: learn-the-api/nodes/widgets/checkbox.md
-        - Dropdown: learn-the-api/nodes/widgets/dropdown.md
-        - Images: learn-the-api/nodes/widgets/images.md
-        - Slider: learn-the-api/nodes/widgets/slider.md
+      - Element Nodes:
+        - Overview: learn-the-api/nodes/elements/index.md
+        - Button: learn-the-api/nodes/elements/button.md
+        - Label: learn-the-api/nodes/elements/label.md
+        - Input Field: learn-the-api/nodes/elements/input-field.md
+        - Checkbox: learn-the-api/nodes/elements/checkbox.md
+        - Dropdown: learn-the-api/nodes/elements/dropdown.md
+        - Images: learn-the-api/nodes/elements/images.md
+        - Slider: learn-the-api/nodes/elements/slider.md
     - Animations:
       - Overview: learn-the-api/animations/index.md
       - Animate Function: learn-the-api/animations/animate-function.md
