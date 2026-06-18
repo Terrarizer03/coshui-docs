@@ -1505,7 +1505,7 @@
   <span class="md-ellipsis">
     
   
-    Widget Nodes
+    Element Nodes
   
 
     
@@ -1521,7 +1521,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Widget Nodes
+    Element Nodes
   
 
           </label>
@@ -1534,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/" class="md-nav__link">
         
   
   
@@ -1562,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/button/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/button/" class="md-nav__link">
         
   
   
@@ -1590,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/label/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/label/" class="md-nav__link">
         
   
   
@@ -1618,7 +1618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/input-field/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/input-field/" class="md-nav__link">
         
   
   
@@ -1646,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/checkbox/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/checkbox/" class="md-nav__link">
         
   
   
@@ -1674,7 +1674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/dropdown/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/dropdown/" class="md-nav__link">
         
   
   
@@ -1702,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/images/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/images/" class="md-nav__link">
         
   
   
@@ -1730,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn-the-api/nodes/widgets/slider/" class="md-nav__link">
+      <a href="../learn-the-api/nodes/elements/slider/" class="md-nav__link">
         
   
   
@@ -4152,6 +4152,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v031-graphics-backends-fix-patch-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.1] Graphics Backends Fix | Patch Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v030-graphics-pipeline-support" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4210,6 +4221,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v031-graphics-backends-fix-patch-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.1] Graphics Backends Fix | Patch Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v030-graphics-pipeline-support" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4257,6 +4279,19 @@
 
 <h1 id="changelog">Changelog</h1>
 <p>This section outlines all versions and changes for CoshUI's releases and updates.</p>
+<hr />
+<h2 id="v031-graphics-backends-fix-patch-notes">[v0.3.1] Graphics Backends Fix | Patch Notes</h2>
+<p><code>June 18, 2026</code></p>
+<h3 id="patches">Patches:</h3>
+<ul>
+<li><strong>Missing Shaders</strong>: PyOpenGL and ModernGL backends not working at all due to shaders not being added to the PyPI package.</li>
+</ul>
+<h3 id="dx-additions">DX Additions:</h3>
+<ul>
+<li><strong>PyOpenGL Windower Warning</strong>: If anything other than <code>cui.GLFW</code> is passed into <code>PyOpenGLBackend</code>, it gives an error.</li>
+<li><strong>Wrong Node ID</strong>: <code>get_signal</code> now has a Node ID check, before it did not.</li>
+<li><strong>Dropdown Default Theme</strong>: Added a basic default theme for Dropdown to reduce resistance of usage.</li>
+</ul>
 <hr />
 <h2 id="v030-graphics-pipeline-support">[v0.3.0] Graphics Pipeline Support</h2>
 <p><code>June 7, 2026</code></p>

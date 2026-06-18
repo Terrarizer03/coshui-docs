@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1294,6 +1299,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1311,6 +1336,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parentnode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ParentNode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Element
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1515,7 +1592,7 @@
   <span class="md-ellipsis">
     
   
-    Widget Nodes
+    Element Nodes
   
 
     
@@ -1531,7 +1608,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Widget Nodes
+    Element Nodes
   
 
           </label>
@@ -1544,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/" class="md-nav__link">
+      <a href="elements/" class="md-nav__link">
         
   
   
@@ -1572,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/button/" class="md-nav__link">
+      <a href="elements/button/" class="md-nav__link">
         
   
   
@@ -1600,7 +1677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/label/" class="md-nav__link">
+      <a href="elements/label/" class="md-nav__link">
         
   
   
@@ -1628,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/input-field/" class="md-nav__link">
+      <a href="elements/input-field/" class="md-nav__link">
         
   
   
@@ -1656,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/checkbox/" class="md-nav__link">
+      <a href="elements/checkbox/" class="md-nav__link">
         
   
   
@@ -1684,7 +1761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/dropdown/" class="md-nav__link">
+      <a href="elements/dropdown/" class="md-nav__link">
         
   
   
@@ -1712,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/images/" class="md-nav__link">
+      <a href="elements/images/" class="md-nav__link">
         
   
   
@@ -1740,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/slider/" class="md-nav__link">
+      <a href="elements/slider/" class="md-nav__link">
         
   
   
@@ -4139,6 +4216,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parentnode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ParentNode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Element
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4160,9 +4280,26 @@
   
 
 
-  <h1>Overview</h1>
-
-
+<h1 id="overview">Overview</h1>
+<h2 id="introduction">Introduction</h2>
+<p>CoshUI has a couple of Widgets or Nodes that make up the entire UI syntax. Overall, the types are split between 2 kinds, the <code>ParentNode</code> and the <code>Element</code>.</p>
+<hr />
+<h2 id="parentnode">ParentNode</h2>
+<p>A <code>ParentNode</code> is a type of Node that acts as a <em>context manager</em> and take in <em>children nodes</em>. It is the main system that drives the layout engine. An example of CoshUI's most basic and most used <em><code>ParentNode</code></em> is the <code>Container</code>:</p>
+<div class="language-python highlight"><span class="filename">Container Example</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></code></pre></div>
+<p>A <code>ParentNode</code>, whether it be <code>Container</code>, <code>Grid</code>, or <code>Modal</code> can be treated as a <em>context manager</em> (<code>with</code> blocks). Although they can be treated as a regular <code>Element</code> on their own without the <code>with</code> block which stops them from taking in children nodes, their main purpose is to take in <em>children nodes</em>, determine their positions, and sometimes set how much space they take up.</p>
+<p>If you want to learn more, check out the <a href="parent-nodes/">Parent Nodes</a> section.</p>
+<hr />
+<h2 id="element">Element</h2>
+<p>An <code>Element</code> is a type of Node that generally lives as itself without having the ability to take in any <em>children nodes</em>. These are Nodes like <code>Button()</code> or <code>Label()</code> that don't drive layout and only really care about how they get presented.</p>
+<div class="language-python highlight"><span class="filename">Element Example</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>Elements</code> that are shown above are Widgets that have specific behavior. The label is an element that specifically displays text, while the Button both displays text and has default animation behaviors. Most <code>Element</code> Nodes can be approximated through primitives like the <code>Container</code> and custom signals, but they're specifically added to the library so rendering passes are not wasted.</p>
+<p>If you want to learn more, check out the <a href="elements/">Element Nodes</a> section.</p>
 
 
 

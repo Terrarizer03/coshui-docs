@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1374,6 +1379,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1391,6 +1416,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1517,7 +1605,7 @@
   <span class="md-ellipsis">
     
   
-    Widget Nodes
+    Element Nodes
   
 
     
@@ -1533,7 +1621,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Widget Nodes
+    Element Nodes
   
 
           </label>
@@ -1546,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/" class="md-nav__link">
+      <a href="../elements/" class="md-nav__link">
         
   
   
@@ -1574,7 +1662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/button/" class="md-nav__link">
+      <a href="../elements/button/" class="md-nav__link">
         
   
   
@@ -1602,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/label/" class="md-nav__link">
+      <a href="../elements/label/" class="md-nav__link">
         
   
   
@@ -1630,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/input-field/" class="md-nav__link">
+      <a href="../elements/input-field/" class="md-nav__link">
         
   
   
@@ -1658,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/checkbox/" class="md-nav__link">
+      <a href="../elements/checkbox/" class="md-nav__link">
         
   
   
@@ -1686,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/dropdown/" class="md-nav__link">
+      <a href="../elements/dropdown/" class="md-nav__link">
         
   
   
@@ -1714,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/images/" class="md-nav__link">
+      <a href="../elements/images/" class="md-nav__link">
         
   
   
@@ -1742,7 +1830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../widgets/slider/" class="md-nav__link">
+      <a href="../elements/slider/" class="md-nav__link">
         
   
   
@@ -4141,6 +4229,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4162,9 +4304,21 @@
   
 
 
-  <h1>Overview</h1>
-
-
+<h1 id="overview">Overview</h1>
+<h2 id="introduction">Introduction</h2>
+<p><code>ParentNodes</code> are Nodes that let you build interesting UI structures inside CoshUI in a declarative way. They are context managers, meaning they automatically deal with adding the children nodes to their actual children list, setting those children's positions based on their parameters, and sometimes even determine how much space those children take up within them. </p>
+<p>When something like this:</p>
+<p><div class="language-python highlight"><span class="filename">ParentNode Example</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span></code></pre></div>
+is done, CoshUI does one thing, it adds the <code>Container</code> to the global CoshUI stack, and once the <code>Button</code> is initialized, the Button adds itself to the children list of the recently added <code>ParentNode</code> in the stack. Once all children have been added, the <code>Container</code> then pops itself out of the stack, which then starts the entire cycle over for other <code>ParentNodes</code>.</p>
+<p>So now that we know what <code>ParentNodes</code> do, let's talk about the 3 different kinds of <code>ParentNodes</code> that CoshUI has; <code>Container</code>, <code>Grid</code>, and <code>Modal</code>.</p>
+<hr />
+<h2 id="container">Container</h2>
+<hr />
+<h2 id="grid">Grid</h2>
+<hr />
+<h2 id="modal">Modal</h2>
 
 
 
