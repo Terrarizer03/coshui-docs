@@ -108,21 +108,20 @@ nav:
         - Overview: learn-the-api/nodes/elements/index.md
         - Button: learn-the-api/nodes/elements/button.md
         - Label: learn-the-api/nodes/elements/label.md
-        - Input Field: learn-the-api/nodes/elements/input-field.md
         - Checkbox: learn-the-api/nodes/elements/checkbox.md
         - Dropdown: learn-the-api/nodes/elements/dropdown.md
         - Images: learn-the-api/nodes/elements/images.md
         - Slider: learn-the-api/nodes/elements/slider.md
+    - Interactions:
+      - Overview: learn-the-api/interactions/index.md
+      - Signals: learn-the-api/interactions/signals.md
+      - Mouse Filter: learn-the-api/interactions/mouse-filter.md
+      - Data Binding: learn-the-api/interactions/data-binding.md
     - Animations:
       - Overview: learn-the-api/animations/index.md
       - Animate Function: learn-the-api/animations/animate-function.md
       - Properties: learn-the-api/animations/properties.md
       - Easing: learn-the-api/animations/easing.md
-    - Interactions:
-      - Overview: learn-the-api/interactions/index.md
-      - Signals: learn-the-api/interactions/signals.md
-      - Data Binding: learn-the-api/interactions/data-binding.md
-      - Mouse Filter: learn-the-api/interactions/mouse-filter.md
     - Text System:
       - Overview: learn-the-api/text/index.md
       - Text Properties: learn-the-api/text/text-properties.md
