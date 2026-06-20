@@ -19,6 +19,8 @@ with cui.Container(id="card", ...):
 
 `mouse_filter` is a universal property, meaning every Node has it regardless of type.
 
+---
+
 ### STOP
 The default behavior. The Node receives interaction events and prevents any Nodes behind it from receiving them.
 
@@ -26,6 +28,8 @@ The default behavior. The Node receives interaction events and prevents any Node
 cui.Button(id="btn", mouse_filter=cui.STOP, ...)
 # Nodes behind this button will not receive events while the mouse is over it
 ```
+
+---
 
 ### PASS
 The Node receives interaction events and emits signals normally, but does not block Nodes behind it from also receiving events. This is useful for decorative Nodes layered on top of interactive ones.
@@ -36,6 +40,8 @@ with cui.Container(id="card", ...):
     cui.Label(id="card_label", text="Hello", mouse_filter=cui.PASS)
 ```
 
+---
+
 ### IGNORE
 The Node is completely invisible to the interaction system. It emits no signals and does not block anything behind it.
 
@@ -43,6 +49,8 @@ The Node is completely invisible to the interaction system. It emits no signals 
 # This container will never receive any interaction events
 cui.Container(id="bg_decoration", mouse_filter=cui.IGNORE, ...)
 ```
+
+---
 
 ### Default Behavior
 

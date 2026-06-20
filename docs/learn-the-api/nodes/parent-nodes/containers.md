@@ -23,6 +23,8 @@ with cui.Container(id="root", width=400, height=200, padding=10, gap=8):
     cui.Button(id="btn_b", text="B")
 ```
 
+---
+
 ### Direction
 
 The `direction` property controls the axis children are laid out along. `ROW` places children left to right, `COLUMN` places them top to bottom.
@@ -37,6 +39,8 @@ with cui.Container(id="col_example", direction=cui.COLUMN, ...):
     cui.Button(id="btn_b", ...)
 ```
 
+---
+
 ### Align
 
 `align` controls positioning along the **cross axis** (perpendicular to `direction`).
@@ -46,6 +50,8 @@ with cui.Container(id="col_example", direction=cui.COLUMN, ...):
 | `ALIGN_START` | Children are placed at the start of the cross axis |
 | `ALIGN_CENTER` | Children are centered along the cross axis |
 | `ALIGN_END` | Children are placed at the end of the cross axis |
+
+---
 
 ### Justify
 
@@ -60,6 +66,8 @@ with cui.Container(id="col_example", direction=cui.COLUMN, ...):
 | `JUSTIFY_SPACE_AROUND` | Equal space around each child |
 | `JUSTIFY_SPACE_EVENLY` | Equal space between children and edges |
 
+---
+
 ### Padding and Gap
 
 `padding` adds space between the `Container`'s edges and its children. `gap` adds space between each child.
@@ -70,9 +78,13 @@ with cui.Container(id="spaced", padding=16, gap=8, ...):
     cui.Button(id="btn_b", ...)
 ```
 
+---
+
 ### Auto Sizing
 
 When `width` or `height` is set to `AUTO`, the `Container` sizes itself to fit its children. If the `Container` has no children and is set to `AUTO`, it falls back to `FILL` with a warning.
+
+---
 
 ### Default Behavior
 

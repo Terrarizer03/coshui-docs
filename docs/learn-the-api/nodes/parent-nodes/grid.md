@@ -9,8 +9,8 @@
 | `justify` | `CoshJustify` | `START` |
 | `padding` | `float` | `0.0` |
 | `gap` | `float` | `0.0` |
-| `width` | `float \| CoshSizing \| CoshPercentage` | `AUTO` |
-| `height` | `float \| CoshSizing \| CoshPercentage` | `AUTO` |
+| `width` | `float | CoshSizing | CoshPercentage` | `AUTO` |
+| `height` | `float | CoshSizing | CoshPercentage` | `AUTO` |
 
 ### Introduction
 
@@ -21,6 +21,8 @@ with cui.Grid(id="gallery", column_count=3, width=600, height=400, gap=8):
     for i in range(9):
         cui.Image(id=f"img_{i}", src=f"assets/{i}.png")
 ```
+
+---
 
 ### Column Count
 
@@ -34,9 +36,13 @@ with cui.Grid(id="example", column_count=2, ...):
     cui.Button(id="btn_c", ...)
 ```
 
+---
+
 ### Cell Sizing
 
 Each cell slot is sized uniformly by dividing the available space across columns and rows. Children with a fixed size that exceeds the uniform cell size will expand their track to accommodate them. Children set to `FILL` expand to fill their cell slot.
+
+---
 
 ### Align and Justify
 
@@ -46,6 +52,8 @@ Each cell slot is sized uniformly by dividing the available space across columns
 | :--- | :--- |
 | `align` | Vertical position of the grid content block |
 | `justify` | Horizontal position of the grid content block |
+
+---
 
 ### Default Behavior
 

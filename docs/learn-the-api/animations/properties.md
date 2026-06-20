@@ -14,6 +14,8 @@
 
 Not every Node property can be animated — only properties that are tracked in state and interpolated by the tween system are supported. These are primarily the visual and transform properties that make the most sense to animate.
 
+---
+
 ### alpha
 
 Animates the opacity of a Node. Expects a `float` between `0` and `255`, where `0` is fully transparent and `255` is fully opaque.
@@ -26,6 +28,8 @@ cui.animate("alpha", "my_panel", 0, 0.5, "ease_in")
 cui.animate("alpha", "my_panel", 255, 0.5, "ease_out")
 ```
 
+---
+
 ### background_color
 
 Animates the background color of a Node. Expects an `(r, g, b)` tuple with values between `0` and `255`.
@@ -36,6 +40,8 @@ cui.animate("background_color", "my_btn", (255, 80, 80), 0.2, "ease_out")
 
 Note that `Checkbox` does not support `background_color` animation since its color directly represents its checked state.
 
+---
+
 ### transform_position
 
 Animates a positional offset applied on top of the Node's laid-out position. Expects an `(x, y)` tuple. This does not affect layout — it's a visual offset only, applied at render time.
@@ -44,6 +50,8 @@ Animates a positional offset applied on top of the Node's laid-out position. Exp
 # Slide down by 20px
 cui.animate("transform_position", "my_panel", (0, 20), 0.3, "ease_out")
 ```
+
+---
 
 ### transform_scale
 
@@ -57,6 +65,8 @@ if cui.get_signal("my_card", cui.HOVER_ENTER):
 if cui.get_signal("my_card", cui.HOVER_EXIT):
     cui.animate("transform_scale", "my_card", 1.0, 0.15, "ease_out")
 ```
+
+---
 
 ### transform_rotation
 

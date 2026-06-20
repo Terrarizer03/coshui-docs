@@ -25,6 +25,8 @@ if cui.get_signal("my_btn", cui.CLICKED):
 
 `get_signal()` returns `True` if that signal was emitted for that Node this frame, and `False` otherwise.
 
+---
+
 ### Signal Reference
 
 #### CLICKED

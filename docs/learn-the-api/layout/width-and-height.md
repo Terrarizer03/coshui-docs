@@ -4,8 +4,8 @@
 
 | Property | Type | Default | Recursive or Local |
 | :--- | :--- | :--- | :--- |
-| `width` | CoshSizing **or** int | CoshSizing.AUTO | Local | 
-| `height` | CoshSizing **or** int | CoshSizing.AUTO | Local | 
+| `width` | `CoshSizing | CoshPercentage | int` | CoshSizing.AUTO | Local | 
+| `height` | `CoshSizing | CoshPercentage | int` | CoshSizing.AUTO | Local | 
 
 ### Introduction
 
@@ -16,7 +16,7 @@ with cui.CoshUIRenderer(...):
     cui.Container(id="example_container", width=100, height=100)
 ```
 
-The code-block above shows us how to set a *fixed* width and height. But there are different behaviors you can set width and height to. Like in CSS, you can set these properties to `AUTO` and `FILL`. 
+The code-block above shows us how to set a *fixed* width and height. But there are different behaviors you can set width and height to. Like in CSS, you can set these properties to `AUTO`, `FILL`, and `PERCENTAGE()`. 
 
 The behavior for `AUTO` means it will adapt to the size of its children, mimicking CSS's `auto` behavior.
 
@@ -35,15 +35,23 @@ with cui.CoshUIRenderer(...):
     cui.Container(id="example_container", width=cui.FILL, height=cui.FILL)
 ```
 
+`PERCENTAGE()` lets you move set the size of the Node to a percentage of the size of its parent.
+
+```python title="Setting width and height as FILL"
+with cui.CoshUIRenderer(...):
+    cui.Container(id="example_container", width=cui.PERCENTAGE(50), height=cui.PERCENTAGE(75))
+```
+The code-block above sets the width of our `Container` as 50% of its parent size (which is the screen size), and 75% of the parents height. 
+
 Of course you can also mix behavior.
 
-```python title="Setting width and height as AUTO and FILL"
+```python title="Setting width and height as PERCENTAGE and FILL"
 with cui.CoshUIRenderer(...):
-    cui.Container(id="example_container", width=cui.AUTO, height=cui.FILL) # And vice-versa
+    cui.Container(id="example_container", width=cui.PERCENTAGE(50), height=cui.FILL) # Or AUTO too
 ```
 
-??? info "CoshSizing"
-    `CoshSizing` is the Enum that houses AUTO and FILL (e.g., `CoshSizing.AUTO` and `CoshSizing.FILL`). Though CoshUI has the `AUTO` and `FILL` constants that you can pass without needing to call the Enum, it's good to understand where these constants come from.
+??? info "CoshSizing and CoshPercentage"
+    `CoshSizing` is the Enum that houses AUTO and FILL (e.g., `CoshSizing.AUTO` and `CoshSizing.FILL`). `CoshPercentage` on the other hand is a class that divides the value set by 100, which is then used in internal layout calculations. Though CoshUI has the `AUTO`, `FILL`, and `PERCENTAGE()` constants that you can pass without needing to call the Enum and class, it's good to understand where these constants come from.
 
 --- 
 

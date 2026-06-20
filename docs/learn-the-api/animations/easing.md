@@ -21,6 +21,8 @@ Easing curves control how an animation progresses over its duration. Without eas
 cui.animate("background_color", "my_btn", (255, 0, 0), 0.3, "ease_out")
 ```
 
+---
+
 ### linear
 
 Progresses at a constant rate from start to finish. Rarely the best choice for UI but useful when you want something purely mechanical or when animating something like a progress bar.
@@ -28,6 +30,8 @@ Progresses at a constant rate from start to finish. Rarely the best choice for U
 ```python title="linear"
 cui.animate("alpha", "my_bar", 255, 1.0, "linear")
 ```
+
+---
 
 ### ease_in
 
@@ -37,6 +41,8 @@ Starts slow and accelerates toward the end. Good for elements that are leaving t
 cui.animate("alpha", "my_panel", 0, 0.3, "ease_in")
 ```
 
+---
+
 ### ease_out
 
 Starts fast and decelerates toward the end. Good for elements entering the screen — they arrive quickly and settle into place.
@@ -44,6 +50,8 @@ Starts fast and decelerates toward the end. Good for elements entering the scree
 ```python title="ease_out"
 cui.animate("transform_position", "my_panel", (0, 0), 0.3, "ease_out")
 ```
+
+---
 
 ### ease_in_out
 
@@ -53,6 +61,8 @@ Starts slow, speeds up in the middle, and slows down again at the end. A safe, n
 cui.animate("transform_scale", "my_modal", 1.0, 0.4, "ease_in_out")
 ```
 
+---
+
 ### ease_out_bounce
 
 Overshoots the target value at the end and bounces back to settle. Good for playful UI elements like notifications or popups appearing.
@@ -60,6 +70,8 @@ Overshoots the target value at the end and bounces back to settle. Good for play
 ```python title="ease_out_bounce"
 cui.animate("transform_scale", "my_toast", 1.0, 0.5, "ease_out_bounce")
 ```
+
+---
 
 ### ease_in_bounce
 
@@ -69,6 +81,8 @@ Bounces at the start before committing to the animation. Less commonly used but 
 cui.animate("transform_position", "my_panel", (0, 500), 0.5, "ease_in_bounce")
 ```
 
+---
+
 ### ease_out_elastic
 
 Overshoots the target and snaps back like a rubber band. Great for interactive elements like buttons or toggles that need to feel springy and responsive.
@@ -77,6 +91,8 @@ Overshoots the target and snaps back like a rubber band. Great for interactive e
 if cui.get_signal("my_btn", cui.CLICKED):
     cui.animate("transform_scale", "my_btn", 1.0, 0.4, "ease_out_elastic")
 ```
+
+---
 
 ### ease_in_elastic
 

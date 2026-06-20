@@ -30,6 +30,8 @@ with cui.CoshUIRenderer(cui.PygameBackend(screen)):
 # Raylib
 with cui.CoshUIRenderer(cui.RaylibBackend()):
     pass
+
+# Or other backends
 ```
 
 And with that, you can now get onto making your UI structure.
@@ -48,11 +50,6 @@ This section teaches you about the `CoshStyling` object, its attributes, and how
 
 [Start Here](styling/index.md)
 
-### Themes
-
-Themes are the base appearance of the UI. This section will talk about the different default themes, how to set them, and how to create your own theme using the `create_theme()` public function.
-
-[Start Here](themes/index.md)
 
 ### Nodes
 
@@ -78,11 +75,11 @@ CoshUI uses the utilized backend's built-in text system to display text. This se
 
 [Start Here](text/index.md)
 
-### Types and Enums
+### Themes
 
-CoshUI has multiple Enums to be passed as values for attributes. This section will teach you all about them, where to use them, and how to use them.
+Themes are the base appearance of the UI. This section will talk about the different default themes, how to set them, and how to create your own theme using the `create_theme()` public function.
 
-[Start Here](types/index.md)
+[Start Here](themes/index.md)
 
 ---
 

@@ -4,8 +4,8 @@
 
 | Property | Type | Default |
 | :--- | :--- | :--- |
-| `width` | `float \| CoshSizing \| CoshPercentage` | `AUTO` |
-| `height` | `float \| CoshSizing \| CoshPercentage` | `AUTO` |
+| `width` | `float | CoshSizing | CoshPercentage` | `AUTO` |
+| `height` | `float | CoshSizing | CoshPercentage` | `AUTO` |
 | `direction` | `CoshDirection` | `ROW` |
 | `align` | `CoshAlign` | `START` |
 | `justify` | `CoshJustify` | `START` |
@@ -27,6 +27,8 @@ with cui.Modal(id="settings_modal", width=300, height=200):
     cui.Button(id="close_btn", text="Close")
 ```
 
+---
+
 ### Structure
 
 When expanded, a `Modal` with `id="my_modal"` produces the following node structure:
@@ -37,12 +39,15 @@ my_modal::root       (Container, COLUMN)
 └── my_modal::content (Container, holds children)
 ```
 
-
 The header height is fixed at 25px with 10px padding. All children declared inside the `Modal` are placed into the content area.
+
+---
 
 ### Dragging
 
 The header acts as a drag handle automatically. Clicking and dragging it moves the entire modal, with its position persisted in state across frames.
+
+---
 
 ### Styling
 
@@ -61,9 +66,13 @@ with cui.Modal(
     ...
 ```
 
+---
+
 ### Positioning
 
 `Modal` defaults to `ABSOLUTE` positioning, placing it outside the normal document flow. Its position is controlled by its drag state rather than the parent layout.
+
+---
 
 ### Default Behavior
 

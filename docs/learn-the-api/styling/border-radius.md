@@ -4,7 +4,7 @@
 
 | Property | Type | Default | Recursive or Local |
 | :--- | :--- | :--- | :--- |
-| `border_radius` | int **or** tuple(x, y, z, w) | 0 | Local | 
+| `border_radius` | `int | tuple(x, y, z, w)` | 0 | Local | 
 
 ### Introduction
 

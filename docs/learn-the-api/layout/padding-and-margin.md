@@ -4,8 +4,8 @@
 
 | Property | Type | Default | Recursive or Local |
 | :--- | :--- | :--- | :--- |
-| `padding` | float **or** int | 0.0 | Local | 
-| `margin` | float **or** int | 0.0 | Local | 
+| `padding` | `float | int` | 0.0 | Local | 
+| `margin` | `float | int` | 0.0 | Local | 
 
 ### Introduction
 

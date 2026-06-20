@@ -6,7 +6,7 @@
 | :--- | :--- | :--- |
 | `n_property` | `str` | The property to animate |
 | `target_id` | `str` | The `id` of the Node to animate |
-| `end_value` | `float \| tuple` | The target value to animate to |
+| `end_value` | `float | tuple` | The target value to animate to |
 | `duration` | `float` | Duration of the animation in seconds |
 | `easing` | `str` | The easing curve to use |
 
@@ -19,6 +19,8 @@ cui.animate("background_color", "my_btn", (255, 0, 0), 0.3, "ease_in_out")
 ```
 
 This animates `my_btn`'s background color to red over 0.3 seconds using the `ease_in_out` curve.
+
+---
 
 ### How It Works
 
@@ -37,6 +39,8 @@ with cui.CoshUIRenderer(...):
         cui.animate("background_color", "my_btn", (86, 115, 143), 0.2, "ease_out")
 ```
 
+---
+
 ### Interrupting Animations
 
 If you call `animate()` on a property that is already being animated on the same Node, CoshUI cancels the existing tween and starts the new one. This means you don't need to manually stop anything — just call `animate()` again with the new target.
@@ -47,6 +51,8 @@ if cui.get_signal("my_btn", cui.CLICKED):
     cui.animate("background_color", "my_btn", (255, 255, 255), 0.1, "ease_in")
 ```
 
+---
+
 ### On Complete Callback
 
 `animate()` returns the `Tween` it creates, which exposes a `.finished()` method for running a callback once the animation completes.
@@ -54,6 +60,8 @@ if cui.get_signal("my_btn", cui.CLICKED):
 ```python title="On Complete"
 cui.animate("alpha", "my_panel", 0, 0.3, "ease_in").finished(lambda: print("Faded out!"))
 ```
+
+---
 
 ### Default Behavior
 

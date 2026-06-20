@@ -92,11 +92,6 @@ nav:
       - Border Radius: learn-the-api/styling/border-radius.md
       - Transforms: learn-the-api/styling/transforms.md
       - Classes: learn-the-api/styling/classes.md
-    - Themes:
-      - Overview: learn-the-api/themes/index.md
-      - Default Themes: learn-the-api/themes/defaults.md
-      - Theme Creation: learn-the-api/themes/create-theme.md
-      - Set Theme: learn-the-api/themes/set-theme.md
     - Nodes:
       - Overview: learn-the-api/nodes/index.md
       - Parent Nodes:
@@ -126,11 +121,11 @@ nav:
       - Overview: learn-the-api/text/index.md
       - Text Properties: learn-the-api/text/text-properties.md
       - Set Default Font: learn-the-api/text/set-default.md
-    - Types and Enums:
-      - Overview: learn-the-api/types/index.md
-      - Layout Enums: learn-the-api/types/layout-enums.md
-      - Interaction Enums: learn-the-api/types/interaction-enums.md
-      - Text Enums: learn-the-api/types/text-enums.md
+    - Themes:
+      - Overview: learn-the-api/themes/index.md
+      - Default Themes: learn-the-api/themes/defaults.md
+      - Theme Creation: learn-the-api/themes/create-theme.md
+      - Set Theme: learn-the-api/themes/set-theme.md
     - Backends:
       - Overview: learn-the-api/backends/index.md
       - Pygame: learn-the-api/backends/pygame.md

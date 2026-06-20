@@ -4,7 +4,7 @@
 
 | Property | Type | Default | Recursive or Local |
 | :--- | :--- | :--- | :--- |
-| `border` | tuple(tuple(r, g, b), weight) **or** tuple(r, g, b, weight) | None | Local | 
+| `border` | `tuple(tuple(r, g, b), weight) | tuple(r, g, b, weight)` | None | Local | 
 
 ### Introduction
 

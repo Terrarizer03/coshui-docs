@@ -5,7 +5,7 @@
 | Property | Type | Default | Recursive or Local |
 | :--- | :--- | :--- | :--- |
 | `alpha` | int | 255 | Recursive | 
-| `background_color` | tuple(r, g, b) **or** tuple(r, g, b, a) | None | Local |
+| `background_color` | `tuple(r, g, b) | tuple(r, g, b, a)` | None | Local |
 
 ### Introduction
 
