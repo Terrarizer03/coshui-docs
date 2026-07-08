@@ -63,6 +63,22 @@ cui.animate("alpha", "my_panel", 0, 0.3, "ease_in").finished(lambda: print("Fade
 
 ---
 
+### Loop Method
+
+Another method `Tween` has is the `.loop()` method. Obvious is obvious, but it lets you loop your animations without needing to chain `.finished()` calls.
+
+It accepts 3 parameters, in this order — `count`, `ping_pong`, `delay`:
+
+- `count`: The total number of times the animation will play through, including the first. `None` (the default) means infinite.
+- `ping_pong`: A boolean. If `True`, each loop reverses direction — smoothly animating back from the end value to the start value instead of jumping back to the start. If `False` (default), each loop restarts from the original start value in the same direction.
+- `delay`: How long to pause between iterations, in seconds. Defaults to `0.0` (no pause).
+
+```python title="Loop"
+cui.animate("alpha", "my_panel", 0, 0.3, "ease_in").loop(count=None, ping_pong=True, delay=0.5)
+```
+
+---
+
 ### Default Behavior
 
 If an invalid property, Node id, or easing curve is passed, CoshUI raises a `CoshUIError` with a suggestion for what you might have meant.

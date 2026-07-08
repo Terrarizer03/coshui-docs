@@ -103,6 +103,7 @@ nav:
         - Overview: learn-the-api/nodes/elements/index.md
         - Button: learn-the-api/nodes/elements/button.md
         - Label: learn-the-api/nodes/elements/label.md
+        - RichLabel: learn-the-api/nodes/elements/richlabel.md
         - Checkbox: learn-the-api/nodes/elements/checkbox.md
         - Dropdown: learn-the-api/nodes/elements/dropdown.md
         - Images: learn-the-api/nodes/elements/images.md
@@ -119,8 +120,9 @@ nav:
       - Easing: learn-the-api/animations/easing.md
     - Text System:
       - Overview: learn-the-api/text/index.md
+      - Fonts: learn-the-api/text/fonts.md
       - Text Properties: learn-the-api/text/text-properties.md
-      - Set Default Font: learn-the-api/text/set-default.md
+      - CoshML: learn-the-api/text/coshml.md
     - Themes:
       - Overview: learn-the-api/themes/index.md
       - Default Themes: learn-the-api/themes/defaults.md

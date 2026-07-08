@@ -14,11 +14,13 @@
 
 ### Introduction
 
-Any `TextNode`-based Element — like `Label()` or `Button()` — exposes a set of properties to control how its text is rendered. These properties are set directly on the Node itself, not through `style`.
+Any `TextNode`-based Element — like `Label()` or `Button()` — exposes a set of properties to control how its text is rendered. These properties are set directly on the Node itself, not through `style`, and act as the default style for the whole string.
 
 ```python title="Basic Usage"
 cui.Label(id="my_label", text="Hello, World!", font_size=20, text_color=(255, 200, 0))
 ```
+
+`RichLabel` shares these same base properties, but also parses CoshML tags inside `text` to override styling for specific portions of the string — see [CoshML](coshml.md) for that.
 
 ---
 
@@ -34,21 +36,11 @@ cui.Label(id="greeting", text="Welcome back!")
 
 ### font
 
-References a font by name from CoshUI's font library, not by file path directly. CoshUI ships with `"Courier"`, `"Inter"`, and `"Ubuntu"` built in. If `font` is left as `None`, the Node falls back to the active default font.
+References a font by name from CoshUI's font library, not by file path directly. If `font` is left as `None`, the Node falls back to the active default font. See [Fonts](fonts.md) for registering your own.
 
 ```python title="font"
 cui.Label(id="my_label", text="Styled text", font="Courier")
 ```
-
-To use your own font, you first need to register it with `add_font()` before referencing it by name.
-
-```python title="add_font()"
-cui.add_font("Poppins", "assets/fonts/Poppins-Regular.ttf")
-
-cui.Label(id="my_label", text="Custom font!", font="Poppins")
-```
-
-`add_font()` takes a name and a file path, and raises a `CoshUIError` if the path doesn't point to a valid file. Once registered, the name can be reused across any `TextNode` in your UI.
 
 ---
 

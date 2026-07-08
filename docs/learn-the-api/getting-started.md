@@ -71,7 +71,7 @@ This section explains the different signals a `Node` object can emit, how to cap
 
 ### Text System
 
-CoshUI uses the utilized backend's built-in text system to display text. This section will teach you all about how text can be used and manipulated.
+This section will teach you all about how to add fonts, style parts of text using CoshML, and the different functions and parameters that lets you customize your text. 
 
 [Start Here](text/index.md)
 

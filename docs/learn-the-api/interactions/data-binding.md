@@ -40,6 +40,14 @@ with cui.CoshUIRenderer(...):
 
 The `Ref` is updated automatically as the user drags the slider, so `volume.value` always reflects the current slider position.
 
+You can also call the `.on_change()` method on `Ref`:
+
+```python title="Calling .on_change()"
+volume = cui.Ref(50.0).on_change(lambda value: adjust_volume(value))
+```
+
+It accepts a callback that gets called when Ref's value changes.
+
 ### Supported Nodes
 
 #### Slider
@@ -61,7 +69,10 @@ cui.Checkbox(id="enable_toggle", bind=enabled)
 #### Dropdown
 Binds the currently selected item from the `item_list`, updated whenever the user selects a new option.
 
+!!! info "Ref and selector_index"
+    the `Ref`'s initial value is not used to set the starting selection — `Dropdown` always starts at `selector_index` (default `0`). Use `selector_index` to control the initial choice instead.
+
 ```python title="Dropdown Binding"
 selected_quality = cui.Ref("Medium")
-cui.Dropdown(id="quality_dropdown", item_list=["Low", "Medium", "High"], bind=selected_quality)
+cui.Dropdown(id="quality_dropdown", item_list=["Low", "Medium", "High"], selector_index=1, bind=selected_quality)
 ```

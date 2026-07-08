@@ -98,12 +98,13 @@ This example showcases a simple game loop with a health-bar that goes down and a
                                 cui.Button(id="restart_btn", text="Restart")
                                 cui.Button(id="quit_btn", text="Quit")
                 
-                if cui.get_signal("quit_btn", cui.CLICKED):
-                    self.running = False
+                if self.player.health <= 0:
+                    if cui.get_signal("quit_btn", cui.CLICKED):
+                        self.running = False
 
-                if cui.get_signal("restart_btn", cui.CLICKED):
-                    self.player.x, self.player.y = 0, 0
-                    self.player.health = 100
+                    if cui.get_signal("restart_btn", cui.CLICKED):
+                        self.player.x, self.player.y = 0, 0
+                        self.player.health = 100
 
                 py.display.flip()
                 self.clock.tick(60)

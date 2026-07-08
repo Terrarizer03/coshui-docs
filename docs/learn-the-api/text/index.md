@@ -1,22 +1,28 @@
 # Overview
 
 ## Introduction
-The text system in CoshUI for version {{ version }} is currently very primitive, but it does have some basic features you need to know about. Text can be added to your UI using the `Label()` element (the `Button()` element also has the properties that `Label()` has but it has default values). 
-
-If you want to know details like text properties or how to set fonts, then lets continue.
+The text system in CoshUI is built around `TextNode`-based widgets — `Label`, `Button`, `RichLabel`, and others — plus its own lightweight markup language called **CoshML**, inspired by BBCode. CoshML lets you style *parts* of a string by wrapping text in tags, rather than styling the whole Node uniformly.
 
 ---
 
 ## Text Properties
 
-There are quite a few properties that let you change how text is rendered through CoshUI, like changing text color, font, weight, whether it wraps or hides when overflowing, and more.
+There are quite a few properties that let you change how text is rendered through CoshUI — text color, font, size, alignment, whether it wraps or hides when overflowing, and more. These apply to any `TextNode`, and set the *default* style for all the text on that Node.
 
 To find the details, check the [Text Properties](text-properties.md) section.
 
 ---
 
-## Set Default Font
+## Fonts
 
-Aside from setting a font directly on each Node, you can change the font of every `TextNode` in your UI.
+Aside from setting a font directly on each Node, you can register your own fonts and change the font every `TextNode` falls back to by default.
 
-To learn more, check the [Set Default Font](set-default.md) section.
+To learn more, check the [Fonts](fonts.md) section.
+
+---
+
+## CoshML
+
+If you need more than one style within a single string — like bolding a single word, or coloring part of a sentence — CoshML tags let you do that inline, without splitting text across multiple Nodes. This is primarily used through `RichLabel`.
+
+To learn more, check the [CoshML](coshml.md) section.
