@@ -1448,6 +1448,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../learn-the-api/nodes/elements/richlabel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RichLabel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../learn-the-api/nodes/elements/checkbox/" class="md-nav__link">
         
   
@@ -1994,6 +2022,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../learn-the-api/text/fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../learn-the-api/text/text-properties/" class="md-nav__link">
         
   
@@ -2022,14 +2078,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn-the-api/text/set-default/" class="md-nav__link">
+      <a href="../../learn-the-api/text/coshml/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Set Default Font
+    CoshML
   
 
     
@@ -4092,7 +4148,8 @@
 <span class="normal"><a href="#__codelineno-0-110">110</a></span>
 <span class="normal"><a href="#__codelineno-0-111">111</a></span>
 <span class="normal"><a href="#__codelineno-0-112">112</a></span>
-<span class="normal"><a href="#__codelineno-0-113">113</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="normal"><a href="#__codelineno-0-113">113</a></span>
+<span class="normal"><a href="#__codelineno-0-114">114</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">py</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">coshui</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cui</span>
@@ -4178,33 +4235,34 @@
 </span></span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="hll">                            <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;restart_btn&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Restart&quot;</span><span class="p">)</span>
 </span></span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="hll">                            <span class="n">cui</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;quit_btn&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Quit&quot;</span><span class="p">)</span>
 </span></span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="hll">
-</span></span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="hll">            <span class="k">if</span> <span class="n">cui</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="s2">&quot;quit_btn&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CLICKED</span><span class="p">):</span>
-</span></span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
-</span></span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="hll">
-</span></span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="hll">            <span class="k">if</span> <span class="n">cui</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="s2">&quot;restart_btn&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CLICKED</span><span class="p">):</span>
-</span></span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-</span></span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="mi">100</span>
-</span></span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a>
-</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="n">py</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
-</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>
-</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="n">py</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a>
-</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101"></a>
-</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="n">player_rect</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
-</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103"></a>
-</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a>        <span class="k">if</span> <span class="n">player_rect</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center_rect</span><span class="p">):</span>
-</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a>
-</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="n">py</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">game</span> <span class="o">=</span> <span class="n">Game</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
-</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="n">game</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111"></a>
-</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113"></a>    <span class="n">main</span><span class="p">()</span>
+</span></span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="hll">                <span class="k">if</span> <span class="n">cui</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="s2">&quot;quit_btn&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CLICKED</span><span class="p">):</span>
+</span></span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="hll">                    <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="hll">
+</span></span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="hll">                <span class="k">if</span> <span class="n">cui</span><span class="o">.</span><span class="n">get_signal</span><span class="p">(</span><span class="s2">&quot;restart_btn&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">CLICKED</span><span class="p">):</span>
+</span></span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="hll">                    <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="n">py</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a>        <span class="n">py</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102"></a>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103"></a>        <span class="n">player_rect</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a>        <span class="k">if</span> <span class="n">player_rect</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center_rect</span><span class="p">):</span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">health</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">py</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="n">game</span> <span class="o">=</span> <span class="n">Game</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111"></a>    <span class="n">game</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112"></a>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114"></a>    <span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">

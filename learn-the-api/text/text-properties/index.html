@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://terrarizer03.github.io/coshui-docs/learn-the-api/text/text-properties/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../fonts/">
       
       
-        <link rel="next" href="../set-default/">
+        <link rel="next" href="../coshml/">
       
       
         
@@ -1453,6 +1453,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../nodes/elements/richlabel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RichLabel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nodes/elements/checkbox/" class="md-nav__link">
         
   
@@ -1998,6 +2026,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2039,14 +2095,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../set-default/" class="md-nav__link">
+      <a href="../coshml/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Set Default Font
+    CoshML
   
 
     
@@ -4020,9 +4076,10 @@
 </tbody>
 </table>
 <h3 id="introduction">Introduction</h3>
-<p>Any <code>TextNode</code>-based Element — like <code>Label()</code> or <code>Button()</code> — exposes a set of properties to control how its text is rendered. These properties are set directly on the Node itself, not through <code>style</code>.</p>
+<p>Any <code>TextNode</code>-based Element — like <code>Label()</code> or <code>Button()</code> — exposes a set of properties to control how its text is rendered. These properties are set directly on the Node itself, not through <code>style</code>, and act as the default style for the whole string.</p>
 <div class="language-python highlight"><span class="filename">Basic Usage</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">text_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </span></code></pre></div>
+<p><code>RichLabel</code> shares these same base properties, but also parses CoshML tags inside <code>text</code> to override styling for specific portions of the string — see <a href="../coshml/">CoshML</a> for that.</p>
 <hr />
 <h3 id="text">text</h3>
 <p>The string content to render.</p>
@@ -4030,24 +4087,18 @@
 </span></code></pre></div>
 <hr />
 <h3 id="font">font</h3>
-<p>References a font by name from CoshUI's font library, not by file path directly. CoshUI ships with <code>"Courier"</code>, <code>"Inter"</code>, and <code>"Ubuntu"</code> built in. If <code>font</code> is left as <code>None</code>, the Node falls back to the active default font.</p>
+<p>References a font by name from CoshUI's font library, not by file path directly. If <code>font</code> is left as <code>None</code>, the Node falls back to the active default font. See <a href="../fonts/">Fonts</a> for registering your own.</p>
 <div class="language-python highlight"><span class="filename">font</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Styled text&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Courier&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<p>To use your own font, you first need to register it with <code>add_font()</code> before referencing it by name.</p>
-<div class="language-python highlight"><span class="filename">add_font()</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span><span class="s2">&quot;Poppins&quot;</span><span class="p">,</span> <span class="s2">&quot;assets/fonts/Poppins-Regular.ttf&quot;</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Custom font!&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Poppins&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p><code>add_font()</code> takes a name and a file path, and raises a <code>CoshUIError</code> if the path doesn't point to a valid file. Once registered, the name can be reused across any <code>TextNode</code> in your UI.</p>
 <hr />
 <h3 id="font_size">font_size</h3>
 <p>Controls the pixel size of the rendered text. Defaults to <code>16</code> if not set.</p>
-<div class="language-python highlight"><span class="filename">font_size</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Big Title&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">font_size</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Big Title&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h3 id="text_color">text_color</h3>
 <p>An <code>(r, g, b)</code> tuple controlling the color of the text. Defaults to white.</p>
-<div class="language-python highlight"><span class="filename">text_color</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Careful!&quot;</span><span class="p">,</span> <span class="n">text_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+<div class="language-python highlight"><span class="filename">text_color</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Careful!&quot;</span><span class="p">,</span> <span class="n">text_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
 </span></code></pre></div>
 <hr />
 <h3 id="text_align">text_align</h3>
@@ -4074,7 +4125,7 @@
 </tr>
 </tbody>
 </table>
-<div class="language-python highlight"><span class="filename">text_align</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Top aligned&quot;</span><span class="p">,</span> <span class="n">text_align</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_ALIGN_TOP</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">text_align</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Top aligned&quot;</span><span class="p">,</span> <span class="n">text_align</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_ALIGN_TOP</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h3 id="text_justify">text_justify</h3>
@@ -4101,7 +4152,7 @@
 </tr>
 </tbody>
 </table>
-<div class="language-python highlight"><span class="filename">text_justify</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Right aligned&quot;</span><span class="p">,</span> <span class="n">text_justify</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_JUSTIFY_RIGHT</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">text_justify</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Right aligned&quot;</span><span class="p">,</span> <span class="n">text_justify</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_JUSTIFY_RIGHT</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h3 id="text_overflow">text_overflow</h3>
@@ -4128,13 +4179,13 @@
 </tr>
 </tbody>
 </table>
-<div class="language-python highlight"><span class="filename">text_overflow</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;A long sentence that needs wrapping&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">text_overflow</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_WRAP</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">text_overflow</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;A long sentence that needs wrapping&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">text_overflow</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_WRAP</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h3 id="auto-sizing">Auto Sizing</h3>
 <p>If <code>width</code> or <code>height</code> is left as <code>AUTO</code>, the Node measures the text and sizes itself to fit it exactly.</p>
-<div class="language-python highlight"><span class="filename">Auto Sizing</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Sizes itself to exactly fit &quot;Hello!&quot; at font_size=16</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;auto_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Auto Sizing</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Sizes itself to exactly fit &quot;Hello!&quot; at font_size=16</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;auto_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 
 
@@ -4172,7 +4223,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../fonts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fonts">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4182,20 +4233,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                Fonts
               </div>
             </div>
           </a>
         
         
           
-          <a href="../set-default/" class="md-footer__link md-footer__link--next" aria-label="Next: Set Default Font">
+          <a href="../coshml/" class="md-footer__link md-footer__link--next" aria-label="Next: CoshML">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Set Default Font
+                CoshML
               </div>
             </div>
             <div class="md-footer__button md-icon">

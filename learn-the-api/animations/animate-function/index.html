@@ -1453,6 +1453,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../nodes/elements/richlabel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RichLabel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nodes/elements/checkbox/" class="md-nav__link">
         
   
@@ -2011,6 +2039,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../text/fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../text/text-properties/" class="md-nav__link">
         
   
@@ -2039,14 +2095,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../text/set-default/" class="md-nav__link">
+      <a href="../../text/coshml/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Set Default Font
+    CoshML
   
 
     
@@ -4038,6 +4094,17 @@
 <h3 id="on-complete-callback">On Complete Callback</h3>
 <p><code>animate()</code> returns the <code>Tween</code> it creates, which exposes a <code>.finished()</code> method for running a callback once the animation completes.</p>
 <div class="language-python highlight"><span class="filename">On Complete</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="s2">&quot;my_panel&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;ease_in&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">finished</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Faded out!&quot;</span><span class="p">))</span>
+</span></code></pre></div>
+<hr />
+<h3 id="loop-method">Loop Method</h3>
+<p>Another method <code>Tween</code> has is the <code>.loop()</code> method. Obvious is obvious, but it lets you loop your animations without needing to chain <code>.finished()</code> calls.</p>
+<p>It accepts 3 parameters, in this order — <code>count</code>, <code>ping_pong</code>, <code>delay</code>:</p>
+<ul>
+<li><code>count</code>: The total number of times the animation will play through, including the first. <code>None</code> (the default) means infinite.</li>
+<li><code>ping_pong</code>: A boolean. If <code>True</code>, each loop reverses direction — smoothly animating back from the end value to the start value instead of jumping back to the start. If <code>False</code> (default), each loop restarts from the original start value in the same direction.</li>
+<li><code>delay</code>: How long to pause between iterations, in seconds. Defaults to <code>0.0</code> (no pause).</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Loop</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="s2">&quot;my_panel&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;ease_in&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">loop</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ping_pong</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h3 id="default-behavior">Default Behavior</h3>

@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://terrarizer03.github.io/coshui-docs/learn-the-api/text/set-default/">
+        <link rel="canonical" href="https://terrarizer03.github.io/coshui-docs/learn-the-api/text/coshml/">
       
       
         <link rel="prev" href="../text-properties/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Set Default Font - CoshUI</title>
+        <title>CoshML - CoshUI</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#set-default-font" class="md-skip">
+        <a href="#coshml" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Set Default Font
+              CoshML
             
           </span>
         </div>
@@ -1453,6 +1453,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../nodes/elements/richlabel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RichLabel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nodes/elements/checkbox/" class="md-nav__link">
         
   
@@ -2001,6 +2029,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../text-properties/" class="md-nav__link">
         
   
@@ -2045,7 +2101,7 @@
   <span class="md-ellipsis">
     
   
-    Set Default Font
+    CoshML
   
 
     
@@ -3971,49 +4027,94 @@
   
 
 
-<h1 id="set-default-font">Set Default Font</h1>
-<h3 id="quick-guide">Quick Guide</h3>
+<h1 id="coshml">CoshML</h1>
+<h3 id="introduction">Introduction</h3>
+<p>CoshML is a small BBCode-style markup language for styling parts of a string. It's parsed by <code>RichLabel</code>, letting you mix multiple fonts, colors, weights, and other styles within a single block of text.</p>
+<div class="language-python highlight"><span class="filename">Basic Usage</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Welcome [bold]back[/], friend!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Tags open with <code>[tag]</code> and close with <code>[/]</code>. Tags can be nested, and inner tags inherit whatever style is currently active — only overriding what they explicitly set.</p>
+<div class="language-python highlight"><span class="filename">Nesting</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;[font=Courier]Hello [bold]World[/][/]&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Here, <code>World</code> is bold <strong>and</strong> stays in Courier, since <code>[bold]</code> doesn't touch the active font — it only adds bold on top of it.</p>
+<hr />
+<h3 id="keyword-tags">Keyword Tags</h3>
+<p>These are single-word tags that don't take a value:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Function</th>
-<th style="text-align: left;">Parameters</th>
-<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Tag</th>
+<th style="text-align: left;">Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>set_default_font()</code></td>
-<td style="text-align: left;"><code>name : str</code></td>
-<td style="text-align: left;">Sets the default font used by every <code>TextNode</code> that doesn't explicitly set its own <code>font</code></td>
+<td style="text-align: left;"><code>[bold]</code></td>
+<td style="text-align: left;">Bold weight</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[italic]</code></td>
+<td style="text-align: left;">Italic style</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[underline]</code></td>
+<td style="text-align: left;">Underlines the text</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[strikethrough]</code></td>
+<td style="text-align: left;">Strikes through the text</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[red]</code> / <code>[green]</code> / <code>[blue]</code> / <code>[white]</code></td>
+<td style="text-align: left;">Sets text color</td>
 </tr>
 </tbody>
 </table>
-<h3 id="introduction">Introduction</h3>
-<p>Rather than setting <code>font</code> on every single <code>Label</code>, <code>Button</code>, or other <code>TextNode</code> in your UI, you can set one default font that applies globally to any Node that doesn't override it.</p>
-<div class="language-python highlight"><span class="filename">Basic Usage</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span><span class="s2">&quot;Poppins&quot;</span><span class="p">,</span> <span class="s2">&quot;assets/fonts/Poppins-Regular.ttf&quot;</span><span class="p">)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">set_default_font</span><span class="p">(</span><span class="s2">&quot;Poppins&quot;</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="c1"># Uses &quot;Poppins&quot; automatically since font isn&#39;t set</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Keyword tags</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;[bold][red]Warning:[/] please read carefully[/]&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
-<h3 id="requirements">Requirements</h3>
-<p><code>set_default_font()</code> only accepts font names that have already been registered through <code>add_font()</code>. Passing an unregistered name raises a <code>CoshUIError</code>.</p>
-<div class="language-python highlight"><span class="filename">Unregistered Font</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">set_default_font</span><span class="p">(</span><span class="s2">&quot;Poppins&quot;</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># CoshUIError: That font does not exist in the system.</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Please do add_font() before this function call with the name and path as arguments.</span>
+<h3 id="attribute-tags">Attribute Tags</h3>
+<p>These take a value with <code>tag=value</code> syntax:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tag</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>color</code></td>
+<td style="text-align: left;"><code>(r, g, b)</code> string</td>
+<td style="text-align: left;"><code>[color=(255, 0, 0)]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>font</code></td>
+<td style="text-align: left;">Registered font name</td>
+<td style="text-align: left;"><code>[font=Courier]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>font_size</code></td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;"><code>[font_size=24]</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-python highlight"><span class="filename">Attribute tags</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;[color=(0, 200, 255)][font_size=24]Big blue text[/][/]&quot;</span><span class="p">)</span>
 </span></code></pre></div>
+<p>Fonts referenced here must already be registered via <code>add_font()</code> — see <a href="../fonts/">Fonts</a>.</p>
 <hr />
-<h3 id="overriding-per-node">Overriding Per Node</h3>
-<p>Setting a default font doesn't stop individual Nodes from using their own font. Any <code>TextNode</code> with an explicit <code>font</code> value will still use that instead of the default.</p>
-<div class="language-python highlight"><span class="filename">Per Node Override</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">set_default_font</span><span class="p">(</span><span class="s2">&quot;Poppins&quot;</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">with</span> <span class="n">cui</span><span class="o">.</span><span class="n">CoshUIRenderer</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;default_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Uses Poppins&quot;</span><span class="p">)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;custom_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Uses Courier instead&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Courier&quot;</span><span class="p">)</span>
+<h3 id="custom-text-classes-add_class">Custom Text Classes — <code>add_class()</code></h3>
+<p>For styles you reuse often, register a named <code>TextStyle</code> once with <code>add_class()</code>, then reference it by name as a tag:</p>
+<div class="language-python highlight"><span class="filename">add_class() with TextStyle</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">TextStyle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;my_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;[warning]Careful, this can&#39;t be undone.[/]&quot;</span><span class="p">)</span>
 </span></code></pre></div>
+<p><code>TextStyle</code> accepts the same properties as the attribute tags above (<code>color</code>, <code>font</code>, <code>font_size</code>, <code>bold</code>, <code>italic</code>, <code>underline</code>, <code>strikethrough</code>). A class name can't collide with an existing tag name or another registered class — both raise a <code>CoshUIError</code>.</p>
+<p>Note: <code>add_class()</code> is also used to register <code>CoshStyling</code> classes for general Node styling (background color, border, etc.) — passing a <code>CoshStyling</code> instead of a <code>TextStyle</code> registers a class usable via a Node's <code>classes</code> property instead of a CoshML tag. The two are separate registries, so a name can be reused as both a Node style class and a text style class.</p>
+<hr />
+<h3 id="error-handling">Error Handling</h3>
+<p>Malformed CoshML raises a <code>CoshMLError</code> rather than failing silently — unclosed tags, unknown tags/attributes (with a suggestion via typo-matching), and invalid values (e.g. a non-3-tuple <code>color</code>) are all caught at parse time.  </p>
 
 
 

@@ -16,7 +16,7 @@
         <link rel="prev" href="../animations/easing/">
       
       
-        <link rel="next" href="text-properties/">
+        <link rel="next" href="fonts/">
       
       
         
@@ -1453,6 +1453,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/elements/richlabel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RichLabel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/elements/checkbox/" class="md-nav__link">
         
   
@@ -2055,10 +2083,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-default-font" class="md-nav__link">
+  <a href="#fonts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Set Default Font
+        Fonts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoshML
       
     </span>
   </a>
@@ -2069,6 +2108,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2109,14 +2176,14 @@
   
   
     <li class="md-nav__item">
-      <a href="set-default/" class="md-nav__link">
+      <a href="coshml/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Set Default Font
+    CoshML
   
 
     
@@ -4050,10 +4117,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-default-font" class="md-nav__link">
+  <a href="#fonts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Set Default Font
+        Fonts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoshML
       
     </span>
   </a>
@@ -4084,16 +4162,19 @@
 
 <h1 id="overview">Overview</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The text system in CoshUI for version 0.3.0 is currently very primitive, but it does have some basic features you need to know about. Text can be added to your UI using the <code>Label()</code> element (the <code>Button()</code> element also has the properties that <code>Label()</code> has but it has default values). </p>
-<p>If you want to know details like text properties or how to set fonts, then lets continue.</p>
+<p>The text system in CoshUI is built around <code>TextNode</code>-based widgets — <code>Label</code>, <code>Button</code>, <code>RichLabel</code>, and others — plus its own lightweight markup language called <strong>CoshML</strong>, inspired by BBCode. CoshML lets you style <em>parts</em> of a string by wrapping text in tags, rather than styling the whole Node uniformly.</p>
 <hr />
 <h2 id="text-properties">Text Properties</h2>
-<p>There are quite a few properties that let you change how text is rendered through CoshUI, like changing text color, font, weight, whether it wraps or hides when overflowing, and more.</p>
+<p>There are quite a few properties that let you change how text is rendered through CoshUI — text color, font, size, alignment, whether it wraps or hides when overflowing, and more. These apply to any <code>TextNode</code>, and set the <em>default</em> style for all the text on that Node.</p>
 <p>To find the details, check the <a href="text-properties/">Text Properties</a> section.</p>
 <hr />
-<h2 id="set-default-font">Set Default Font</h2>
-<p>Aside from setting a font directly on each Node, you can change the font of every <code>TextNode</code> in your UI.</p>
-<p>To learn more, check the <a href="set-default/">Set Default Font</a> section.</p>
+<h2 id="fonts">Fonts</h2>
+<p>Aside from setting a font directly on each Node, you can register your own fonts and change the font every <code>TextNode</code> falls back to by default.</p>
+<p>To learn more, check the <a href="fonts/">Fonts</a> section.</p>
+<hr />
+<h2 id="coshml">CoshML</h2>
+<p>If you need more than one style within a single string — like bolding a single word, or coloring part of a sentence — CoshML tags let you do that inline, without splitting text across multiple Nodes. This is primarily used through <code>RichLabel</code>.</p>
+<p>To learn more, check the <a href="coshml/">CoshML</a> section.</p>
 
 
 
@@ -4147,13 +4228,13 @@
         
         
           
-          <a href="text-properties/" class="md-footer__link md-footer__link--next" aria-label="Next: Text Properties">
+          <a href="fonts/" class="md-footer__link md-footer__link--next" aria-label="Next: Fonts">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Text Properties
+                Fonts
               </div>
             </div>
             <div class="md-footer__button md-icon">

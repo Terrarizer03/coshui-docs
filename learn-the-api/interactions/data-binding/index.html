@@ -1453,6 +1453,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../nodes/elements/richlabel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RichLabel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nodes/elements/checkbox/" class="md-nav__link">
         
   
@@ -2011,6 +2039,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../text/fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../text/text-properties/" class="md-nav__link">
         
   
@@ -2039,14 +2095,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../text/set-default/" class="md-nav__link">
+      <a href="../../text/coshml/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Set Default Font
+    CoshML
   
 
     
@@ -4013,21 +4069,29 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">cui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;volume_label&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Volume: </span><span class="si">{</span><span class="n">volume</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p>The <code>Ref</code> is updated automatically as the user drags the slider, so <code>volume.value</code> always reflects the current slider position.</p>
+<p>You can also call the <code>.on_change()</code> method on <code>Ref</code>:</p>
+<div class="language-python highlight"><span class="filename">Calling .on_change()</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">volume</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="mf">50.0</span><span class="p">)</span><span class="o">.</span><span class="n">on_change</span><span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">adjust_volume</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</span></code></pre></div>
+<p>It accepts a callback that gets called when Ref's value changes.</p>
 <h3 id="supported-nodes">Supported Nodes</h3>
 <h4 id="slider">Slider</h4>
 <p>Binds the current slider value as a <code>float</code>, updated continuously as the thumb is dragged.</p>
-<div class="language-python highlight"><span class="filename">Slider Binding</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">brightness</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="mf">75.0</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;brightness_slider&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">brightness</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Slider Binding</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">brightness</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="mf">75.0</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;brightness_slider&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">brightness</span><span class="p">)</span>
 </span></code></pre></div>
 <h4 id="checkbox">Checkbox</h4>
 <p>Binds the checked state as a <code>bool</code>, updated whenever the checkbox is toggled.</p>
-<div class="language-python highlight"><span class="filename">Checkbox Binding</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">enabled</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;enable_toggle&quot;</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">enabled</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Checkbox Binding</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">enabled</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;enable_toggle&quot;</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">enabled</span><span class="p">)</span>
 </span></code></pre></div>
 <h4 id="dropdown">Dropdown</h4>
 <p>Binds the currently selected item from the <code>item_list</code>, updated whenever the user selects a new option.</p>
-<div class="language-python highlight"><span class="filename">Dropdown Binding</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">selected_quality</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="s2">&quot;Medium&quot;</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;quality_dropdown&quot;</span><span class="p">,</span> <span class="n">item_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">],</span> <span class="n">bind</span><span class="o">=</span><span class="n">selected_quality</span><span class="p">)</span>
+<div class="admonition info">
+<p class="admonition-title">Ref and selector_index</p>
+<p>the <code>Ref</code>'s initial value is not used to set the starting selection — <code>Dropdown</code> always starts at <code>selector_index</code> (default <code>0</code>). Use <code>selector_index</code> to control the initial choice instead.</p>
+</div>
+<div class="language-python highlight"><span class="filename">Dropdown Binding</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">selected_quality</span> <span class="o">=</span> <span class="n">cui</span><span class="o">.</span><span class="n">Ref</span><span class="p">(</span><span class="s2">&quot;Medium&quot;</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">cui</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;quality_dropdown&quot;</span><span class="p">,</span> <span class="n">item_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">],</span> <span class="n">selector_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">selected_quality</span><span class="p">)</span>
 </span></code></pre></div>
 
 
