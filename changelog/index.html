@@ -4010,6 +4010,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v0321-hotfix-patch-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.2.1] Hotfix | Patch Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v032-coshml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.2] CoshML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v031-graphics-backends-fix-patch-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4079,6 +4101,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v0321-hotfix-patch-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.2.1] Hotfix | Patch Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v032-coshml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [v0.3.2] CoshML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v031-graphics-backends-fix-patch-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4138,6 +4182,148 @@
 <h1 id="changelog">Changelog</h1>
 <p>This section outlines all versions and changes for CoshUI's releases and updates.</p>
 <hr />
+<h2 id="v0321-hotfix-patch-notes">[v0.3.2.1] Hotfix | Patch Notes</h2>
+<p><code>July 7, 2026</code></p>
+<h3 id="bug-fix">Bug Fix</h3>
+<ul>
+<li><strong>Nested Font Bug</strong>: A small bug in CoshML where if users were to do <code>"[font=Courier]Hello [bold]World[/][/]"</code>, the <code>"World"</code> word wouldn't be set to designated font. The fix for this was adding a <code>_font_family</code> private member variable inside the <code>TextStyle</code> object that saves the font name to be used in the <code>validate_style()</code> function.</li>
+</ul>
+<hr />
+<h2 id="v032-coshml">[v0.3.2] CoshML</h2>
+<p><code>July 5, 2026</code></p>
+<h3 id="coshml-v10">CoshML v1.0:</h3>
+<p>CoshML is a markup language for CoshUI's <code>RichLabel</code> widget. It gives users flexibility when styling their CoshUI text by letting them write CoshML markup directly in the <code>text</code> field.</p>
+<p>With CoshML comes new fields and possiblities for text, like being able to set <code>bold</code> and/or <code>italic</code>, setting <code>underline</code> and/or <code>strikethrough</code>, a <strong>class</strong> system where users can pass in a <code>TextStyle</code> object which can then be used as a <em>tag</em> on CoshML text, and much more.</p>
+<p>Here is a basic example use-case for CoshML:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_rich_label&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;[color=(255, 100, 100) font_size=38]Hello CoshUI![/] My name is [bold italic]JyleFV[/], this is a [font=Ubuntu bold]test[/] on the CoshML system.&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">width</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">FILL</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">text_align</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_ALIGN_TOP</span><span class="p">,</span> <span class="n">text_justify</span><span class="o">=</span><span class="n">cui</span><span class="o">.</span><span class="n">TEXT_JUSTIFY_CENTER</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<p>CoshML already features a comprehensive set of tags for its initial release, here's a quick rundown of them all:</p>
+<div class="admonition note">
+<p class="admonition-title">Tag vs Keyword</p>
+<p><strong>Tag</strong>: Requires a value to be set after it separated by "=".<br />
+<strong>Keyword</strong>: Works standalone and does not need a value set after it.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CoshML Tag</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>color</code></td>
+<td style="text-align: left;">A <strong>tag</strong> that lets users set the color for that part of the text. This requires a 3-tuple value in the range of 0-255 to be set after it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>font</code></td>
+<td style="text-align: left;">A <strong>tag</strong> that lets users set the font for that part of the text. This requires the name of a font that has been declared using <code>add_font()</code> or exists in the <code>_font_library</code> to be set after it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>font_size</code></td>
+<td style="text-align: left;">A <strong>tag</strong> that lets users set the font size for that part of the text. This requires an <code>int</code> size value to be set after it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bold</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that lets users make <strong>bold</strong> for whatever text is encompassed with it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>italic</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that lets users make <strong>italic</strong> for whatever text is encompassed with it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>strikethrough</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that renders a line in the middle whatever text is encompassed with the CoshML tag.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>underline</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that renders a line below whatever text is encompassed with the CoshML tag.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>red</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that simplifies <code>color=(255, 0, 0)</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>blue</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that simplifies <code>color=(0, 0, 255)</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>green</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that simplifies <code>color=(0, 255, 0)</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>white</code></td>
+<td style="text-align: left;">A <strong>keyword</strong> that simplifies <code>color=(255, 255, 255)</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>On top of that, users can use the existing <code>add_class()</code> function — which used to only take in <code>CoshStyling</code> objects — and pass in <code>TextStyle</code> objects and use the class as a tag.</p>
+<p><strong>Example:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">cui</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="n">cui</span><span class="o">.</span><span class="n">TextStyle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">48</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Courier&quot;</span><span class="p">,</span> <span class="n">italic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># in CoshUIRenderer:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">cui</span><span class="o">.</span><span class="n">RichLabel</span><span class="p">(</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;example_rich_label&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;[header]CoshUI[/]&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="o">...</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<p>CoshML is inspired by BBCode visually, but with small differences like how CoshML supports multiple CoshML tags at once as opposed to nested tags or having a universal <code>[/]</code> closing tag instead of closing with explicit tag names (like <code>[/color]</code> or <code>&lt;/b&gt;</code>) as seen in BBCode or HTML. It is also heavily tailored towards CoshUI's engine, thus the choice of making it as its own standalone markup language instead of integrating BBCode.</p>
+<p>If you want to learn more about CoshML's internals as a contributor, <code>text_engine.py</code> is the best entry point.</p>
+<h3 id="new-features">New Features:</h3>
+<ul>
+<li><strong>RichLabel</strong>: Added new <code>RichLabel</code> widget which CoshML — and by extension this update — centers around.</li>
+<li><strong>Profiler</strong>: Added a profiler for CoshUI's internal subsystems which tracks and visualizes execution times for all major engine subsystems.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Profiler Limitation</p>
+<p>The profiler only measures the time for the internal pipelines like the animation updates, layout system, event system, and backend rendering. It currently does not take into account Node rebuild time. That will be added in a future version of the profiler.</p>
+</div>
+<h3 id="refactors">Refactors:</h3>
+<ul>
+<li><strong>Padding &amp; Margin</strong>: Added the ability to pass in a 4-value tuple (top, right, bottom, left) to be more precise with what side needs the values.</li>
+<li><strong>User-Side Functions</strong>: Reworked the internals and functionality of <code>add_class</code>, <code>add_font</code>, and <code>set_default_font</code>.<ul>
+<li>In <code>add_class()</code>, you can now pass in <code>TextStyle</code> objects that get added to the <code>_text_style_classes</code> registry which can be used in CoshML markup text.</li>
+<li>The <code>add_font()</code> function now accepts <code>bold</code>, <code>italic</code>, and <code>bold_italic</code> paths that let users set the <code>bold</code> or <code>italic</code> fields to True for that font in <code>Label</code> or <code>RichLabel</code>.</li>
+<li>For <code>set_default_font()</code>, this change is mainly internal, it has no difference from before except that it sets the name of the font in <code>_default_font</code> instead of the path.</li>
+</ul>
+</li>
+<li><strong>Text System</strong>: Reworked how the CoshUI engine treats text, bundling up text values into a singular <code>TextData</code> dataclass.</li>
+<li><strong>Layout System</strong>: Layout has been split to make it easier to read and now deals with text positioning where before, each backend had to deal with it.</li>
+<li><strong>Ref On Change</strong>: Added <code>.on_change(callback)</code> call for the <code>Ref</code> class. It takes in a callback for an argument which if the method is called, will run the callback each time the value changes.</li>
+<li><strong>Animation Loops</strong>: Added a <code>.loop()</code> method to <code>animate()</code> which lets you loop your animations. <ul>
+<li>It has parameters that lets you customize the loop such as <code>count</code> which sets how many times it'll loop (with <code>None</code> being the default and treated as infinite iterations).</li>
+<li>There's <code>delay</code> which sets a timed pause that loops take in between each iteration.</li>
+<li>And <code>ping_pong</code> which makes it so end and start values smoothly go back in forth instead of resetting the start value every iteration.</li>
+</ul>
+</li>
+</ul>
+<h3 id="performance">Performance:</h3>
+<ul>
+<li><strong>[PygameBackend] Surface Caching</strong>: 20%~ reduction in rendering time for some cases, seeing a drop from 1.4-1.5ms to 1.1-1.2ms when rendering 14-19 of mostly different Nodes. Rotation adds an extra 0.7ms~ to those times so a separate <code>_rotation_cache</code> might be a future path.</li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes:</h3>
+<ul>
+<li><strong>GL Minimize Bug</strong>: When clicking minimize on GL backends, the screen-size suddenly becomes (0, 0) which prompts the <code>_get_orthographic_matrix()</code> function of the GL Backends to malfunction due to a <em>"division by 0"</em> error.</li>
+<li><strong>PRESSED Signal Propagation</strong>: The signal <code>PRESSED</code> did not consume clicks which naturally propagated it downwards to every Node. So Nodes above, even if their <code>mouse_filter</code> field was set to STOP, would still let Nodes below get the <code>PRESSED</code> signal.</li>
+<li><strong>GL Text Offset</strong>: The GL backend's text used to use the <code>scaled_font_size</code> for the text's baseline_y value. This caused a small downwards shift from the actual position.</li>
+<li><strong>Text Rotation Pivot</strong>: Backends rotated text from the text's center, this caused problems with Node rotations that had <code>text_align</code> or <code>text_justify</code> <em>not</em> set to <code>CENTER</code>.</li>
+<li><strong>Layout FILL/Percentage Sizing</strong>: Cross-axis FILL and percentage-sized children did not subtract <code>child.margin</code> before computing available space, causing incorrect sizing in certain layouts.</li>
+</ul>
+<h3 id="planned-for-v033-and-above">Planned for v0.3.3 and above:</h3>
+<ul>
+<li><strong>Particle System</strong>: Let users emit particles.</li>
+<li><strong>Theme System Rework</strong>: Rework of the theme system to make it easier and more viable to use.</li>
+<li><strong>More CoshML Capabilities</strong>: Things like <code>[n]</code> (newline) tags and letter-word-line spacing support for text.</li>
+<li><strong>The Previously Planned</strong>: The plans previously discussed in <code>v0.3.0</code>.</li>
+<li><strong>And Much More...</strong></li>
+</ul>
+<hr />
 <h2 id="v031-graphics-backends-fix-patch-notes">[v0.3.1] Graphics Backends Fix | Patch Notes</h2>
 <p><code>June 18, 2026</code></p>
 <h3 id="patches">Patches:</h3>
@@ -4153,7 +4339,7 @@
 <hr />
 <h2 id="v030-graphics-pipeline-support">[v0.3.0] Graphics Pipeline Support</h2>
 <p><code>June 7, 2026</code></p>
-<h3 id="new-features">New Features:</h3>
+<h3 id="new-features_1">New Features:</h3>
 <ul>
 <li><strong>CoshPercentage</strong>: New sizing type that lets users set width/height as a percentage of the parent’s dimensions.</li>
 <li><strong>CoshDebug</strong>: New debugger that opens its own tkinter window and shows a live node inspector showing the full UI tree, computed layout values, style properties, and signals fired each frame.</li>
@@ -4218,7 +4404,7 @@
 </tbody>
 </table>
 </figure>
-<h3 id="bug-fixes">Bug Fixes:</h3>
+<h3 id="bug-fixes_1">Bug Fixes:</h3>
 <ul>
 <li><strong>Pygame’s Missing Alpha</strong>: Alpha value not being set when rotation was 0.0 for rectangles, this is due to being accidentally forgotten when implementing rotation.</li>
 <li><strong>Raylib Border-radius Rotation</strong>: Raylib losing border radius when rotated is now fixed.</li>
@@ -4233,14 +4419,14 @@
 <p>ModernGL-Window's support acts fairly weird with the debugger. My main theory is the debugger consumes a bit too much and hangs some parts of it. If this is true, then this may also be a program complexity problem — which if it is, there might become a need to completely rework the debugger.</p>
 </div>
 <h3 id="new-installs">New Installs:</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># For ModernGL + GLFW</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>moderngl<span class="o">]</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># For ModernGL + MGLW</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>moderngl-mglw<span class="o">]</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># For PyOpenGL + GLFW</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pyopengl<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># For ModernGL + GLFW</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>moderngl<span class="o">]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># For ModernGL + MGLW</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>moderngl-mglw<span class="o">]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># For PyOpenGL + GLFW</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pyopengl<span class="o">]</span>
 </span></code></pre></div>
 <h3 id="planned-for-v031-and-above">Planned for v0.3.1 and above:</h3>
 <ul>
@@ -4267,14 +4453,14 @@ The first public release of CoshUI — a Python-first, declarative, backend-agno
 <li>Text wrapping and transform rotation support</li>
 </ul>
 <h3 id="install">Install</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># For core</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># For Pygame</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pygame<span class="o">]</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># For Raylib</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>raylib<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># For core</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># For Pygame</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>pygame<span class="o">]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># For Raylib</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>pip<span class="w"> </span>install<span class="w"> </span>coshui<span class="o">[</span>raylib<span class="o">]</span>
 </span></code></pre></div>
 <h3 id="notes">Notes</h3>
 <p>This is an early release. Grid has not been thoroughly tested and may have edge cases. Issues and contributions welcome on <a href="https://gitlab.com/jylefv/CoshUI">GitLab</a>.</p>
