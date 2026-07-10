@@ -11,6 +11,11 @@
 | `text_align` | `CoshTextAlign` | `CENTER` |
 | `text_justify` | `CoshTextJustify` | `CENTER` |
 | `text_overflow` | `CoshTextOverflow` | `VISIBLE` |
+| `bold` | `bool` | `False` |
+| `italic`  | `bool` | `False` |
+| `strikethrough`  | `bool` | `False` |
+| `underline`  | `bool` | `False` |
+
 
 ### Introduction
 
@@ -39,6 +44,7 @@ cui.Label(id="greeting", text="Welcome back!")
 References a font by name from CoshUI's font library, not by file path directly. If `font` is left as `None`, the Node falls back to the active default font. See [Fonts](fonts.md) for registering your own.
 
 ```python title="font"
+# Courier is one of the 3 fonts that comes with CoshUI
 cui.Label(id="my_label", text="Styled text", font="Courier")
 ```
 
@@ -60,6 +66,50 @@ An `(r, g, b)` tuple controlling the color of the text. Defaults to white.
 
 ```python title="text_color"
 cui.Label(id="warning", text="Careful!", text_color=(255, 80, 80))
+```
+
+---
+
+### bold and italic
+
+These properties require you to add extra font paths for that specific font family when calling `add_font()`. This is discussed in the [Fonts](fonts.md) section.
+
+The `bold` property is boolean value that sets whether the text uses the bold font path.
+
+```python title="bold"
+cui.Label(id="warning", text="Bold Text!", bold=True)
+```
+
+Whilst the `italic` property is a boolean value that sets whether the text uses the italic font path.
+
+```python title="italic"
+cui.Label(id="warning", text="Italic Text!", italic=True)
+```
+
+!!! note "bold AND italic"
+    Both bold and italic booleans can be set to `True` if you've passed in a `bold_italic` font path for that font family.  
+    ```python title="bold and italic"
+    cui.Label(id="warning", text="Bold Text!", bold=True, italic=True)
+    ```
+
+---
+
+### strikethrough
+
+A boolean value that sets whether the text has a strike line through it.
+
+```python title="strikethrough"
+cui.Label(id="warning", text="This text has strikethrough.", strikethrough=True)
+```
+
+---
+
+### underline
+
+A boolean value that sets whether the text has an underline below it.
+
+```python title="underline"
+cui.Label(id="warning", text="This text has an underline.", underline=True)
 ```
 
 ---
