@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+}
+.nav {
+    background-color: aqua;
+    height: 10vh;
+}
+.nav a {
+    text-decoration: none;
+}

@@ -1,0 +1,28 @@
+{
+    "latest": "0.3.3",
+    "versions": {
+        "0.3.3": {
+            "name": "Node",
+            "description": "The <b>Node</b> class is the basis of every widget in CoshUI.",
+            "public-params": {
+                "id": "Sets a unique identifier for the Node.",
+                "width": "Determines the horizontal size of the Node.",
+                "height": "Determines the vertical size of the Node.",
+                "margin": "Sets the space around the Node.",
+                "style": "Holds the style of the Node in the form of a CoshStyling object.",
+                "classes": "Lets users set reusable <i>styles</i> for Nodes.",
+                "z_index": "Determines the render order of a Node.",
+                "mouse_filter": "Sets different filter types for the Node's mouse interaction.",
+                "positioning": "Determines whether a Node will participate in layout calculations or not.",
+                "x": "Only works with positioning set to ABSOLUTE. Sets the Node's x position starting from parent's x position.",
+                "y": "Only works with positioning set to ABSOLUTE. Sets the Node's y position starting from parent's y position."
+            },
+            "private-params": {
+                "children": "A list of that Node's children.",
+                "_was_hovered": "A variable that stores hover state for that specific Node.",
+                "_x": "The real x value that layout calculations and rendering cares about.",
+                "_y": "The real y value that layout calculations and rendering cares about."
+            }
+        }
+    }
+}
