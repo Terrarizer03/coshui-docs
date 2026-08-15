@@ -1,0 +1,13 @@
+{
+    "latest": "0.3.3",
+    "versions": {
+        "0.3.3": {
+            "name": "add_class",
+            "description": "Creates a class entry within CoshUI's class registers that lets users reuse style objects.",
+            "parameters": {
+                "name": "A `str` object that acts as the name of the class. This will be what you pass onto the `classes` field on Nodes or as a custom CoshML tag.",
+                "style": "Either a `CoshStyling` or a `TextStyle` object, behavior will depend on what you pass in. If a CoshStyling object is passed in, it will let you reuse those styles for Nodes. If a TextStyle object is passed in, it will let you reuse those styles in CoshML as a tag."
+            }
+        }
+    }
+}

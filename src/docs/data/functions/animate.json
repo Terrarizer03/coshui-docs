@@ -1,0 +1,32 @@
+{
+    "latest": "0.3.3",
+    "versions": {
+        "0.3.3": {
+            "name": "animate",
+            "description": "Takes in a Node id and a property and linear interpolates that value towards the new specified value.",
+            "parameters": {
+                "n_property": {
+                    "description": "The property you want to animate (e.g., 'transform_position', 'transform_scale', or 'alpha').",
+                    "type": "str"
+                },
+                "target_id": {
+                    "description": "The id of the node instance the animation is applied to.",
+                    "type": "str"
+                },
+                "end_value": {
+                    "description": "The final target value to reach by the end of the animation.",
+                    "type": "Depends on the property..."
+                },
+                "duration": {
+                    "description": "Animation length in seconds.",
+                    "type": "int | float"
+                },
+                "easing": {
+                    "description": "The easing curve name. Defaults to 'linear' if not passed.",
+                    "type": "str"
+                }
+            },
+            "return-type": "<a href='/learn-the-api/types/Tween/'>Tween</a>"
+        }
+    }    
+}

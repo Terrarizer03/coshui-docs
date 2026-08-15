@@ -1,0 +1,38 @@
+{
+    "versions": {
+        "0.3.3": {
+            "name": "CoshStyling",
+            "description": "The object that holds a Node's style values.",
+            "parameters": {
+                "background_color": {
+                    "description": "Takes in an RGB (or RGBA) value and sets the color of the Node's background.",
+                    "type": "tuple | None"
+                },
+                "alpha": {
+                    "description": "Takes in an integer value between 0 and 255 and sets the opacity of the Node and the children within it.",
+                    "type": "int"
+                },
+                "border": {
+                    "description": "Takes in a color value and a weight value in this format (`((255, 255, 255), 5)` or `(255, 255, 255, 5)`) and renders an outline around the Node.",
+                    "type": "tuple | None"
+                },
+                "border_radius": {
+                    "description": "Curves a Nodes corners, taking in a tuple or int value in this format `(top-left, top-right, bottom-right, bottom-left)` or just an integer to determine the radius.",
+                    "type": "tuple | int | None"
+                },
+                "transform_position": {
+                    "description": "Offsets the Node's render position by the position value given.",
+                    "type": "tuple | None"
+                },
+                "transform_scale": {
+                    "description": "Scales the Node's size in render based on the scalar value given.",
+                    "type": "int | float | None"
+                },
+                "transform_rotation": {
+                    "description": "Rotates the Node based on the degree value given.",
+                    "type": "int | float | None"
+                }
+            }
+        }
+    }
+}

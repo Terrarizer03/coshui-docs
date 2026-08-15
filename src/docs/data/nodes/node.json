@@ -5,23 +5,68 @@
             "name": "Node",
             "description": "The <b>Node</b> class is the basis of every widget in CoshUI.",
             "public-params": {
-                "id": "Sets a unique identifier for the Node.",
-                "width": "Determines the horizontal size of the Node.",
-                "height": "Determines the vertical size of the Node.",
-                "margin": "Sets the space around the Node.",
-                "style": "Holds the style of the Node in the form of a CoshStyling object.",
-                "classes": "Lets users set reusable <i>styles</i> for Nodes.",
-                "z_index": "Determines the render order of a Node.",
-                "mouse_filter": "Sets different filter types for the Node's mouse interaction.",
-                "positioning": "Determines whether a Node will participate in layout calculations or not.",
-                "x": "Only works with positioning set to ABSOLUTE. Sets the Node's x position starting from parent's x position.",
-                "y": "Only works with positioning set to ABSOLUTE. Sets the Node's y position starting from parent's y position."
+                "id": {
+                    "description": "Sets a unique identifier for the Node.",
+                    "type": "str"
+                },
+                "width": {
+                    "description": "Determines the horizontal size of the Node.",
+                    "type": "int | float | CoshSizing | CoshPercentage | None"
+                },
+                "height": {
+                    "description": "Determines the vertical size of the Node.",
+                    "type": "int | float | CoshSizing | CoshPercentage | None"
+                },
+                "margin": {
+                    "description": "Sets the space around the Node.",
+                    "type": "int | float | tuple"
+                },
+                "style": {
+                    "description": "Holds the style of the Node in the form of a <a href='/learn-the-api/types/CoshStyling/'>CoshStyling</a> object.",
+                    "type": "CoshStyling"
+                },
+                "classes": {
+                    "description": "Lets users set reusable <i>styles</i> for Nodes.",
+                    "type": "str | list | tuple"
+                },
+                "z_index": {
+                    "description": "Determines the render order of a Node.",
+                    "type": "int"
+                },
+                "mouse_filter": {
+                    "description": "Sets different filter types for the Node's mouse interaction.",
+                    "type": "CoshMouseFilter"
+                },
+                "positioning": {
+                    "description": "Determines whether a Node will participate in layout calculations or not.",
+                    "type": "CoshPositioning"
+                },
+                "x": {
+                    "description": "Only works with positioning set to ABSOLUTE. Sets the Node's x position starting from parent's x position.",
+                    "type": "int | float | None"
+                },
+                "y": {
+                    "description": "Only works with positioning set to ABSOLUTE. Sets the Node's y position starting from parent's y position.",
+                    "type": "int | float | None"
+                }
             },
             "private-params": {
-                "children": "A list of that Node's children.",
-                "_was_hovered": "A variable that stores hover state for that specific Node.",
-                "_x": "The real x value that layout calculations and rendering cares about.",
-                "_y": "The real y value that layout calculations and rendering cares about."
+                "children": {
+                    "description": "A list of that Node's children.",
+                    "type": "list"
+                },
+                "_was_hovered": {
+                    "description": "A variable that stores hover state for that specific Node.",
+                    "type": "bool"
+                },
+                "_x": {
+                    "description": "The real x value that layout calculations and rendering cares about.",
+                    "type": "int | float"
+                },
+                "_y": {
+                    "description": "The real y value that layout calculations and rendering cares about.",
+                    "type": "int | float"
+                }
             }
         }
     }

@@ -1,10 +1,26 @@
+:root {
+    --header-color: #616161;
+    --header-text-color: #fffef3;
+    --header-text-color-hovered: #cdcdcd;
+}
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .nav {
-    background-color: aqua;
-    height: 10vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: var(--header-color);
+    height: clamp(10rem, 14rem, 17rem);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 .nav a {
+    color: var(--header-text-color);
     text-decoration: none;
+    transition: all 0.1s ease-out;
+}
+.nav a:hover {
+    color: var(--header-text-color-hovered);
 }
