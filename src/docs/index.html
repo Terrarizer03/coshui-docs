@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/page.css">
     <link rel="stylesheet" href="styles/nav.css">
     <title>CoshUI</title>
 </head>
 <body>
-    <div class="nav">
-        <a href="/">Home</a>
-        <a href="/introduction/">Introduction</a>
-        <a href="/learn-the-api/">Learn The API</a>
-        <a href="/changelog/">Changelog</a>
-        <a href="/examples">Examples</a>
-    </div>
-    <div class="content">
-        <h1>CoshUI</h1>
+    <div class="page">
+        <div class="content">
+            <div class="descriptor">
+                <h1 class="headers">CoshUI</h1>
+                Welcome to CoshUI's documentation page!
+                A UI framework made in Python for game development inspired by HTML & CSS, Dear ImGui, React, and Godot.
+                <h3 class="headers">What is CoshUI?</h3>
+            </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+
+        <div class="nav">
+            <h1>CoshUI Docs</h1>
+            <a href="/">Home</a>
+            <a href="/introduction/">Introduction</a>
+            <a href="/learn-the-api/">Learn The API</a>
+            <a href="/changelog/">Changelog</a>
+            <a href="/examples">Examples</a>
+        </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="js/toggle.js"></script>
 </body>
 </html>
